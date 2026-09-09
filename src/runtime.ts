@@ -176,14 +176,25 @@ function validateTicketPlusLottery(value: unknown): asserts value is TicketPlusL
 }
 export function applyTicketPlusPoll(input: TicketPlusRuntimeState, result: { ordinary?: TicketPlusOrdinaryObservation; lottery?: TicketPlusLotteryObservation; errors: string[] }, now = new Date()): TicketPlusRuntimeState {
   const state = structuredClone(input); const attempt = now.toISOString(); state.lastAttemptAt = attempt; state.health.lastAttemptAt = attempt;
+  const ordinaryFailed = result.errors.some((error) => error.startsWith("ordinary:"));
+  const lotteryFailed = result.errors.some((error) => error.startsWith("lottery:"));
   if (result.ordinary || result.lottery) {
     if (result.ordinary) state.ordinary = result.ordinary;
+    else if (ordinaryFailed) state.ordinary = null;
     if (result.lottery) state.lottery = result.lottery;
+    else if (lotteryFailed) state.lottery = null;
     state.pairings = (state.ordinary && state.lottery) ? [{ lotteryActivityId: state.lottery.activityId, ordinaryActivityId: state.ordinary.activityId, confidence: "low", evidence: ["conservative-unverified"], automationEligible: false }] : [];
     state.history = [...state.history, { observedAt: attempt, ordinary: Boolean(result.ordinary), lottery: Boolean(result.lottery) }].slice(-MAX_HISTORY);
     state.lastSuccessfulAt = attempt; state.health.lastSuccessfulAt = attempt; state.health.category = result.errors.length ? "stale" : "ok";
     if (result.errors.length) state.health.error = result.errors.join(";").slice(0, 500); else delete state.health.error;
-  } else { state.health.category = state.lastSuccessfulAt ? "stale" : "error"; state.health.error = result.errors.join(";").slice(0, 500) || "poll-failure"; }
+  } else {
+    if (ordinaryFailed) state.ordinary = null;
+    if (lotteryFailed) state.lottery = null;
+    state.pairings = [];
+    state.history = [...state.history, { observedAt: attempt, ordinary: false, lottery: false }].slice(-MAX_HISTORY);
+    state.health.category = state.lastSuccessfulAt ? "stale" : "error";
+    state.health.error = result.errors.join(";").slice(0, 500) || "poll-failure";
+  }
   return state;
 }
 export function validateUdnObservation(value: unknown): asserts value is UdnObservation {
