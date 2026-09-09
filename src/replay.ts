@@ -9,3 +9,7 @@ export function runIsolatedReplayDemo(value: unknown): PipelineOutput {
 export function replayHasNoDeliverySurface(): true {
   return true;
 }
+
+export function renderReplayDemo(): string {
+  return '<section aria-labelledby="replay-heading"><h2 id="replay-heading">DEMO — sold-out → available replay</h2><p><strong>DEMO</strong>: replayed fixture, not live inventory. No notification sent.</p><p>Fixture <code>ticket-radar-sold-out-to-available-v1</code> · sold-out → available</p></section>';
+}

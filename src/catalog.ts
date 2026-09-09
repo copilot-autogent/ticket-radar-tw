@@ -90,8 +90,8 @@ function summaryFromStructured(item: Record<string, unknown>, source: CatalogSou
 }
 export function parseCatalogSummaries(html: string, source: CatalogSource, now = new Date()): CatalogSummary[] {
   const timestamp = now.toISOString(); const structured = jsonLd(html).map((item) => summaryFromStructured(item, source, timestamp)).filter((item): item is CatalogSummary => item !== null);
-  const linked = eventLinks(html, source).map((url): CatalogSummary => { const title = htmlTitle(html) || `${source.toUpperCase()} event ${eventIdFromUrl(url)}`; return { schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), sourceUrl: url, title, ...classifyEvent(title, undefined), firstSeenAt: timestamp, catalogFetchedAt: timestamp, detailStatus: "discovered-summary", provenance: { source, sourceUrl: url, retrievedAt: timestamp, discoveryMethod: "structured-summary", parserVersion: sourceParserVersion } }; });
-  return [...new Map([...structured, ...linked].map((item) => [`${source}:${item.eventId}`, item])).values()];
+  const linked = eventLinks(html, source).map((url): CatalogSummary => { const title = `${source.toUpperCase()} event ${eventIdFromUrl(url)}`; return { schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), sourceUrl: url, title, ...classifyEvent(title, undefined), firstSeenAt: timestamp, catalogFetchedAt: timestamp, detailStatus: "discovered-summary", provenance: { source, sourceUrl: url, retrievedAt: timestamp, discoveryMethod: "structured-summary", parserVersion: sourceParserVersion } }; });
+  return [...new Map([...linked, ...structured].map((item) => [`${source}:${item.eventId}`, item])).values()];
 }
 function performanceFromOpentix(item: ReturnType<typeof parseOpentixHtml>["performances"][number], eventId: string, url: string): CatalogPerformance { return { schemaVersion: CATALOG_SCHEMA_VERSION, source: "opentix", eventId, performanceId: item.performanceId, sourceUrl: url, startsAt: item.startsAt, ...(item.endsAt ? { endsAt: item.endsAt } : {}), cancelled: false, ...(item.saleOpenAt ? { saleStart: item.saleOpenAt } : {}), ...(item.saleCloseAt ? { saleEnd: item.saleCloseAt } : {}), minPrice: item.price.min, maxPrice: item.price.max, currency: "TWD" }; }
 export function parseUdnCatalogDetailHtml(html: string, eventUrl: string, _now = new Date()): { title: string; performances: CatalogPerformance[] } {
@@ -102,9 +102,10 @@ export function parseUdnCatalogDetailHtml(html: string, eventUrl: string, _now =
   const performances = Array.from({ length: Math.max(uniqueLinks.length, sourceBlocks.length) }, (_, index) => { const block = sourceBlocks[index] ?? ""; const startsAt = isoDate(block); const id = new URL(uniqueLinks[index] ?? eventUrl).searchParams.get("PERFORMANCE_ID") ?? `${eventId}-performance-${index + 1}`; const prices = priceRange(block); const venueMatch = block.match(/(?:場館|場地|地點|venue)\s*[:：]\s*([^|｜,，;；]+)/i); const cityMatch = block.match(/(?:城市|縣市|city)\s*[:：]\s*([^|｜,，;；]+)/i); const saleStart = isoDate(block.match(/(?:開賣|售票|sale)\s*[:：]?\s*([^\s|｜]+)/i)?.[1] ?? ""); return { schemaVersion: CATALOG_SCHEMA_VERSION, source: "udn" as const, eventId, performanceId: id, sourceUrl: uniqueLinks[index] ?? eventUrl, ...(startsAt ? { startsAt } : {}), cancelled: /取消|cancel/i.test(block), ...(venueMatch?.[1] ? { venue: venueMatch[1].trim() } : {}), ...(cityMatch?.[1] ? { city: cityMatch[1].replace(/\s+NT\$.*$/i, "").trim() } : {}), ...(saleStart ? { saleStart } : {}), ...prices, currency: "TWD" as const }; });
   return { title, performances };
 }
-function mergeSummary(old: CatalogSummary | undefined, next: CatalogSummary): CatalogSummary { return { ...old, ...next, firstSeenAt: old?.firstSeenAt ?? next.firstSeenAt, ...(next.title ? { title: next.title } : old?.title ? { title: old.title } : {}), ...(next.artist || old?.artist ? { artist: next.artist ?? old?.artist } : {}), ...(next.venue || old?.venue ? { venue: next.venue ?? old?.venue } : {}), ...(next.city || old?.city ? { city: next.city ?? old?.city } : {}), ...(next.sourceCategory || old?.sourceCategory ? { sourceCategory: next.sourceCategory ?? old?.sourceCategory } : {}) }; }
+function mergeSummary(old: CatalogSummary | undefined, next: CatalogSummary): CatalogSummary { return { ...old, ...next, firstSeenAt: old?.firstSeenAt ?? next.firstSeenAt, ...(old?.detailStatus === "detail-enriched" && next.detailStatus === "discovered-summary" ? { detailStatus: old.detailStatus, provenance: old.provenance, catalogFetchedAt: old.catalogFetchedAt } : {}), ...(next.title ? { title: next.title } : old?.title ? { title: old.title } : {}), ...(next.artist || old?.artist ? { artist: next.artist ?? old?.artist } : {}), ...(next.venue || old?.venue ? { venue: next.venue ?? old?.venue } : {}), ...(next.city || old?.city ? { city: next.city ?? old?.city } : {}), ...(next.sourceCategory || old?.sourceCategory ? { sourceCategory: next.sourceCategory ?? old?.sourceCategory } : {}) }; }
 function coverage(events: CatalogEvent[]): CatalogCoverage { return { summariesDiscovered: events.length, detailEnriched: events.filter((event) => event.detailStatus === "detail-enriched").length, performancesDiscovered: events.reduce((sum, event) => sum + event.performances.length, 0), pricesKnown: events.reduce((sum, event) => sum + event.performances.filter((item) => item.minPrice !== null && item.maxPrice !== null).length, 0), categoriesKnown: events.filter((event) => event.category !== "unknown").length }; }
 function normalizeEvent(event: CatalogEvent, source: CatalogSource, now: string): CatalogEvent {
+  const performances = event.performances ?? [];
   const eventSourceUrl = event.sourceUrl || sourceUrl(source, event.eventId);
   return {
     ...event,
@@ -112,9 +113,9 @@ function normalizeEvent(event: CatalogEvent, source: CatalogSource, now: string)
     source,
     sourceUrl: eventSourceUrl,
     title: event.title || `${source.toUpperCase()} event ${event.eventId}`,
-    detailStatus: event.detailStatus ?? (event.performances.length ? "detail-enriched" : "discovered-summary"),
+    detailStatus: event.detailStatus ?? (performances.length ? "detail-enriched" : "discovered-summary"),
     provenance: event.provenance ?? { source, sourceUrl: eventSourceUrl, retrievedAt: event.catalogFetchedAt || now, discoveryMethod: "legacy-migration", parserVersion: "legacy-state" },
-    performances: event.performances ?? []
+    performances
   };
 }
 export function catalogStateMateriallyEqual(a: CatalogState | null, b: CatalogState): boolean { if (!a) return false; const comparable = (state: CatalogState) => ({ ...state, generatedAt: "", completeness: { ...state.completeness, fetchedAt: "" }, events: state.events.map((event) => ({ ...event, catalogFetchedAt: "" })), summaries: (state.summaries ?? state.events.map(({ performances: _performances, ...summary }) => summary)).map((summary) => ({ ...summary, catalogFetchedAt: "" })) }); return JSON.stringify(comparable(a)) === JSON.stringify(comparable(b)); }
@@ -143,5 +144,5 @@ export function selectUdnTiers<T extends { availability: string; exactCount: num
   return includeUnavailable ? tiers : tiers.filter(isUdnPurchasable);
 }
 export function cheapestUdnExactPositive<T extends { availability: string; exactCount: number | null; priceTwd: number }>(tiers: T[]): T | null {
-  return tiers.filter((tier) => tier.availability === "exact" && (tier.exactCount ?? 0) > 0).sort((a, b) => a.priceTwd - b.priceTwd)[0] ?? null;
+  return tiers.filter((tier) => tier.availability === "exact" && (tier.exactCount ?? 0) > 0 && !/(access|companion|student|member|package|lottery|wheelchair|accessibility|身份|會員|陪同|套票|抽籤|輪椅|無障礙)/i.test((tier as T & { label?: string }).label ?? "")).sort((a, b) => a.priceTwd - b.priceTwd)[0] ?? null;
 }
