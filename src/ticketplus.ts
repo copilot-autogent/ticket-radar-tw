@@ -26,11 +26,14 @@ function timestamp(value: unknown): string | undefined {
   const candidate = match ? `${dateParts[0]}-${dateParts[1]!.padStart(2, "0")}-${dateParts[2]!.padStart(2, "0")}T${match[2]!.padStart(2, "0")}:${match[3]}:${match[4] ?? "00"}+08:00` : raw;
   return iso.test(candidate) && !Number.isNaN(Date.parse(candidate)) ? candidate : undefined;
 }
-function lifecycle(status: string, start?: string, end?: string, sessionStart?: string, now = Date.now()): TicketPlusOrdinaryLifecycle {
-  if (sessionStart && Date.parse(sessionStart) <= now && (!end || Date.parse(end) > now)) return "ended";
-  if (end && Date.parse(end) < now) return "sale-closed";
-  if (status.toLowerCase() === "onsale") return "on-sale";
-  if (start) return Date.parse(start) > now ? "sale-scheduled" : "on-sale";
+function lifecycle(status: string, saleStart?: string, saleEnd?: string, sessionStart?: string, sessionEnd?: string, now = Date.now()): TicketPlusOrdinaryLifecycle {
+  const normalized = status.toLowerCase().replace(/[-_\s]/g, "");
+  if (["ended", "finished", "completed", "past"].includes(normalized)) return "ended";
+  if (sessionEnd && Date.parse(sessionEnd) <= now) return "ended";
+  if (saleEnd && Date.parse(saleEnd) <= now) return "sale-closed";
+  if (saleStart && Date.parse(saleStart) > now) return "sale-scheduled";
+  if (normalized === "onsale") return "on-sale";
+  if (saleStart) return "on-sale";
   return status ? "announced" : "unknown";
 }
 function values(value: unknown): unknown[] {
@@ -77,7 +80,7 @@ export function parseTicketPlusOrdinaryJson(body: string, observedAt = new Date(
     const endsAt = timestamp(item.endAt ?? item.endsAt);
     return {
       activityId: TICKET_PLUS_ORDINARY_ACTIVITY, eventId: TICKET_PLUS_ORDINARY_EVENT, sessionId, status,
-      lifecycle: lifecycle(status, saleStartAt, saleEndAt, startsAt, now.getTime()),
+      lifecycle: lifecycle(status, saleStartAt, saleEndAt, startsAt, endsAt, now.getTime()),
       ...(exposureStartAt ? { exposureStartAt } : {}), ...(exposureEndAt ? { exposureEndAt } : {}),
       ...(saleStartAt ? { saleStartAt } : {}), ...(saleEndAt ? { saleEndAt } : {}),
       ...(startsAt ? { startsAt } : {}), ...(endsAt ? { endsAt } : {}),
@@ -103,27 +106,58 @@ function windowFrom(text: string, kind: TicketPlusLotteryRound["windows"][number
   if (!dates.length) return undefined;
   return { kind, ...(dates[0] ? { startAt: dates[0] } : {}), ...(dates[1] ? { endAt: dates[1] } : {}), evidenceId: evidence(kind, match[0] ?? "") };
 }
+function roundSections(text: string): Array<{ roundId: string; kind: TicketPlusLotteryRound["kind"]; text: string }> {
+  const headings = [...text.matchAll(/(?:第\s*(\d+|一|二|三|四)\s*(?:輪|回|次)|初始輪)/gi)];
+  if (!headings.length) return [{ roundId: "initial", kind: "initial", text }];
+  const ordinal = (value: string | undefined): number => value === "一" ? 1 : value === "二" ? 2 : value === "三" ? 3 : value === "四" ? 4 : Number(value ?? 1);
+  const sections = headings.map((heading, index) => {
+    const number = heading[1] ? ordinal(heading[1]) : 1;
+    const kind: TicketPlusLotteryRound["kind"] = number === 1 ? "initial" : number === 2 ? "second" : "other";
+    return { roundId: number === 1 ? "initial" : number === 2 ? "second" : `round-${number}`, kind, text: text.slice(heading.index, headings[index + 1]?.index ?? text.length) };
+  });
+  const prefix = text.slice(0, headings[0]!.index);
+  return prefix.trim() ? [{ roundId: "initial", kind: "initial", text: prefix }, ...sections] : sections;
+}
+function deriveLotteryState(rounds: TicketPlusLotteryRound[], text: string, now: Date): TicketPlusLotteryState {
+  const windows = rounds.flatMap((round) => round.windows);
+  const at = now.getTime();
+  const active = (window: TicketPlusLotteryRound["windows"][number]) => window.startAt && window.endAt && Date.parse(window.startAt) <= at && at < Date.parse(window.endAt);
+  if (windows.some((window) => window.kind === "payment" && active(window))) return "payment-window";
+  if (windows.some((window) => window.kind === "registration" && active(window))) return "registration-open";
+  if (windows.some((window) => window.kind === "registration" && window.startAt && Date.parse(window.startAt) > at)) return "registration-scheduled";
+  if (windows.some((window) => window.kind === "results" && window.startAt && Date.parse(window.startAt) > at)) return "results-pending";
+  if (windows.some((window) => window.kind === "payment" && window.startAt && Date.parse(window.startAt) > at)) return "results-pending";
+  if (windows.some((window) => window.kind === "general-sale" && window.startAt && Date.parse(window.startAt) > at)) return "general-sale-scheduled";
+  const knownEnds = windows.map((window) => window.endAt ?? window.startAt).filter((value): value is string => Boolean(value));
+  if (knownEnds.length && knownEnds.every((value) => Date.parse(value) <= at)) return "ended";
+  if (text.includes("登記截止")) return "registration-closed";
+  if (text.includes("付款")) return "payment-window";
+  if (text.includes("一般販售")) return "general-sale-scheduled";
+  return "unknown";
+}
 export function parseTicketPlusLotteryHtml(body: string, observedAt = new Date().toISOString(), now = new Date()): TicketPlusLotteryObservation {
   ensureSize(body);
-  void now;
   let source = body;
   try {
     const parsed = JSON.parse(body) as unknown;
     source = findAll(parsed, () => true).flatMap((item) => Object.values(item).filter((value): value is string => typeof value === "string")).join(" ");
   } catch { /* official activity pages are HTML; JSON config pages are also supported */ }
   const text = source.replace(/<script[\s\S]*?<\/script>|<style[\s\S]*?<\/style>/gi, " ").replace(/<[^>]+>/g, " ").replace(/&nbsp;/g, " ").replace(/\s+/g, " ");
-  const rounds: TicketPlusLotteryRound[] = [];
-  const initialWindows = [
-    windowFrom(text, "registration", /(?:登記時間|報名時間|登記抽選[：:])[^；。]{0,180}/i),
-    windowFrom(text, "results", /(?:結果公布|中選結果|抽選結果)[^；。]{0,180}/i),
-    windowFrom(text, "payment", /(?:繳費期限|付款期限|付款)[^；。]{0,180}/i),
-    windowFrom(text, "general-sale", /(?:一般販售|一般發售|條件一般)[^；。]{0,180}/i)
-  ].filter((item): item is NonNullable<typeof item> => Boolean(item)).map((item) => ({ ...item, version: 1 }));
-  if (initialWindows.length) rounds.push({ roundId: "initial", kind: "initial", windows: initialWindows, version: 1, state: text.includes("登記截止") || text.includes("登記截止") ? "registration-closed" : "unknown" });
-  const second = /第二(?:次|輪|回)[\s\S]{0,500}/i.test(text);
-  if (second) rounds.push({ roundId: "second", kind: "second", windows: initialWindows.map((item) => ({ ...item, version: 1 })), version: 1, state: "unknown" });
+  const rounds: TicketPlusLotteryRound[] = roundSections(text).map(({ roundId, kind, text: section }) => {
+    const windows = [
+      windowFrom(section, "registration", /(?:登記時間|報名時間|登記抽選[：:])[^；。]{0,180}/i),
+      windowFrom(section, "results", /(?:結果公布|中選結果|抽選結果)[^；。]{0,180}/i),
+      windowFrom(section, "payment", /(?:繳費期限|付款期限|付款)[^；。]{0,180}/i),
+      windowFrom(section, "general-sale", /(?:一般販售|一般發售|條件一般)[^；。]{0,180}/i)
+    ].filter((item): item is NonNullable<typeof item> => Boolean(item)).map((item) => ({ ...item, version: 1 }));
+    return { roundId, kind, windows, version: 1, state: "unknown" as const };
+  });
   if (!rounds.length) throw new Error("ticket-plus-parse-failure: missing-lottery-windows");
-  const state: TicketPlusLotteryState = text.includes("登記截止") ? "registration-closed" : text.includes("付款") ? "payment-window" : text.includes("一般販售") ? "general-sale-scheduled" : "unknown";
+  if (!rounds.some((round) => round.windows.length)) {
+    if (!roundSections(text).some((round) => round.roundId !== "initial")) throw new Error("ticket-plus-parse-failure: missing-lottery-windows");
+  }
+  const state = deriveLotteryState(rounds, text, now);
+  for (const round of rounds) round.state = deriveLotteryState([round], "", now);
   return { source: TICKET_PLUS_SOURCE, activityId: TICKET_PLUS_LOTTERY_ACTIVITY, title: "Vaundy ASIA ARENA TOUR 2026", rounds, currentState: state, parseVersion: TICKET_PLUS_PARSER_VERSION, evidenceIds: rounds.flatMap((round) => round.windows.map((item) => item.evidenceId)).slice(0, 40), observedAt, sourceUrl: TICKET_PLUS_LOTTERY_URL };
 }
 export function pairTicketPlus(ordinary: TicketPlusOrdinaryObservation | null, lottery: TicketPlusLotteryObservation | null) {
