@@ -32,7 +32,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 24
+        "remaining": 91
       },
       {
         "schemaVersion": 2,
@@ -54,7 +54,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 80
+        "remaining": 55
       },
       {
         "schemaVersion": 2,
@@ -186,7 +186,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 82
+        "remaining": 41
       },
       {
         "schemaVersion": 2,
@@ -318,7 +318,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 135
+        "remaining": 76
       },
       {
         "schemaVersion": 2,
@@ -340,7 +340,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 76
+        "remaining": 141
       },
       {
         "schemaVersion": 2,
@@ -362,7 +362,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 141
+        "remaining": 42
       },
       {
         "schemaVersion": 2,
@@ -384,7 +384,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 81
+        "remaining": 106
       },
       {
         "schemaVersion": 2,
@@ -406,7 +406,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 106
+        "remaining": 23
       },
       {
         "schemaVersion": 2,
@@ -428,7 +428,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 23
+        "remaining": 160
       },
       {
         "schemaVersion": 2,
@@ -450,7 +450,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 160
+        "remaining": 88
       },
       {
         "schemaVersion": 2,
@@ -472,7 +472,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 88
+        "remaining": 43
       },
       {
         "schemaVersion": 2,
@@ -494,7 +494,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 43
+        "remaining": 107
       },
       {
         "schemaVersion": 2,
@@ -516,7 +516,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 107
+        "remaining": 175
       },
       {
         "schemaVersion": 2,
@@ -538,7 +538,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 175
+        "remaining": 65
       },
       {
         "schemaVersion": 2,
@@ -560,18 +560,18 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 133
+        "remaining": 193
       }
     ],
-    "remainingTotal": 2399,
-    "observedAt": "2026-09-09T07:28:41.559Z",
+    "remainingTotal": 2351,
+    "observedAt": "2026-09-09T09:10:28.775Z",
     "parserVersion": "opentix-jsonld-v1"
   },
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-09T07:28:41.559Z",
-    "lastSuccessfulAt": "2026-09-09T07:28:41.559Z",
-    "nextEligibleAt": "2026-09-09T07:58:41.559Z"
+    "lastAttemptAt": "2026-09-09T09:10:28.775Z",
+    "lastSuccessfulAt": "2026-09-09T09:10:28.775Z",
+    "nextEligibleAt": "2026-09-09T09:40:28.775Z"
   },
   "history": [
     {
@@ -603,19 +603,24 @@
       "observedAt": "2026-09-09T07:28:41.559Z",
       "performanceCount": 25,
       "totalRemaining": 2399
+    },
+    {
+      "observedAt": "2026-09-09T09:10:28.775Z",
+      "performanceCount": 25,
+      "totalRemaining": 2351
     }
   ],
-  "lastAttemptAt": "2026-09-09T07:28:41.559Z",
-  "lastSuccessfulAt": "2026-09-09T07:28:41.559Z",
-  "retainedDataAt": "2026-09-09T07:28:41.559Z",
+  "lastAttemptAt": "2026-09-09T09:10:28.775Z",
+  "lastSuccessfulAt": "2026-09-09T09:10:28.775Z",
+  "retainedDataAt": "2026-09-09T09:10:28.775Z",
   "transitions": [],
   "sources": {
     "opentix": {
       "health": {
         "category": "ok",
-        "lastAttemptAt": "2026-09-09T07:28:41.559Z",
-        "lastSuccessfulAt": "2026-09-09T07:28:41.559Z",
-        "nextEligibleAt": "2026-09-09T07:58:41.559Z"
+        "lastAttemptAt": "2026-09-09T09:10:28.775Z",
+        "lastSuccessfulAt": "2026-09-09T09:10:28.775Z",
+        "nextEligibleAt": "2026-09-09T09:40:28.775Z"
       },
       "event": {
         "schemaVersion": 2,
@@ -648,7 +653,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 24
+            "remaining": 91
           },
           {
             "schemaVersion": 2,
@@ -670,7 +675,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 80
+            "remaining": 55
           },
           {
             "schemaVersion": 2,
@@ -802,7 +807,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 82
+            "remaining": 41
           },
           {
             "schemaVersion": 2,
@@ -934,7 +939,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 135
+            "remaining": 76
           },
           {
             "schemaVersion": 2,
@@ -956,7 +961,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 76
+            "remaining": 141
           },
           {
             "schemaVersion": 2,
@@ -978,7 +983,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 141
+            "remaining": 42
           },
           {
             "schemaVersion": 2,
@@ -1000,7 +1005,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 81
+            "remaining": 106
           },
           {
             "schemaVersion": 2,
@@ -1022,7 +1027,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 106
+            "remaining": 23
           },
           {
             "schemaVersion": 2,
@@ -1044,7 +1049,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 23
+            "remaining": 160
           },
           {
             "schemaVersion": 2,
@@ -1066,7 +1071,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 160
+            "remaining": 88
           },
           {
             "schemaVersion": 2,
@@ -1088,7 +1093,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 88
+            "remaining": 43
           },
           {
             "schemaVersion": 2,
@@ -1110,7 +1115,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 43
+            "remaining": 107
           },
           {
             "schemaVersion": 2,
@@ -1132,7 +1137,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 107
+            "remaining": 175
           },
           {
             "schemaVersion": 2,
@@ -1154,7 +1159,7 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 175
+            "remaining": 65
           },
           {
             "schemaVersion": 2,
@@ -1176,11 +1181,11 @@
               "min": 1200,
               "max": 2200
             },
-            "remaining": 133
+            "remaining": 193
           }
         ],
-        "remainingTotal": 2399,
-        "observedAt": "2026-09-09T07:28:41.559Z",
+        "remainingTotal": 2351,
+        "observedAt": "2026-09-09T09:10:28.775Z",
         "parserVersion": "opentix-jsonld-v1"
       }
     },
@@ -1193,7 +1198,7 @@
         "performanceId": "P1AFIPX7",
         "title": "udn售票網",
         "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
-        "observedAt": "2026-09-09T07:28:41.559Z",
+        "observedAt": "2026-09-09T09:11:07.655Z",
         "parserVersion": "udn-utk0204-table-v1",
         "tiers": [
           {
@@ -3057,21 +3062,331 @@
               "exactCount": null
             }
           ]
+        },
+        {
+          "provider": "udn",
+          "eventId": "P1AEBJG5",
+          "performanceId": "P1AFIPX7",
+          "title": "udn售票網",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+          "observedAt": "2026-09-09T09:10:28.775Z",
+          "parserVersion": "udn-utk0204-table-v1",
+          "tiers": [
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "4400元|4400",
+              "label": "4400元",
+              "priceTwd": 4400,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 14
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "4000元|4000",
+              "label": "4000元",
+              "priceTwd": 4000,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 41
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "3400元|3400",
+              "label": "3400元",
+              "priceTwd": 3400,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 13
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "3000元|3000",
+              "label": "3000元",
+              "priceTwd": 3000,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 64
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "2400元|2400",
+              "label": "2400元",
+              "priceTwd": 2400,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "hot-selling-unknown",
+              "exactCount": null
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "輪椅席2200元|2200",
+              "label": "輪椅席2200元",
+              "priceTwd": 2200,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 10
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "輪椅陪同席2200元|2200",
+              "label": "輪椅陪同席2200元",
+              "priceTwd": 2200,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 10
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "1600元|1600",
+              "label": "1600元",
+              "priceTwd": 1600,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 86
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "1000元|1000",
+              "label": "1000元",
+              "priceTwd": 1000,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "sold-out",
+              "exactCount": null
+            }
+          ]
+        },
+        {
+          "provider": "udn",
+          "eventId": "P1AEBJG5",
+          "performanceId": "P1AFIPX7",
+          "title": "udn售票網",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+          "observedAt": "2026-09-09T09:11:07.655Z",
+          "parserVersion": "udn-utk0204-table-v1",
+          "tiers": [
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "4400元|4400",
+              "label": "4400元",
+              "priceTwd": 4400,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 14
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "4000元|4000",
+              "label": "4000元",
+              "priceTwd": 4000,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 41
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "3400元|3400",
+              "label": "3400元",
+              "priceTwd": 3400,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 13
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "3000元|3000",
+              "label": "3000元",
+              "priceTwd": 3000,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 64
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "2400元|2400",
+              "label": "2400元",
+              "priceTwd": 2400,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "hot-selling-unknown",
+              "exactCount": null
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "輪椅席2200元|2200",
+              "label": "輪椅席2200元",
+              "priceTwd": 2200,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 10
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "輪椅陪同席2200元|2200",
+              "label": "輪椅陪同席2200元",
+              "priceTwd": 2200,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 10
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "1600元|1600",
+              "label": "1600元",
+              "priceTwd": 1600,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "exact",
+              "exactCount": 86
+            },
+            {
+              "provider": "udn",
+              "eventId": "P1AEBJG5",
+              "performanceId": "P1AFIPX7",
+              "tierId": "1000元|1000",
+              "label": "1000元",
+              "priceTwd": 1000,
+              "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_000.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5",
+              "availability": "sold-out",
+              "exactCount": null
+            }
+          ]
         }
       ],
       "health": {
         "category": "ok",
-        "lastAttemptAt": "2026-09-09T07:28:41.559Z",
-        "lastSuccessfulAt": "2026-09-09T07:28:41.559Z"
+        "lastAttemptAt": "2026-09-09T09:11:07.655Z",
+        "lastSuccessfulAt": "2026-09-09T09:11:07.655Z"
       },
-      "lastAttemptAt": "2026-09-09T07:28:41.559Z",
-      "lastSuccessfulAt": "2026-09-09T07:28:41.559Z"
+      "lastAttemptAt": "2026-09-09T09:11:07.655Z",
+      "lastSuccessfulAt": "2026-09-09T09:11:07.655Z"
     },
     "ticketPlus": {
       "source": "ticket-plus",
-      "ordinary": null,
-      "lottery": null,
-      "pairings": [],
+      "ordinary": {
+        "source": "ticket-plus",
+        "activityId": "df31f9384cf60a3110dbf9607e780a1b",
+        "eventId": "e000001508",
+        "title": "Ticket Plus ordinary sale",
+        "sessions": [
+          {
+            "activityId": "df31f9384cf60a3110dbf9607e780a1b",
+            "eventId": "e000001508",
+            "sessionId": "s000002229",
+            "status": "pending",
+            "lifecycle": "sale-scheduled",
+            "saleStartAt": "2026-09-11T12:00:00+08:00",
+            "saleEndAt": "2026-09-19T17:00:00+08:00",
+            "sourceUrl": "https://ticketplus.com.tw/activity/df31f9384cf60a3110dbf9607e780a1b"
+          },
+          {
+            "activityId": "df31f9384cf60a3110dbf9607e780a1b",
+            "eventId": "e000001508",
+            "sessionId": "s000002230",
+            "status": "pending",
+            "lifecycle": "sale-scheduled",
+            "saleStartAt": "2026-09-12T12:00:00+08:00",
+            "saleEndAt": "2026-09-19T17:00:00+08:00",
+            "sourceUrl": "https://ticketplus.com.tw/activity/df31f9384cf60a3110dbf9607e780a1b"
+          }
+        ],
+        "observedAt": "2026-09-09T09:11:08.540Z",
+        "parserVersion": "ticket-plus-lifecycle-v1",
+        "sourceUrl": "https://ticketplus.com.tw/activity/df31f9384cf60a3110dbf9607e780a1b"
+      },
+      "lottery": {
+        "source": "ticket-plus",
+        "activityId": "6c3d8c24e0f00c9c84777615c001bebe",
+        "title": "Vaundy ASIA ARENA TOUR 2026",
+        "rounds": [
+          {
+            "roundId": "initial",
+            "kind": "initial",
+            "windows": [],
+            "version": 1,
+            "state": "unknown"
+          },
+          {
+            "roundId": "second",
+            "kind": "second",
+            "windows": [
+              {
+                "kind": "registration",
+                "startAt": "2026-05-13T12:00:00+08:00",
+                "endAt": "2026-05-17T21:00:00+08:00",
+                "evidenceId": "registration:fp-8c2d9fca",
+                "version": 1
+              },
+              {
+                "kind": "results",
+                "startAt": "2026-05-19T12:00:00+08:00",
+                "endAt": "2026-05-20T12:00:00+08:00",
+                "evidenceId": "results:fp-45c81a76",
+                "version": 1
+              },
+              {
+                "kind": "payment",
+                "startAt": "2026-05-20T12:00:00+08:00",
+                "evidenceId": "payment:fp-24079187",
+                "version": 1
+              }
+            ],
+            "version": 1,
+            "state": "ended"
+          }
+        ],
+        "currentState": "ended",
+        "parseVersion": "ticket-plus-lifecycle-v1",
+        "evidenceIds": [
+          "registration:fp-8c2d9fca",
+          "results:fp-45c81a76",
+          "payment:fp-24079187"
+        ],
+        "observedAt": "2026-09-09T09:11:08.540Z",
+        "sourceUrl": "https://ticketplus.com.tw/activity/6c3d8c24e0f00c9c84777615c001bebe"
+      },
+      "pairings": [
+        {
+          "lotteryActivityId": "6c3d8c24e0f00c9c84777615c001bebe",
+          "ordinaryActivityId": "df31f9384cf60a3110dbf9607e780a1b",
+          "confidence": "low",
+          "evidence": [
+            "conservative-unverified"
+          ],
+          "automationEligible": false
+        }
+      ],
       "conflicts": [],
       "history": [
         {
@@ -3093,16 +3408,25 @@
           "observedAt": "2026-09-09T07:28:41.559Z",
           "ordinary": false,
           "lottery": false
+        },
+        {
+          "observedAt": "2026-09-09T09:10:28.775Z",
+          "ordinary": true,
+          "lottery": true
+        },
+        {
+          "observedAt": "2026-09-09T09:11:07.655Z",
+          "ordinary": true,
+          "lottery": true
         }
       ],
       "health": {
-        "category": "stale",
-        "lastAttemptAt": "2026-09-09T07:28:41.559Z",
-        "lastSuccessfulAt": "2026-09-09T04:33:55.675Z",
-        "error": "ordinary:http-403;lottery:http-403"
+        "category": "ok",
+        "lastAttemptAt": "2026-09-09T09:11:07.655Z",
+        "lastSuccessfulAt": "2026-09-09T09:11:07.655Z"
       },
-      "lastAttemptAt": "2026-09-09T07:28:41.559Z",
-      "lastSuccessfulAt": "2026-09-09T04:33:55.675Z"
+      "lastAttemptAt": "2026-09-09T09:11:07.655Z",
+      "lastSuccessfulAt": "2026-09-09T09:11:07.655Z"
     }
   }
 }

@@ -8,6 +8,7 @@ import { writeJsonAtomic } from "./pipeline.js";
 import type { NormalizedEvent } from "./types.js";
 import { discoverUdnPerformance, fetchUdnPerformance } from "./udn.js";
 import { fetchTicketPlus } from "./ticketplus.js";
+import { discoverCatalog, type CatalogState } from "./catalog.js";
 
 async function loadBuildState(root: string): Promise<{ event: NormalizedEvent | null; state: RuntimeState }> {
   const statePath = resolve(root, "generated/runtime-state.json");
@@ -27,6 +28,10 @@ async function loadBuildState(root: string): Promise<{ event: NormalizedEvent | 
 export async function build(root = process.cwd()): Promise<void> {
   const statePath = resolve(root, "generated/runtime-state.json");
   const { event, state } = await loadBuildState(root);
+  let catalog: { opentix: CatalogState | null; udn: CatalogState | null } = { opentix: null, udn: null };
+  try { catalog = JSON.parse(await readFile(resolve(root, "generated/catalog-state.json"), "utf8")) as typeof catalog; } catch (error) {
+    if (!(error && typeof error === "object" && "code" in error && error.code === "ENOENT")) throw error;
+  }
   let multi: MultiSourceRuntimeState;
   try {
     multi = JSON.parse(await readFile(resolve(root, "generated/multi-source-state.json"), "utf8")) as MultiSourceRuntimeState;
@@ -37,7 +42,7 @@ export async function build(root = process.cwd()): Promise<void> {
     validateMultiSourceState(multi);
   } catch (error) { if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") multi = migrateRuntimeState(state); else throw error; }
   await mkdir(resolve(root, "generated"), { recursive: true }); await mkdir(resolve(root, "public/data"), { recursive: true });
-  await Promise.all([writeJsonAtomic(resolve(root, "generated/normalized-snapshot.json"), event), writeJsonAtomic(resolve(root, "generated/state.json"), state), writeJsonAtomic(resolve(root, "generated/history.json"), state.history), writeJsonAtomic(resolve(root, "generated/transitions.json"), state.transitions), writeJsonAtomic(resolve(root, "generated/multi-source-state.json"), multi), saveState(statePath, state)]); await renderLiveDashboard(root, event, state, multi.sources.udn, multi.sources.ticketPlus);
+  await Promise.all([writeJsonAtomic(resolve(root, "generated/normalized-snapshot.json"), event), writeJsonAtomic(resolve(root, "generated/state.json"), state), writeJsonAtomic(resolve(root, "generated/history.json"), state.history), writeJsonAtomic(resolve(root, "generated/transitions.json"), state.transitions), writeJsonAtomic(resolve(root, "generated/multi-source-state.json"), multi), saveState(statePath, state)]); await renderLiveDashboard(root, event, state, multi.sources.udn, multi.sources.ticketPlus, catalog);
 }
 async function monitor(root = process.cwd()): Promise<void> {
   const statePath = resolve(root, "generated/runtime-state.json");
@@ -52,6 +57,10 @@ async function monitor(root = process.cwd()): Promise<void> {
     validateMultiSourceState(multi);
   } catch (error) { if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") multi = migrateRuntimeState(state); else throw error; }
   const now = new Date();
+  let priorCatalog: { opentix: CatalogState | null; udn: CatalogState | null } = { opentix: null, udn: null };
+  try { priorCatalog = JSON.parse(await readFile(resolve(root, "generated/catalog-state.json"), "utf8")) as typeof priorCatalog; } catch (error) {
+    if (!(error && typeof error === "object" && "code" in error && error.code === "ENOENT")) throw error;
+  }
   if (eligibleToPoll(state, now.getTime())) {
     const result = await fetchOpentix(undefined, { ...(state.cache.etag ? { etag: state.cache.etag } : {}), ...(state.cache.lastModified ? { lastModified: state.cache.lastModified } : {}), now });
     state = applyPoll(state, result, now, Number(process.env.AVAILABILITY_THRESHOLD ?? "1"));
@@ -68,9 +77,15 @@ async function monitor(root = process.cwd()): Promise<void> {
   multi.sources.udn = applyUdnPoll(multi.sources.udn ?? emptyUdnState(), udnResult, now);
   const ticketPlus = await fetchTicketPlus();
   multi.sources.ticketPlus = applyTicketPlusPoll(multi.sources.ticketPlus ?? emptyTicketPlusState(), ticketPlus, now);
+  const discoveredOpentix = await discoverCatalog("opentix", { now });
+  const discoveredUdn = await discoverCatalog("udn", { now });
+  const catalog = {
+    opentix: discoveredOpentix.completeness.health === "ok" && discoveredOpentix.events.length > 0 ? discoveredOpentix : priorCatalog.opentix,
+    udn: discoveredUdn.completeness.health === "ok" && discoveredUdn.events.length > 0 ? discoveredUdn : priorCatalog.udn
+  };
   await saveState(statePath, state);
-  await Promise.all([writeJsonAtomic(resolve(root, "generated/normalized-snapshot.json"), state.snapshot), writeJsonAtomic(resolve(root, "generated/state.json"), state), writeJsonAtomic(resolve(root, "generated/history.json"), state.history), writeJsonAtomic(resolve(root, "generated/transitions.json"), state.transitions), writeJsonAtomic(resolve(root, "generated/multi-source-state.json"), multi)]);
-  await renderLiveDashboard(root, state.snapshot, state, multi.sources.udn, multi.sources.ticketPlus);
+  await Promise.all([writeJsonAtomic(resolve(root, "generated/normalized-snapshot.json"), state.snapshot), writeJsonAtomic(resolve(root, "generated/state.json"), state), writeJsonAtomic(resolve(root, "generated/history.json"), state.history), writeJsonAtomic(resolve(root, "generated/transitions.json"), state.transitions), writeJsonAtomic(resolve(root, "generated/multi-source-state.json"), multi), writeJsonAtomic(resolve(root, "generated/catalog-state.json"), catalog)]);
+  await renderLiveDashboard(root, state.snapshot, state, multi.sources.udn, multi.sources.ticketPlus, catalog);
 }
 const command = process.argv[2];
 if (command === "build") await build(); else if (command === "monitor") await monitor(); else if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) { console.error("Usage: node dist/cli.js build|monitor"); process.exitCode = 2; }
