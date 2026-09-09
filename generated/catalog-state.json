@@ -1,69 +1,8 @@
 {
   "opentix": {
     "schemaVersion": 1,
-    "generatedAt": "2026-09-09T09:11:07.655Z",
+    "generatedAt": "2026-09-09T09:14:20.257Z",
     "events": [
-      {
-        "schemaVersion": 1,
-        "source": "opentix",
-        "eventId": "2070445180942770176",
-        "sourceUrl": "https://www.opentix.life/event/2070445180942770176",
-        "title": "2026秋天藝術節 卡羅琳．居拉．阮 《眼淚》",
-        "venue": "國家戲劇院",
-        "city": "中正區中山南路21之1號",
-        "category": "unknown",
-        "classificationReason": "unknown",
-        "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
-        "performances": [
-          {
-            "schemaVersion": 1,
-            "source": "opentix",
-            "eventId": "2070445180942770176",
-            "performanceId": "2076884356523708417",
-            "sourceUrl": "https://www.opentix.life/event/2070445180942770176",
-            "startsAt": "2026-10-30T19:00:00+08:00",
-            "endsAt": "2026-10-30T22:15:00+08:00",
-            "cancelled": false,
-            "saleStart": "2026-08-01T12:00:00+08:00",
-            "saleEnd": "2026-10-30T22:15:00+08:00",
-            "minPrice": 600,
-            "maxPrice": 1600,
-            "currency": "TWD"
-          },
-          {
-            "schemaVersion": 1,
-            "source": "opentix",
-            "eventId": "2070445180942770176",
-            "performanceId": "2078020035739734016",
-            "sourceUrl": "https://www.opentix.life/event/2070445180942770176",
-            "startsAt": "2026-10-31T14:00:00+08:00",
-            "endsAt": "2026-10-31T17:15:00+08:00",
-            "cancelled": false,
-            "saleStart": "2026-08-01T12:00:00+08:00",
-            "saleEnd": "2026-10-31T17:15:00+08:00",
-            "minPrice": 600,
-            "maxPrice": 1600,
-            "currency": "TWD"
-          },
-          {
-            "schemaVersion": 1,
-            "source": "opentix",
-            "eventId": "2070445180942770176",
-            "performanceId": "2076885042433744896",
-            "sourceUrl": "https://www.opentix.life/event/2070445180942770176",
-            "startsAt": "2026-11-01T14:00:00+08:00",
-            "endsAt": "2026-11-01T17:15:00+08:00",
-            "cancelled": false,
-            "saleStart": "2026-08-01T12:00:00+08:00",
-            "saleEnd": "2026-11-01T17:15:00+08:00",
-            "minPrice": 600,
-            "maxPrice": 1600,
-            "currency": "TWD"
-          }
-        ]
-      },
       {
         "schemaVersion": 1,
         "source": "opentix",
@@ -75,8 +14,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -218,173 +157,6 @@
       {
         "schemaVersion": 1,
         "source": "opentix",
-        "eventId": "2072638218921242625",
-        "sourceUrl": "https://www.opentix.life/event/2072638218921242625",
-        "title": "誠品動漫祭《日本動畫交響音樂會—宮崎駿と新海誠篇》",
-        "venue": "誠品表演廳",
-        "city": "信義區菸廠路88號B1",
-        "category": "concert",
-        "classificationReason": "title-keyword-fallback",
-        "classificationConfidence": "medium",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
-        "performances": [
-          {
-            "schemaVersion": 1,
-            "source": "opentix",
-            "eventId": "2072638218921242625",
-            "performanceId": "2072639233141698560",
-            "sourceUrl": "https://www.opentix.life/event/2072638218921242625",
-            "startsAt": "2026-09-19T14:30:00+08:00",
-            "endsAt": "2026-09-19T16:05:00+08:00",
-            "cancelled": false,
-            "saleStart": "2026-07-08T12:00:00+08:00",
-            "saleEnd": "2026-09-19T16:05:00+08:00",
-            "minPrice": 800,
-            "maxPrice": 2000,
-            "currency": "TWD"
-          },
-          {
-            "schemaVersion": 1,
-            "source": "opentix",
-            "eventId": "2072638218921242625",
-            "performanceId": "2072639234989760512",
-            "sourceUrl": "https://www.opentix.life/event/2072638218921242625",
-            "startsAt": "2026-09-19T19:00:00+08:00",
-            "endsAt": "2026-09-19T20:35:00+08:00",
-            "cancelled": false,
-            "saleStart": "2026-07-08T12:00:00+08:00",
-            "saleEnd": "2026-09-19T20:35:00+08:00",
-            "minPrice": 800,
-            "maxPrice": 2000,
-            "currency": "TWD"
-          }
-        ]
-      },
-      {
-        "schemaVersion": 1,
-        "source": "opentix",
-        "eventId": "2048966343179272192",
-        "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
-        "title": "【相聲瓦舍】《啖噓呵嘻吸吹呼》",
-        "venue": "中壢藝術館音樂廳",
-        "city": "中壢區中美路16號",
-        "category": "unknown",
-        "classificationReason": "unknown",
-        "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
-        "performances": [
-          {
-            "schemaVersion": 1,
-            "source": "opentix",
-            "eventId": "2048966343179272192",
-            "performanceId": "2053682683259686913",
-            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
-            "startsAt": "2026-09-12T14:30:00+08:00",
-            "endsAt": "2026-09-12T16:30:00+08:00",
-            "cancelled": false,
-            "saleStart": "2026-05-14T12:00:00+08:00",
-            "saleEnd": "2026-09-12T16:30:00+08:00",
-            "minPrice": 600,
-            "maxPrice": 2000,
-            "currency": "TWD"
-          },
-          {
-            "schemaVersion": 1,
-            "source": "opentix",
-            "eventId": "2048966343179272192",
-            "performanceId": "2053683251956801536",
-            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
-            "startsAt": "2026-09-12T19:30:00+08:00",
-            "endsAt": "2026-09-12T21:30:00+08:00",
-            "cancelled": false,
-            "saleStart": "2026-05-14T12:00:00+08:00",
-            "saleEnd": "2026-09-12T21:30:00+08:00",
-            "minPrice": 600,
-            "maxPrice": 2000,
-            "currency": "TWD"
-          },
-          {
-            "schemaVersion": 1,
-            "source": "opentix",
-            "eventId": "2048966343179272192",
-            "performanceId": "2053683251819290624",
-            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
-            "startsAt": "2026-10-03T14:30:00+08:00",
-            "endsAt": "2026-10-03T16:30:00+08:00",
-            "cancelled": false,
-            "saleStart": "2026-05-14T12:00:00+08:00",
-            "saleEnd": "2026-10-03T16:30:00+08:00",
-            "minPrice": 600,
-            "maxPrice": 2000,
-            "currency": "TWD"
-          },
-          {
-            "schemaVersion": 1,
-            "source": "opentix",
-            "eventId": "2048966343179272192",
-            "performanceId": "2053683251823484929",
-            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
-            "startsAt": "2026-10-03T19:30:00+08:00",
-            "endsAt": "2026-10-03T21:30:00+08:00",
-            "cancelled": false,
-            "saleStart": "2026-05-14T12:00:00+08:00",
-            "saleEnd": "2026-10-03T21:30:00+08:00",
-            "minPrice": 600,
-            "maxPrice": 2000,
-            "currency": "TWD"
-          },
-          {
-            "schemaVersion": 1,
-            "source": "opentix",
-            "eventId": "2048966343179272192",
-            "performanceId": "2053683251882610688",
-            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
-            "startsAt": "2026-10-04T14:30:00+08:00",
-            "endsAt": "2026-10-04T16:30:00+08:00",
-            "cancelled": false,
-            "saleStart": "2026-05-14T12:00:00+08:00",
-            "saleEnd": "2026-10-04T16:30:00+08:00",
-            "minPrice": 600,
-            "maxPrice": 2000,
-            "currency": "TWD"
-          },
-          {
-            "schemaVersion": 1,
-            "source": "opentix",
-            "eventId": "2048966343179272192",
-            "performanceId": "2053683251823484928",
-            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
-            "startsAt": "2026-10-17T14:30:00+08:00",
-            "endsAt": "2026-10-17T16:30:00+08:00",
-            "cancelled": false,
-            "saleStart": "2026-05-14T12:00:00+08:00",
-            "saleEnd": "2026-10-17T16:30:00+08:00",
-            "minPrice": 600,
-            "maxPrice": 2000,
-            "currency": "TWD"
-          },
-          {
-            "schemaVersion": 1,
-            "source": "opentix",
-            "eventId": "2048966343179272192",
-            "performanceId": "2053683251973578752",
-            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
-            "startsAt": "2026-10-18T14:30:00+08:00",
-            "endsAt": "2026-10-18T16:30:00+08:00",
-            "cancelled": false,
-            "saleStart": "2026-05-14T12:00:00+08:00",
-            "saleEnd": "2026-10-18T16:30:00+08:00",
-            "minPrice": 600,
-            "maxPrice": 2000,
-            "currency": "TWD"
-          }
-        ]
-      },
-      {
-        "schemaVersion": 1,
-        "source": "opentix",
         "eventId": "2064989613489934337",
         "sourceUrl": "https://www.opentix.life/event/2064989613489934337",
         "title": "2026朱宗慶打擊樂團擊樂劇場《六部曲》",
@@ -393,8 +165,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -536,6 +308,52 @@
       {
         "schemaVersion": 1,
         "source": "opentix",
+        "eventId": "2072638218921242625",
+        "sourceUrl": "https://www.opentix.life/event/2072638218921242625",
+        "title": "誠品動漫祭《日本動畫交響音樂會—宮崎駿と新海誠篇》",
+        "venue": "誠品表演廳",
+        "city": "信義區菸廠路88號B1",
+        "category": "concert",
+        "classificationReason": "title-keyword-fallback",
+        "classificationConfidence": "medium",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
+        "performances": [
+          {
+            "schemaVersion": 1,
+            "source": "opentix",
+            "eventId": "2072638218921242625",
+            "performanceId": "2072639233141698560",
+            "sourceUrl": "https://www.opentix.life/event/2072638218921242625",
+            "startsAt": "2026-09-19T14:30:00+08:00",
+            "endsAt": "2026-09-19T16:05:00+08:00",
+            "cancelled": false,
+            "saleStart": "2026-07-08T12:00:00+08:00",
+            "saleEnd": "2026-09-19T16:05:00+08:00",
+            "minPrice": 800,
+            "maxPrice": 2000,
+            "currency": "TWD"
+          },
+          {
+            "schemaVersion": 1,
+            "source": "opentix",
+            "eventId": "2072638218921242625",
+            "performanceId": "2072639234989760512",
+            "sourceUrl": "https://www.opentix.life/event/2072638218921242625",
+            "startsAt": "2026-09-19T19:00:00+08:00",
+            "endsAt": "2026-09-19T20:35:00+08:00",
+            "cancelled": false,
+            "saleStart": "2026-07-08T12:00:00+08:00",
+            "saleEnd": "2026-09-19T20:35:00+08:00",
+            "minPrice": 800,
+            "maxPrice": 2000,
+            "currency": "TWD"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
         "eventId": "2077607839858749441",
         "sourceUrl": "https://www.opentix.life/event/2077607839858749441",
         "title": "【TCO】聽見蘇文慶－2026/27樂季開季音樂會",
@@ -544,8 +362,8 @@
         "category": "concert",
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -567,14 +385,196 @@
       {
         "schemaVersion": 1,
         "source": "opentix",
+        "eventId": "2070445180942770176",
+        "sourceUrl": "https://www.opentix.life/event/2070445180942770176",
+        "title": "2026秋天藝術節 卡羅琳．居拉．阮 《眼淚》",
+        "venue": "國家戲劇院",
+        "city": "中正區中山南路21之1號",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
+        "performances": [
+          {
+            "schemaVersion": 1,
+            "source": "opentix",
+            "eventId": "2070445180942770176",
+            "performanceId": "2076884356523708417",
+            "sourceUrl": "https://www.opentix.life/event/2070445180942770176",
+            "startsAt": "2026-10-30T19:00:00+08:00",
+            "endsAt": "2026-10-30T22:15:00+08:00",
+            "cancelled": false,
+            "saleStart": "2026-08-01T12:00:00+08:00",
+            "saleEnd": "2026-10-30T22:15:00+08:00",
+            "minPrice": 600,
+            "maxPrice": 1600,
+            "currency": "TWD"
+          },
+          {
+            "schemaVersion": 1,
+            "source": "opentix",
+            "eventId": "2070445180942770176",
+            "performanceId": "2078020035739734016",
+            "sourceUrl": "https://www.opentix.life/event/2070445180942770176",
+            "startsAt": "2026-10-31T14:00:00+08:00",
+            "endsAt": "2026-10-31T17:15:00+08:00",
+            "cancelled": false,
+            "saleStart": "2026-08-01T12:00:00+08:00",
+            "saleEnd": "2026-10-31T17:15:00+08:00",
+            "minPrice": 600,
+            "maxPrice": 1600,
+            "currency": "TWD"
+          },
+          {
+            "schemaVersion": 1,
+            "source": "opentix",
+            "eventId": "2070445180942770176",
+            "performanceId": "2076885042433744896",
+            "sourceUrl": "https://www.opentix.life/event/2070445180942770176",
+            "startsAt": "2026-11-01T14:00:00+08:00",
+            "endsAt": "2026-11-01T17:15:00+08:00",
+            "cancelled": false,
+            "saleStart": "2026-08-01T12:00:00+08:00",
+            "saleEnd": "2026-11-01T17:15:00+08:00",
+            "minPrice": 600,
+            "maxPrice": 1600,
+            "currency": "TWD"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2048966343179272192",
+        "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
+        "title": "【相聲瓦舍】《啖噓呵嘻吸吹呼》",
+        "venue": "中壢藝術館音樂廳",
+        "city": "中壢區中美路16號",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
+        "performances": [
+          {
+            "schemaVersion": 1,
+            "source": "opentix",
+            "eventId": "2048966343179272192",
+            "performanceId": "2053682683259686913",
+            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
+            "startsAt": "2026-09-12T14:30:00+08:00",
+            "endsAt": "2026-09-12T16:30:00+08:00",
+            "cancelled": false,
+            "saleStart": "2026-05-14T12:00:00+08:00",
+            "saleEnd": "2026-09-12T16:30:00+08:00",
+            "minPrice": 600,
+            "maxPrice": 2000,
+            "currency": "TWD"
+          },
+          {
+            "schemaVersion": 1,
+            "source": "opentix",
+            "eventId": "2048966343179272192",
+            "performanceId": "2053683251956801536",
+            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
+            "startsAt": "2026-09-12T19:30:00+08:00",
+            "endsAt": "2026-09-12T21:30:00+08:00",
+            "cancelled": false,
+            "saleStart": "2026-05-14T12:00:00+08:00",
+            "saleEnd": "2026-09-12T21:30:00+08:00",
+            "minPrice": 600,
+            "maxPrice": 2000,
+            "currency": "TWD"
+          },
+          {
+            "schemaVersion": 1,
+            "source": "opentix",
+            "eventId": "2048966343179272192",
+            "performanceId": "2053683251819290624",
+            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
+            "startsAt": "2026-10-03T14:30:00+08:00",
+            "endsAt": "2026-10-03T16:30:00+08:00",
+            "cancelled": false,
+            "saleStart": "2026-05-14T12:00:00+08:00",
+            "saleEnd": "2026-10-03T16:30:00+08:00",
+            "minPrice": 600,
+            "maxPrice": 2000,
+            "currency": "TWD"
+          },
+          {
+            "schemaVersion": 1,
+            "source": "opentix",
+            "eventId": "2048966343179272192",
+            "performanceId": "2053683251823484929",
+            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
+            "startsAt": "2026-10-03T19:30:00+08:00",
+            "endsAt": "2026-10-03T21:30:00+08:00",
+            "cancelled": false,
+            "saleStart": "2026-05-14T12:00:00+08:00",
+            "saleEnd": "2026-10-03T21:30:00+08:00",
+            "minPrice": 600,
+            "maxPrice": 2000,
+            "currency": "TWD"
+          },
+          {
+            "schemaVersion": 1,
+            "source": "opentix",
+            "eventId": "2048966343179272192",
+            "performanceId": "2053683251882610688",
+            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
+            "startsAt": "2026-10-04T14:30:00+08:00",
+            "endsAt": "2026-10-04T16:30:00+08:00",
+            "cancelled": false,
+            "saleStart": "2026-05-14T12:00:00+08:00",
+            "saleEnd": "2026-10-04T16:30:00+08:00",
+            "minPrice": 600,
+            "maxPrice": 2000,
+            "currency": "TWD"
+          },
+          {
+            "schemaVersion": 1,
+            "source": "opentix",
+            "eventId": "2048966343179272192",
+            "performanceId": "2053683251823484928",
+            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
+            "startsAt": "2026-10-17T14:30:00+08:00",
+            "endsAt": "2026-10-17T16:30:00+08:00",
+            "cancelled": false,
+            "saleStart": "2026-05-14T12:00:00+08:00",
+            "saleEnd": "2026-10-17T16:30:00+08:00",
+            "minPrice": 600,
+            "maxPrice": 2000,
+            "currency": "TWD"
+          },
+          {
+            "schemaVersion": 1,
+            "source": "opentix",
+            "eventId": "2048966343179272192",
+            "performanceId": "2053683251973578752",
+            "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
+            "startsAt": "2026-10-18T14:30:00+08:00",
+            "endsAt": "2026-10-18T16:30:00+08:00",
+            "cancelled": false,
+            "saleStart": "2026-05-14T12:00:00+08:00",
+            "saleEnd": "2026-10-18T16:30:00+08:00",
+            "minPrice": 600,
+            "maxPrice": 2000,
+            "currency": "TWD"
+          }
+        ]
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
         "eventId": "2028779666870386688",
         "sourceUrl": "https://www.opentix.life/event/2028779666870386688",
         "title": "冠名贊助：卡洛塔妮 〈島影情深 III 余曉怡管風琴音樂會 · 人文關懷之夜〉",
         "category": "concert",
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -588,8 +588,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -619,8 +619,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -650,8 +650,8 @@
         "category": "concert",
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -681,8 +681,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -712,8 +712,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -743,8 +743,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -804,8 +804,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -865,8 +865,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -1556,8 +1556,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -1587,8 +1587,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -1618,8 +1618,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -1784,8 +1784,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -1845,8 +1845,8 @@
         "category": "concert",
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -1898,7 +1898,7 @@
     ],
     "completeness": {
       "source": "opentix",
-      "fetchedAt": "2026-09-09T09:11:07.655Z",
+      "fetchedAt": "2026-09-09T09:14:20.257Z",
       "eventCount": 20,
       "pageCount": 1,
       "detailCount": 20,
@@ -1908,21 +1908,8 @@
   },
   "udn": {
     "schemaVersion": 1,
-    "generatedAt": "2026-09-09T09:11:07.655Z",
+    "generatedAt": "2026-09-09T09:14:20.257Z",
     "events": [
-      {
-        "schemaVersion": 1,
-        "source": "udn",
-        "eventId": "P19BAHLP",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A01",
-        "title": "【櫻桃小丸子原作40週年】特展 | udn售票網",
-        "category": "unknown",
-        "classificationReason": "unknown",
-        "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
-        "performances": []
-      },
       {
         "schemaVersion": 1,
         "source": "udn",
@@ -1932,8 +1919,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -1945,8 +1932,21 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
+        "performances": []
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P19BAHLP",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A01",
+        "title": "【櫻桃小丸子原作40週年】特展 | udn售票網",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -1958,8 +1958,8 @@
         "category": "musical",
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -1971,8 +1971,8 @@
         "category": "musical",
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -1984,8 +1984,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -1997,8 +1997,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -2010,8 +2010,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -2023,8 +2023,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -2036,8 +2036,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -2049,8 +2049,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -2062,8 +2062,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -2075,21 +2075,21 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
         "schemaVersion": 1,
         "source": "udn",
-        "eventId": "P1EA8QIL",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A02",
-        "title": "2026 台北國際玩具創作大展 | udn售票網",
+        "eventId": "P1CHFLI4",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1CHFLI4&kdid=A03",
+        "title": "忠泰美術館當期展覽《藤本壯介建築展：原初．未來．森 》 | udn售票網",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -2101,34 +2101,47 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
         "schemaVersion": 1,
         "source": "udn",
-        "eventId": "P1AJGKAD",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A03",
-        "title": "動物王國大探險展-比薩大學自然史博物館 | udn售票網",
+        "eventId": "P1EW334F",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EW334F&kdid=A03",
+        "title": "《FunVR 劇場》套票 | udn售票網",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
         "schemaVersion": 1,
         "source": "udn",
-        "eventId": "P1AGQOQ6",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A04",
-        "title": "烏克蘭國家歌劇院管弦樂團 貝九《合唱》交響曲 | udn售票網",
+        "eventId": "P185ZP45",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P185ZP45&kdid=A04",
+        "title": "會演是英雄2之《英雄所賤略同》 | udn售票網",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
+        "performances": []
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P0YXZMT5",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A04",
+        "title": "王偉忠監製舞台劇《明星養老院》2.0人生下半場，笑著登場! | udn售票網",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -2140,21 +2153,8 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
-        "performances": []
-      },
-      {
-        "schemaVersion": 1,
-        "source": "udn",
-        "eventId": "P0YXZMT5",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A05",
-        "title": "王偉忠監製舞台劇《明星養老院》2.0人生下半場，笑著登場! | udn售票網",
-        "category": "unknown",
-        "classificationReason": "unknown",
-        "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       },
       {
@@ -2166,14 +2166,14 @@
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
-        "firstSeenAt": "2026-09-09T09:11:07.655Z",
-        "catalogFetchedAt": "2026-09-09T09:11:07.655Z",
+        "firstSeenAt": "2026-09-09T09:14:20.257Z",
+        "catalogFetchedAt": "2026-09-09T09:14:20.257Z",
         "performances": []
       }
     ],
     "completeness": {
       "source": "udn",
-      "fetchedAt": "2026-09-09T09:11:07.655Z",
+      "fetchedAt": "2026-09-09T09:14:20.257Z",
       "eventCount": 20,
       "pageCount": 1,
       "detailCount": 20,
