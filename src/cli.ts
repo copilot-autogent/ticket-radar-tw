@@ -3,7 +3,7 @@ import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { renderLiveDashboard } from "./dashboard.js";
 import { fetchOpentix } from "./opentix.js";
-import { applyPoll, applyTicketPlusPoll, applyUdnPoll, emptyState, emptyUdnState, emptyTicketPlusState, eligibleToPoll, loadState, migrateRuntimeState, reconcileNotifications, saveState, validateMultiSourceState, type MultiSourceRuntimeState, type RuntimeState } from "./runtime.js";
+import { applyPoll, applyTicketPlusPoll, applyUdnPoll, emptyState, emptyUdnState, emptyTicketPlusState, eligibleToPoll, loadState, mergeMultiSourceState, migrateRuntimeState, reconcileNotifications, saveState, validateMultiSourceState, type MultiSourceRuntimeState, type RuntimeState } from "./runtime.js";
 import { writeJsonAtomic } from "./pipeline.js";
 import type { NormalizedEvent } from "./types.js";
 import { discoverUdnPerformance, fetchUdnPerformance } from "./udn.js";
@@ -83,6 +83,13 @@ async function monitor(root = process.cwd()): Promise<void> {
     opentix: discoveredOpentix.completeness.health === "ok" && discoveredOpentix.events.length > 0 ? discoveredOpentix : priorCatalog.opentix,
     udn: discoveredUdn.completeness.health === "ok" && discoveredUdn.events.length > 0 ? discoveredUdn : priorCatalog.udn
   };
+  try {
+    const latest = JSON.parse(await readFile(resolve(root, "generated/multi-source-state.json"), "utf8")) as MultiSourceRuntimeState;
+    validateMultiSourceState(latest);
+    multi = mergeMultiSourceState(latest, multi);
+  } catch (error) {
+    if (!(error && typeof error === "object" && "code" in error && error.code === "ENOENT")) throw error;
+  }
   await saveState(statePath, state);
   await Promise.all([writeJsonAtomic(resolve(root, "generated/normalized-snapshot.json"), state.snapshot), writeJsonAtomic(resolve(root, "generated/state.json"), state), writeJsonAtomic(resolve(root, "generated/history.json"), state.history), writeJsonAtomic(resolve(root, "generated/transitions.json"), state.transitions), writeJsonAtomic(resolve(root, "generated/multi-source-state.json"), multi), writeJsonAtomic(resolve(root, "generated/catalog-state.json"), catalog)]);
   await renderLiveDashboard(root, state.snapshot, state, multi.sources.udn, multi.sources.ticketPlus, catalog);

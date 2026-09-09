@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { applyTicketPlusPoll, emptyTicketPlusState, migrateRuntimeState, validateMultiSourceState } from "../src/runtime.js";
+import { applyTicketPlusPoll, emptyTicketPlusState, mergeMultiSourceState, migrateRuntimeState, validateMultiSourceState } from "../src/runtime.js";
 import { parseTicketPlusLotteryHtml, parseTicketPlusOrdinaryJson, pairTicketPlus, fetchTicketPlus } from "../src/ticketplus.js";
 import { emptyState } from "../src/runtime.js";
 
@@ -96,5 +96,16 @@ describe("Ticket Plus lifecycle adapter", () => {
     state.sources.ticketPlus.ordinary = null;
     state.sources.ticketPlus.lottery = { ...parseTicketPlusLotteryHtml(lottery), rounds: [{ ...parseTicketPlusLotteryHtml(lottery).rounds[0]!, windows: [{ ...parseTicketPlusLotteryHtml(lottery).rounds[0]!.windows[0]!, evidenceId: "" }] }] };
     expect(() => validateMultiSourceState(state)).toThrow("ticket-plus-window");
+  });
+  it("does not let a stale catalog checkout resurrect newer Ticket Plus quarantine", () => {
+    const newer = migrateRuntimeState(emptyState());
+    const healthy = applyTicketPlusPoll(emptyTicketPlusState(), { ordinary: parseTicketPlusOrdinaryJson(ordinary, "2026-09-09T08:00:00Z"), lottery: parseTicketPlusLotteryHtml(lottery, "2026-09-09T08:00:00Z"), errors: [] }, new Date("2026-09-09T08:00:00Z"));
+    newer.sources.ticketPlus = applyTicketPlusPoll(healthy, { errors: ["ordinary:http-403", "lottery:http-403"] }, new Date("2026-09-09T09:00:00Z"));
+    const stale = migrateRuntimeState(emptyState());
+    stale.sources.ticketPlus = applyTicketPlusPoll(emptyTicketPlusState(), { ordinary: parseTicketPlusOrdinaryJson(ordinary, "2026-09-09T08:00:00Z"), lottery: parseTicketPlusLotteryHtml(lottery, "2026-09-09T08:00:00Z"), errors: [] }, new Date("2026-09-09T08:00:00Z"));
+    const merged = mergeMultiSourceState(newer, stale);
+    expect(merged.sources.ticketPlus.health.category).toBe("stale");
+    expect(merged.sources.ticketPlus.ordinary).toBeNull();
+    expect(merged.sources.ticketPlus.lottery).toBeNull();
   });
 });
