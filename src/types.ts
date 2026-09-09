@@ -118,3 +118,31 @@ export interface NormalizedObservation {
   event: NormalizedEvent;
   observedAt: string;
 }
+
+export const MULTI_SOURCE_SCHEMA_VERSION = 3 as const;
+export const UDN_PROVIDER = "udn" as const;
+export const UDN_EVENT_ID = "P1AEBJG5" as const;
+export const UDN_EVENT_SOURCE = "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5" as const;
+
+export type UdnAvailabilityKind = "exact" | "sold-out" | "hot-selling-unknown" | "unknown";
+export interface UdnTier {
+  provider: typeof UDN_PROVIDER;
+  eventId: typeof UDN_EVENT_ID;
+  performanceId: string;
+  tierId: string;
+  label: string;
+  priceTwd: number;
+  sourceUrl: string;
+  availability: UdnAvailabilityKind;
+  exactCount: number | null;
+}
+export interface UdnObservation {
+  provider: typeof UDN_PROVIDER;
+  eventId: typeof UDN_EVENT_ID;
+  performanceId: string;
+  title: string;
+  sourceUrl: string;
+  observedAt: string;
+  parserVersion: string;
+  tiers: UdnTier[];
+}

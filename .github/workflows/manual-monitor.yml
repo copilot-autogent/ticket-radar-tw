@@ -1,4 +1,4 @@
-name: OPENTIX monitor
+name: Multi-source monitor
 on:
   schedule:
     - cron: "*/30 * * * *"
@@ -12,7 +12,7 @@ permissions:
   contents: write
   issues: write
 concurrency:
-  group: opentix-monitor
+  group: ticket-radar-monitor
   cancel-in-progress: false
 jobs:
   monitor:
@@ -27,10 +27,11 @@ jobs:
           node-version: 22
           cache: npm
       - run: npm ci
-      - name: Poll public OPENTIX page
+      - name: Poll public OPENTIX and UDN pages
         env:
           AVAILABILITY_THRESHOLD: ${{ inputs.threshold || '1' }}
           OPENTIX_ISSUE_NUMBER: "3"
+          UDN_PERFORMANCE_URL: "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5"
           GITHUB_TOKEN: ${{ github.token }}
         run: npm run monitor
       - name: Commit durable state
@@ -44,7 +45,7 @@ jobs:
           git add generated public
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git commit -m "chore: update OPENTIX monitor state" -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+          git commit -m "chore: update multi-source monitor state" -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
           git stash drop
           for attempt in 1 2 3; do git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0; git fetch origin && git rebase "origin/${GITHUB_REF_NAME}"; done
           exit 1
