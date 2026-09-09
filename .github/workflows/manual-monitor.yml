@@ -30,7 +30,7 @@ jobs:
       - name: Probe Ticket Plus public paths
         run: |
           node <<'NODE'
-          const crypto = require("node:crypto");
+          import crypto from "node:crypto";
           const urls = [
             ["ordinary", "https://apis.ticketplus.com.tw/config/api/v1/get?eventId=e000001508&sessionId=s000002229,s000002230"],
             ["lottery", "https://apis.ticketplus.com.tw/config/api/v1/getS3?path=event/6c3d8c24e0f00c9c84777615c001bebe/event.json"]
