@@ -24,31 +24,49 @@ export function validateNormalizedEvent(event: unknown): NormalizedEvent {
   return value;
 }
 function transition(key: string, kind: TransitionRecord["kind"], performanceId: string, from: TransitionRecord["from"], to: TransitionRecord["to"], observedAt: string): TransitionRecord { return { key, kind, performanceId, from, to, observedAt }; }
+export function validateThreshold(threshold: number): number {
+  if (!Number.isFinite(threshold) || threshold <= 0) throw new Error("validation: threshold");
+  return threshold;
+}
 function transitionsFor(previous: NormalizedEvent | null, current: NormalizedEvent, threshold: number): TransitionRecord[] {
   const result: TransitionRecord[] = []; const old = new Map(previous?.performances.map((item) => [item.performanceId, item]) ?? []);
   for (const item of current.performances) {
     const before = old.get(item.performanceId);
     if (!before) { if (item.remaining !== null && item.remaining >= threshold) result.push(transition(`${item.performanceId}:new`, "new-performance", item.performanceId, null, item.remaining, current.observedAt)); continue; }
     if (before.lifecycle !== "on-sale" && item.lifecycle === "on-sale") result.push(transition(`${item.performanceId}:sale-open`, "sale-open", item.performanceId, before.lifecycle, item.lifecycle, current.observedAt));
-    if (before.remaining !== null && item.remaining !== null && before.remaining < threshold && item.remaining >= threshold) result.push(transition(`${item.performanceId}:threshold:${threshold}`, "threshold", item.performanceId, before.remaining, item.remaining, current.observedAt));
+    if (before.remaining !== null && item.remaining !== null && before.remaining < threshold && item.remaining >= threshold && !(threshold === 1 && before.remaining === 0 && item.remaining > 0)) result.push(transition(`${item.performanceId}:threshold:${threshold}`, "threshold", item.performanceId, before.remaining, item.remaining, current.observedAt));
     if (before.remaining === 0 && item.remaining !== null && item.remaining > 0) result.push(transition(`${item.performanceId}:available`, "became-available", item.performanceId, before.remaining, item.remaining, current.observedAt));
   }
   return result;
 }
+function capOutbox(state: RuntimeState): void {
+  const pending = state.outbox.filter((item) => state.ledger[item.key]?.status !== "sent");
+  const sent = state.outbox.filter((item) => state.ledger[item.key]?.status === "sent");
+  state.outbox = [...sent.slice(-Math.max(0, MAX_OUTBOX - pending.length)), ...pending];
+}
 export function applyPoll(input: RuntimeState, result: PollResult, now = new Date(), threshold = 1): RuntimeState {
-  const state = structuredClone(input); const attempt = now.toISOString(); state.lastAttemptAt = attempt; state.health.lastAttemptAt = attempt;
+  const validatedThreshold = validateThreshold(threshold); const state = structuredClone(input); const attempt = now.toISOString(); state.lastAttemptAt = attempt; state.health.lastAttemptAt = attempt;
   if (result.kind === "success" && result.observation) {
-    const observation = validateNormalizedEvent(result.observation); const transitions = state.snapshot ? transitionsFor(state.snapshot, observation, threshold) : [];
+    const observation = validateNormalizedEvent(result.observation); const transitions = state.snapshot ? transitionsFor(state.snapshot, observation, validatedThreshold) : [];
     state.snapshot = observation; state.retainedDataAt = observation.observedAt; state.lastSuccessfulAt = attempt; state.health.lastSuccessfulAt = attempt; state.health.category = "ok"; delete state.health.error; state.cache = result.validators ?? {};
     state.lastAttemptAt = attempt; state.nextEligibleAt = new Date(now.getTime() + MIN_INTERVAL_MS).toISOString(); state.health.nextEligibleAt = state.nextEligibleAt;
     state.history.push({ observedAt: observation.observedAt, performanceCount: observation.performances.length, totalRemaining: total(observation) }); state.history = state.history.slice(-MAX_HISTORY);
     for (const item of transitions) { if (!state.transitions.some((old) => old.key === item.key)) state.transitions.push(item); if (!state.ledger[item.key]) { state.ledger[item.key] = { status: "pending", updatedAt: attempt }; state.outbox.push(item); } }
-    state.transitions = state.transitions.slice(-MAX_HISTORY); state.outbox = state.outbox.slice(-MAX_OUTBOX); return state;
+    state.transitions = state.transitions.slice(-MAX_HISTORY); capOutbox(state); return state;
   }
-  if (result.kind === "not-modified") { state.health.category = state.snapshot ? "ok" : "stale"; delete state.health.error; state.cache = result.validators ?? state.cache; state.nextEligibleAt = new Date(now.getTime() + MIN_INTERVAL_MS).toISOString(); state.health.nextEligibleAt = state.nextEligibleAt; return state; }
+  if (result.kind === "not-modified") { state.health.category = state.snapshot ? "ok" : "stale"; delete state.health.error; state.cache = { ...state.cache, ...result.validators }; state.nextEligibleAt = new Date(now.getTime() + MIN_INTERVAL_MS).toISOString(); state.health.nextEligibleAt = state.nextEligibleAt; return state; }
   state.health.category = state.snapshot ? "stale" : "error"; state.health.error = result.errorCategory ?? `http-${result.status}`; const delay = backoffMs(1, result.retryAfterMs); state.nextEligibleAt = nextEligibleAt(attempt, delay); state.health.nextEligibleAt = state.nextEligibleAt; return state;
 }
-export async function loadState(path: string): Promise<RuntimeState> { try { const value = JSON.parse(await readFile(path, "utf8")) as RuntimeState; validateState(value); return value; } catch { return emptyState(); } }
+export async function loadState(path: string): Promise<RuntimeState> {
+  try {
+    const value = JSON.parse(await readFile(path, "utf8")) as RuntimeState;
+    validateState(value);
+    return value;
+  } catch (error) {
+    if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") return emptyState();
+    throw error;
+  }
+}
 export function validateState(value: unknown): asserts value is RuntimeState { if (!value || typeof value !== "object") throw new Error("validation: state"); const state = value as RuntimeState; if (state.schemaVersion !== NORMALIZED_SCHEMA_VERSION || state.source !== OPENTIX_SOURCE || !state.health || !Array.isArray(state.history) || !Array.isArray(state.transitions) || !Array.isArray(state.outbox) || !state.ledger) throw new Error("validation: state-contract"); if (state.snapshot) validateNormalizedEvent(state.snapshot); }
 export async function saveState(path: string, state: RuntimeState): Promise<void> { validateState(state); await writeJsonAtomic(resolve(path), state); }
 
@@ -56,7 +74,18 @@ export interface NotificationOptions { token?: string; repository?: string; issu
 export async function reconcileNotifications(state: RuntimeState, options: NotificationOptions = {}): Promise<RuntimeState> {
   if (!options.token || !options.repository || !options.issueNumber) return state;
   const fetchImpl = options.fetchImpl ?? fetch; const endpoint = `https://api.github.com/repos/${options.repository}/issues/${options.issueNumber}/comments`; const headers = { authorization: `Bearer ${options.token}`, accept: "application/vnd.github+json", "content-type": "application/json" };
-  let comments: Array<{ body?: string }> = []; try { const response = await fetchImpl(endpoint, { headers }); if (!response.ok) return state; comments = await response.json() as Array<{ body?: string }>; } catch { return state; }
+  const comments: Array<{ body?: string }> = []; try {
+    let nextUrl: string | undefined = endpoint + "?per_page=100&page=1";
+    while (nextUrl) {
+      const response: Response = await fetchImpl(nextUrl, { headers });
+      if (!response.ok) return state;
+      const page = await response.json() as unknown;
+      if (!Array.isArray(page)) return state;
+      comments.push(...page as Array<{ body?: string }>);
+      const link: string = response.headers.get("link") ?? "";
+      nextUrl = /<([^>]+)>;\s*rel="next"/i.exec(link)?.[1];
+    }
+  } catch { return state; }
   const next = structuredClone(state); for (const item of next.outbox) { if (next.ledger[item.key]?.status === "sent") continue; const marker = `<!-- ticket-radar-transition:${item.key} -->`; if (comments.some((comment) => comment.body?.includes(marker))) { next.ledger[item.key] = { status: "sent", updatedAt: new Date().toISOString() }; continue; } const body = `${marker}\nOPENTIX availability transition for performance \`${item.performanceId}\`: ${String(item.from)} → ${String(item.to)}.`; try { const response = await fetchImpl(endpoint, { method: "POST", headers, body: JSON.stringify({ body }) }); if (response.ok) next.ledger[item.key] = { status: "sent", updatedAt: new Date().toISOString() }; } catch { /* leave pending for the next run */ } }
   return next;
 }

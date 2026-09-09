@@ -8,6 +8,14 @@ export interface FetchResult { status: number; body?: string; etag?: string; las
 export interface PollResult { kind: "success" | "not-modified" | "retryable" | "failure"; status: number; observation?: NormalizedEvent; retryAfterMs?: number; errorCategory?: string; validators?: { etag?: string; lastModified?: string }; }
 export interface FetchOptions { now?: Date; timeoutMs?: number; etag?: string; lastModified?: string; fetchImpl?: typeof fetch; }
 
+function parseRetryAfter(value: string | null, now: Date): number | undefined {
+  if (!value) return undefined;
+  const seconds = Number(value);
+  if (Number.isFinite(seconds)) return Math.max(0, seconds * 1000);
+  const timestamp = Date.parse(value);
+  return Number.isFinite(timestamp) ? Math.max(0, timestamp - now.getTime()) : undefined;
+}
+
 function text(value: unknown): string { return typeof value === "string" ? value.trim() : ""; }
 function escapeRegex(value: string): string { return value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"); }
 function decode(value: string): string {
@@ -37,7 +45,12 @@ function jsonLd(html: string): Record<string, unknown>[] {
   const result: Record<string, unknown>[] = [];
   const re = /<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi;
   for (const match of html.matchAll(re)) {
-    try { const value: unknown = JSON.parse(decode(match[1] ?? "")); if (value && typeof value === "object") result.push(...(Array.isArray(value) ? value : [value]) as Record<string, unknown>[]); } catch { /* malformed JSON-LD is ignored; other bounded fields may still validate */ }
+    try {
+      const value: unknown = JSON.parse(decode(match[1] ?? ""));
+      if (value && typeof value === "object") result.push(...(Array.isArray(value) ? value : [value]) as Record<string, unknown>[]);
+    } catch {
+      throw new Error("parse-failure: malformed-jsonld");
+    }
   }
   return result;
 }
@@ -94,13 +107,16 @@ export async function fetchOpentix(url = OPENTIX_SOURCE, options: FetchOptions =
   try {
     const headers: Record<string, string> = { accept: "text/html,application/xhtml+xml" }; if (options.etag) headers["if-none-match"] = options.etag; if (options.lastModified) headers["if-modified-since"] = options.lastModified;
     const response = await fetchImpl(url, { headers, signal: controller.signal, redirect: "follow" });
-    const retry = Number(response.headers.get("retry-after")); const retryAfterMs = Number.isFinite(retry) ? retry * 1000 : undefined;
+    const retryAfterMs = parseRetryAfter(response.headers.get("retry-after"), options.now ?? new Date());
     const validators = { ...(response.headers.get("etag") ? { etag: response.headers.get("etag")! } : {}), ...(response.headers.get("last-modified") ? { lastModified: response.headers.get("last-modified")! } : {}) };
     if (response.status === 304) return { kind: "not-modified", status: 304, validators };
     if (response.status === 429 || response.status >= 500) return { kind: "retryable", status: response.status, ...(retryAfterMs !== undefined ? { retryAfterMs } : {}), validators, errorCategory: response.status === 429 ? "rate-limited" : "upstream-5xx" };
     if (!response.ok) return { kind: "failure", status: response.status, validators, errorCategory: `http-${response.status}` };
     const body = await response.text(); if (body.length > MAX_RESPONSE_BYTES) return { kind: "failure", status: response.status, validators, errorCategory: "response-size" };
     return { kind: "success", status: response.status, validators, observation: parseOpentixHtml(body, (options.now ?? new Date()).toISOString(), options.now ?? new Date()) };
-  } catch (error) { return { kind: "retryable", status: 0, errorCategory: error instanceof Error && error.name === "AbortError" ? "timeout" : "network" }; }
+  } catch (error) {
+    if (error instanceof Error && error.message.startsWith("parse-failure:")) return { kind: "failure", status: 200, errorCategory: "parse-failure" };
+    return { kind: "retryable", status: 0, errorCategory: error instanceof Error && error.name === "AbortError" ? "timeout" : "network" };
+  }
   finally { clearTimeout(timeout); }
 }
