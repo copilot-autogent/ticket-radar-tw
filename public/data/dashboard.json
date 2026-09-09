@@ -32,7 +32,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 120
+        "remaining": 119
       },
       {
         "schemaVersion": 2,
@@ -563,18 +563,18 @@
         "remaining": 65
       }
     ],
-    "remainingTotal": 2335,
-    "observedAt": "2026-09-09T01:45:00Z",
+    "remainingTotal": 2334,
+    "observedAt": "2026-09-09T02:18:42.437Z",
     "parserVersion": "opentix-jsonld-v1"
   },
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-09T01:45:00.000Z",
-    "lastSuccessfulAt": "2026-09-09T01:45:00.000Z",
-    "nextEligibleAt": "2026-09-09T02:15:00.000Z"
+    "lastAttemptAt": "2026-09-09T02:18:42.437Z",
+    "lastSuccessfulAt": "2026-09-09T02:18:42.437Z",
+    "nextEligibleAt": "2026-09-09T02:48:42.437Z"
   },
-  "lastAttemptAt": "2026-09-09T01:45:00.000Z",
-  "lastSuccessfulAt": "2026-09-09T01:45:00.000Z",
-  "retainedDataAt": "2026-09-09T01:45:00Z",
+  "lastAttemptAt": "2026-09-09T02:18:42.437Z",
+  "lastSuccessfulAt": "2026-09-09T02:18:42.437Z",
+  "retainedDataAt": "2026-09-09T02:18:42.437Z",
   "transitions": []
 }
