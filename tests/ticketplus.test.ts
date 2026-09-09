@@ -78,6 +78,17 @@ describe("Ticket Plus lifecycle adapter", () => {
     expect(migrated.sources.opentix).toEqual(legacy);
     expect(migrated.sources.ticketPlus.ordinary).toBeNull();
   });
+  it("quarantines retained Ticket Plus rows after both public endpoints return 403", () => {
+    const ordinaryObservation = parseTicketPlusOrdinaryJson(ordinary, "2026-09-08T00:00:00Z");
+    const lotteryObservation = parseTicketPlusLotteryHtml(lottery, "2026-09-08T00:00:00Z");
+    const retained = applyTicketPlusPoll(emptyTicketPlusState(), { ordinary: ordinaryObservation, lottery: lotteryObservation, errors: [] }, new Date("2026-09-08T00:00:00Z"));
+    const degraded = applyTicketPlusPoll(retained, { errors: ["ordinary:http-403", "lottery:http-403"] }, new Date("2026-09-09T00:00:00Z"));
+    expect(degraded.health).toMatchObject({ category: "stale", error: "ordinary:http-403;lottery:http-403" });
+    expect(degraded.ordinary).toBeNull();
+    expect(degraded.lottery).toBeNull();
+    expect(degraded.pairings).toEqual([]);
+    expect(degraded.history.at(-1)).toMatchObject({ ordinary: false, lottery: false });
+  });
   it("rejects malformed persisted Ticket Plus observations before dashboard rendering", () => {
     const state = migrateRuntimeState(emptyState());
     state.sources.ticketPlus.ordinary = { ...parseTicketPlusOrdinaryJson(ordinary), sessions: [{ ...parseTicketPlusOrdinaryJson(ordinary).sessions[0]!, saleStartAt: "not-a-date" }] };

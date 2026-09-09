@@ -2274,114 +2274,29 @@
     },
     "ticketPlus": {
       "source": "ticket-plus",
-      "ordinary": {
-        "source": "ticket-plus",
-        "activityId": "df31f9384cf60a3110dbf9607e780a1b",
-        "eventId": "e000001508",
-        "title": "Ticket Plus ordinary sale",
-        "sessions": [
-          {
-            "activityId": "df31f9384cf60a3110dbf9607e780a1b",
-            "eventId": "e000001508",
-            "sessionId": "s000002229",
-            "status": "pending",
-            "lifecycle": "sale-scheduled",
-            "saleStartAt": "2026-09-11T12:00:00+08:00",
-            "saleEndAt": "2026-09-19T17:00:00+08:00",
-            "sourceUrl": "https://ticketplus.com.tw/activity/df31f9384cf60a3110dbf9607e780a1b"
-          },
-          {
-            "activityId": "df31f9384cf60a3110dbf9607e780a1b",
-            "eventId": "e000001508",
-            "sessionId": "s000002230",
-            "status": "pending",
-            "lifecycle": "sale-scheduled",
-            "saleStartAt": "2026-09-12T12:00:00+08:00",
-            "saleEndAt": "2026-09-19T17:00:00+08:00",
-            "sourceUrl": "https://ticketplus.com.tw/activity/df31f9384cf60a3110dbf9607e780a1b"
-          }
-        ],
-        "observedAt": "2026-09-09T04:33:56.588Z",
-        "parserVersion": "ticket-plus-lifecycle-v1",
-        "sourceUrl": "https://ticketplus.com.tw/activity/df31f9384cf60a3110dbf9607e780a1b"
-      },
-      "lottery": {
-        "source": "ticket-plus",
-        "activityId": "6c3d8c24e0f00c9c84777615c001bebe",
-        "title": "Vaundy ASIA ARENA TOUR 2026",
-        "rounds": [
-          {
-            "roundId": "initial",
-            "kind": "initial",
-            "windows": [],
-            "version": 1,
-            "state": "unknown"
-          },
-          {
-            "roundId": "second",
-            "kind": "second",
-            "windows": [
-              {
-                "kind": "registration",
-                "startAt": "2026-05-13T12:00:00+08:00",
-                "endAt": "2026-05-17T21:00:00+08:00",
-                "evidenceId": "registration:fp-8c2d9fca",
-                "version": 1
-              },
-              {
-                "kind": "results",
-                "startAt": "2026-05-19T12:00:00+08:00",
-                "endAt": "2026-05-20T12:00:00+08:00",
-                "evidenceId": "results:fp-45c81a76",
-                "version": 1
-              },
-              {
-                "kind": "payment",
-                "startAt": "2026-05-20T12:00:00+08:00",
-                "evidenceId": "payment:fp-24079187",
-                "version": 1
-              }
-            ],
-            "version": 1,
-            "state": "ended"
-          }
-        ],
-        "currentState": "ended",
-        "parseVersion": "ticket-plus-lifecycle-v1",
-        "evidenceIds": [
-          "registration:fp-8c2d9fca",
-          "results:fp-45c81a76",
-          "payment:fp-24079187"
-        ],
-        "observedAt": "2026-09-09T04:33:56.588Z",
-        "sourceUrl": "https://ticketplus.com.tw/activity/6c3d8c24e0f00c9c84777615c001bebe"
-      },
-      "pairings": [
-        {
-          "lotteryActivityId": "6c3d8c24e0f00c9c84777615c001bebe",
-          "ordinaryActivityId": "df31f9384cf60a3110dbf9607e780a1b",
-          "confidence": "low",
-          "evidence": [
-            "conservative-unverified"
-          ],
-          "automationEligible": false
-        }
-      ],
+      "ordinary": null,
+      "lottery": null,
+      "pairings": [],
       "conflicts": [],
       "history": [
         {
           "observedAt": "2026-09-09T04:33:55.675Z",
           "ordinary": true,
           "lottery": true
+        },
+        {
+          "observedAt": "2026-09-09T05:00:00.000Z",
+          "ordinary": false,
+          "lottery": false
         }
       ],
       "health": {
         "category": "stale",
-        "lastAttemptAt": "2026-09-09T04:54:10.098Z",
+        "lastAttemptAt": "2026-09-09T05:00:00.000Z",
         "lastSuccessfulAt": "2026-09-09T04:33:55.675Z",
         "error": "ordinary:http-403;lottery:http-403"
       },
-      "lastAttemptAt": "2026-09-09T04:54:10.098Z",
+      "lastAttemptAt": "2026-09-09T05:00:00.000Z",
       "lastSuccessfulAt": "2026-09-09T04:33:55.675Z"
     }
   }

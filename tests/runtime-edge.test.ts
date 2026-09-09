@@ -82,6 +82,25 @@ describe("OPENTIX transport and failure edges", () => {
     }
   });
 
+  it("renders Ticket Plus as unsupported after retained rows are quarantined", async () => {
+    const root = "generated/test-dashboard-ticket-plus-degraded";
+    const udn = emptyUdnState();
+    udn.health.category = "ok";
+    const ticketPlus = emptyTicketPlusState();
+    ticketPlus.health = { category: "stale", error: "ordinary:http-403;lottery:http-403", lastAttemptAt: "2026-09-09T01:00:00Z", lastSuccessfulAt: "2026-09-08T01:00:00Z" };
+    try {
+      const { renderLiveDashboard } = await import("../src/dashboard.js");
+      await renderLiveDashboard(root, null, emptyState(), udn, ticketPlus);
+      const html = await readFile(root + "/public/index.html", "utf8");
+      expect(html).toContain("unsupported from this public Actions host");
+      expect(html).toContain("Lifecycle alerts are disabled");
+      expect(html).toContain("No validated lottery observation");
+      expect(html).not.toContain("2026-05-13");
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+
   it("builds Pages from the validated runtime state when present", async () => {
     const root = "generated/test-cli-build";
     const runtime = applyPoll(emptyState(), { kind: "success", status: 200, observation: fixture }, new Date("2026-09-09T01:00:00Z"));
