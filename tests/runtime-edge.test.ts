@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
-import { unlink, writeFile } from "node:fs/promises";
+import { readFile, rm, unlink, writeFile } from "node:fs/promises";
 import { fetchOpentix, parseOpentixHtml } from "../src/opentix.js";
-import { applyPoll, emptyState, loadState, validateState, eligibleToPoll, reconcileNotifications, MAX_OUTBOX, validateThreshold } from "../src/runtime.js";
+import { applyPoll, emptyState, loadState, validateState, eligibleToPoll, reconcileNotifications, MAX_OUTBOX, validateNormalizedEvent, validateThreshold } from "../src/runtime.js";
 import fixture from "../fixtures/opentix-event.json";
 
 const jsonld = (name: string, start: string, end = "2026-10-10T21:10:00") => JSON.stringify({ "@type": "Event", name, startDate: start, endDate: end, location: { name: "Venue & Hall", address: { streetAddress: "Taipei" } }, offers: { lowPrice: 100, highPrice: 200, validFrom: "2026-01-01T00:00:00", availabilityEnds: end } });
@@ -32,6 +32,39 @@ describe("OPENTIX transport and failure edges", () => {
     expect(() => parseOpentixHtml(`<script type="application/ld+json">not-json</script>`)).toThrow("malformed-jsonld");
     expect(eligibleToPoll(emptyState())).toBe(true); expect(await reconcileNotifications(emptyState())).toEqual(emptyState());
   });
+  it("honors persisted next eligibility, including retry backoff", () => {
+    const state = emptyState();
+    state.lastAttemptAt = "2026-09-09T01:00:00.000Z";
+    state.nextEligibleAt = "2026-09-09T02:36:00.000Z";
+    expect(eligibleToPoll(state, Date.parse("2026-09-09T02:35:59.000Z"))).toBe(false);
+    expect(eligibleToPoll(state, Date.parse("2026-09-09T02:36:00.000Z"))).toBe(true);
+  });
+
+  it("requires remaining totals to match known performance values", () => {
+    expect(() => validateNormalizedEvent({ ...fixture, remainingTotal: fixture.remainingTotal + 1 })).toThrow("remaining-total");
+    const partiallyUnknown = structuredClone(fixture);
+    partiallyUnknown.performances[0]!.remaining = null;
+    expect(() => validateNormalizedEvent(partiallyUnknown)).toThrow("remaining-total");
+    partiallyUnknown.remainingTotal = null;
+    expect(validateNormalizedEvent(partiallyUnknown).remainingTotal).toBeNull();
+    const unknownTotal = structuredClone(fixture);
+    unknownTotal.remainingTotal = null;
+    expect(() => validateNormalizedEvent(unknownTotal)).toThrow("remaining-total");
+  });
+
+  it("uses the retained snapshot title when rendering without a live event", async () => {
+    const state = applyPoll(emptyState(), { kind: "success", status: 200, observation: fixture }, new Date("2026-09-09T01:00:00Z"));
+    const root = "generated/test-dashboard-retained";
+    try {
+      const { renderLiveDashboard } = await import("../src/dashboard.js");
+      await renderLiveDashboard(root, null, state);
+      const html = await readFile(root + "/public/index.html", "utf8");
+      expect(html).toContain("<h1>" + fixture.title + "</h1>");
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+
   it("retains validated data on 304 and failure", () => {
     const state = applyPoll(emptyState(), { kind: "success", status: 200, observation: fixture, validators: { etag: "old", lastModified: "yesterday" } }, new Date("2026-09-09T01:00:00Z"));
     expect(applyPoll(state, { kind: "not-modified", status: 304, validators: {} }, new Date("2026-09-09T01:30:00Z")).cache).toEqual({ etag: "old", lastModified: "yesterday" });

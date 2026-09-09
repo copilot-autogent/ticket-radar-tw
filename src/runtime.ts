@@ -21,6 +21,9 @@ export function validateNormalizedEvent(event: unknown): NormalizedEvent {
   if (!event || typeof event !== "object") throw new Error("validation: event-object"); const value = event as NormalizedEvent;
   if (value.schemaVersion !== NORMALIZED_SCHEMA_VERSION || value.source !== OPENTIX_SOURCE || !value.eventId || !value.title || !value.venue?.name || value.venue.timeZone !== "Asia/Taipei" || !Array.isArray(value.performances) || value.performances.length === 0 || (value.remainingTotal !== null && (!Number.isInteger(value.remainingTotal) || value.remainingTotal < 0))) throw new Error("validation: event-contract");
   if (value.performances.some((item) => !validPerformance(item) || item.eventId !== value.eventId || item.venue.name !== value.venue.name || item.price.currency !== "TWD" || item.price.min < 0 || item.price.max < item.price.min)) throw new Error("validation: performance-contract");
+  const hasUnknownRemaining = value.performances.some((item) => item.remaining === null);
+  const expectedRemainingTotal = hasUnknownRemaining ? null : value.performances.reduce((sum, item) => sum + (item.remaining ?? 0), 0);
+  if (value.remainingTotal !== expectedRemainingTotal) throw new Error("validation: remaining-total");
   return value;
 }
 function transition(key: string, kind: TransitionRecord["kind"], performanceId: string, from: TransitionRecord["from"], to: TransitionRecord["to"], observedAt: string): TransitionRecord { return { key, kind, performanceId, from, to, observedAt }; }
@@ -89,4 +92,7 @@ export async function reconcileNotifications(state: RuntimeState, options: Notif
   const next = structuredClone(state); for (const item of next.outbox) { if (next.ledger[item.key]?.status === "sent") continue; const marker = `<!-- ticket-radar-transition:${item.key} -->`; if (comments.some((comment) => comment.body?.includes(marker))) { next.ledger[item.key] = { status: "sent", updatedAt: new Date().toISOString() }; continue; } const body = `${marker}\nOPENTIX availability transition for performance \`${item.performanceId}\`: ${String(item.from)} → ${String(item.to)}.`; try { const response = await fetchImpl(endpoint, { method: "POST", headers, body: JSON.stringify({ body }) }); if (response.ok) next.ledger[item.key] = { status: "sent", updatedAt: new Date().toISOString() }; } catch { /* leave pending for the next run */ } }
   return next;
 }
-export function eligibleToPoll(state: RuntimeState, now = Date.now()): boolean { return isEligible(state.lastAttemptAt ?? undefined, now); }
+export function eligibleToPoll(state: RuntimeState, now = Date.now()): boolean {
+  const nextEligible = state.nextEligibleAt ? Date.parse(state.nextEligibleAt) : Number.NaN;
+  return Number.isFinite(nextEligible) ? now >= nextEligible : isEligible(state.lastAttemptAt ?? undefined, now);
+}

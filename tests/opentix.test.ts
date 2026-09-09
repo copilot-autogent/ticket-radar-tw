@@ -17,8 +17,8 @@ describe("OPENTIX normalized slice", () => {
     expect(() => parseOpentixHtml("<title>login</title>")).toThrow("challenge");
   });
   it("establishes a baseline and detects zero-to-available once", () => {
-    const baseline = structuredClone(fixture); baseline.performances = [structuredClone(fixture.performances[0])]; baseline.performances[0].remaining = 0; baseline.observedAt = "2026-09-09T02:00:00Z";
-    const next = structuredClone(fixture); next.performances = [structuredClone(fixture.performances[0])]; next.performances[0].remaining = 5; next.observedAt = "2026-09-09T02:31:00Z";
+    const baseline = structuredClone(fixture); baseline.performances = [structuredClone(fixture.performances[0])]; baseline.performances[0].remaining = 0; baseline.remainingTotal = 0; baseline.observedAt = "2026-09-09T02:00:00Z";
+    const next = structuredClone(fixture); next.performances = [structuredClone(fixture.performances[0])]; next.performances[0].remaining = 5; next.remainingTotal = 5; next.observedAt = "2026-09-09T02:31:00Z";
     const first = applyPoll(emptyState(), { kind: "success", status: 200, observation: baseline }, new Date("2026-09-09T02:00:00Z"));
     const second = applyPoll(first, { kind: "success", status: 200, observation: next }, new Date("2026-09-09T02:31:00Z"));
     expect(first.transitions).toHaveLength(0); expect(second.transitions.some((item) => item.kind === "became-available")).toBe(true);
@@ -29,8 +29,8 @@ describe("OPENTIX normalized slice", () => {
     expect(backoffMs(20, 30_000)).toBeLessThanOrEqual(6 * 60 * 60 * 1000);
   });
   it("reconciles an existing marker without posting a duplicate", async () => {
-    const baseline = structuredClone(fixture); baseline.performances = [structuredClone(fixture.performances[0])]; baseline.performances[0].remaining = 0;
-    const current = structuredClone(fixture); current.performances = [structuredClone(fixture.performances[0])]; current.performances[0].remaining = 5;
+    const baseline = structuredClone(fixture); baseline.performances = [structuredClone(fixture.performances[0])]; baseline.performances[0].remaining = 0; baseline.remainingTotal = 0;
+    const current = structuredClone(fixture); current.performances = [structuredClone(fixture.performances[0])]; current.performances[0].remaining = 5; current.remainingTotal = 5;
     let state = applyPoll(emptyState(), { kind: "success", status: 200, observation: baseline }, new Date("2026-09-09T02:00:00Z"));
     state = applyPoll(state, { kind: "success", status: 200, observation: current }, new Date("2026-09-09T02:31:00Z"));
     const result = await reconcileNotifications(state, { token: "token", repository: "owner/repo", issueNumber: 3, fetchImpl: async (_url, init) => {
