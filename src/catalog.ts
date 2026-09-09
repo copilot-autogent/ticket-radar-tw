@@ -124,6 +124,9 @@ function priceRange(value: string): { minPrice: number | null; maxPrice: number 
   const prices = [...value.replace(/,/g, "").matchAll(/(?:NT\$|TWD|票價|價格|票)\s*(\d{2,6})/gi)].map((match) => Number(match[1]));
   return prices.length ? { minPrice: Math.min(...prices), maxPrice: Math.max(...prices) } : { minPrice: null, maxPrice: null };
 }
+function cityFromAddress(value: string | undefined): string | undefined {
+  return value?.match(/台北市|新北市|桃園市|台中市|台南市|高雄市|基隆市|新竹市|嘉義市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|澎湖縣|金門縣|連江縣/)?.[0];
+}
 
 /** Extracts only source-visible schedule facts; absent facts remain null/undefined. */
 export function parseUdnCatalogDetailHtml(html: string, eventUrl: string, _now = new Date()): { title: string; performances: CatalogPerformance[] } {
@@ -201,9 +204,10 @@ export async function discoverCatalog(source: CatalogSource, options: {
         }
         const classification = classifyEvent(parsed.title, undefined);
         const artist = htmlArtist(html);
+        const city = cityFromAddress(parsed.venue.address);
         events.push({
           schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), sourceUrl: url,
-          title: parsed.title, ...(artist ? { artist } : {}), venue: parsed.venue.name, ...(parsed.venue.address?.split(/[ ,，]/)[0] ? { city: parsed.venue.address.split(/[ ,，]/)[0] } : {}),
+          title: parsed.title, ...(artist ? { artist } : {}), venue: parsed.venue.name, ...(city ? { city } : {}),
           ...classification, firstSeenAt: now.toISOString(), catalogFetchedAt: now.toISOString(),
           performances: parsed.performances.map((item) => ({
             schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), performanceId: item.performanceId,
@@ -219,13 +223,14 @@ export async function discoverCatalog(source: CatalogSource, options: {
         const artist = htmlArtist(html);
         const remainingDetailCap = Math.max(0, CATALOG_DETAIL_CAP - detailCount);
         const scheduleLinks = [...new Set([...html.matchAll(/(?:https?:\/\/tickets\.udnfunlife\.com)?\/Application\/UTK02\/UTK0204_(?:000)?\.aspx\?[^"' <]+/gi)].map((match) => new URL(match[0]!.replace(/&amp;/g, "&"), "https://tickets.udnfunlife.com").toString()))].slice(0, remainingDetailCap);
-        const schedulePages: string[] = [];
+        const schedulePages: Array<{ url: string; html: string }> = [];
         for (const scheduleUrl of scheduleLinks) {
           const scheduleResponse = await fetchImpl(scheduleUrl, { headers: { accept: "text/html,application/xhtml+xml" }, redirect: "follow" });
           detailCount++;
-          if (scheduleResponse.ok) schedulePages.push(await scheduleResponse.text());
+          if (scheduleResponse.ok) schedulePages.push({ url: scheduleUrl, html: await scheduleResponse.text() });
         }
-        const parsed = parseUdnCatalogDetailHtml(schedulePages.join("\n") || html, url, now);
+        const parsedPages = schedulePages.map((page) => parseUdnCatalogDetailHtml(page.html, page.url, now));
+        const parsed = schedulePages.length ? { title, performances: parsedPages.flatMap((page) => page.performances) } : parseUdnCatalogDetailHtml(html, url, now);
         events.push({ schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), sourceUrl: url, title: parsed.title || title, ...(artist ? { artist } : {}), ...classification, firstSeenAt: now.toISOString(), catalogFetchedAt: now.toISOString(), performances: parsed.performances });
       }
     }

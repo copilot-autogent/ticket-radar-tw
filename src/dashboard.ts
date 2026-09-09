@@ -1,7 +1,7 @@
 import { resolve } from "node:path";
 import type { NormalizedEvent, TicketPlusRuntimeState } from "./types.js";
 import type { RuntimeState, UdnRuntimeState } from "./runtime.js";
-import type { CatalogState } from "./catalog.js";
+import type { CatalogEvent, CatalogState } from "./catalog.js";
 import { writeJsonAtomic, writeTextAtomic } from "./pipeline.js";
 
 function escapeHtml(value: string): string {
@@ -11,7 +11,13 @@ function display(value: string | number | null | undefined): string { return val
 function healthColor(category: string | undefined): string { return category === "ok" ? "#146c38" : category === "stale" ? "#9a6700" : category === "error" ? "#b42318" : "#667085"; }
 
 function catalogMarkup(catalog: { opentix: CatalogState | null; udn: CatalogState | null }, watchedIds: string[]): string {
-  const events = [...(catalog.opentix?.events ?? []), ...(catalog.udn?.events ?? [])];
+  const events: CatalogEvent[] = [...(catalog.opentix?.events ?? []), ...(catalog.udn?.events ?? [])];
+  for (const watchedId of watchedIds) {
+    if (events.some((event) => `${event.source}:${event.eventId}` === watchedId)) continue;
+    const [source, eventId = ""] = watchedId.split(":");
+    if (source !== "opentix" && source !== "udn") continue;
+    events.push({ schemaVersion: 1, source: source as "opentix" | "udn", eventId, sourceUrl: source === "opentix" ? `https://www.opentix.life/event/${eventId}` : `https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=${eventId}`, title: "Watched event (catalog not currently discovered)", category: "unknown", classificationReason: "unknown", classificationConfidence: "low", firstSeenAt: new Date(0).toISOString(), catalogFetchedAt: new Date(0).toISOString(), performances: [] });
+  }
   const payload = JSON.stringify({ events, watchedIds }).replaceAll("<", "\\u003c");
   return `<section aria-labelledby="catalog-heading"><h2 id="catalog-heading">Event catalog</h2>
     <p>Discovery is informational; watched availability remains separate. OPENTIX: ${catalog.opentix?.completeness.eventCount ?? 0}; UDN: ${catalog.udn?.completeness.eventCount ?? 0}. Watch requests require GitHub sign-in plus maintainer manual validation and commit; clicking does not add a watch.</p>
@@ -42,7 +48,7 @@ function catalogMarkup(catalog: { opentix: CatalogState | null; udn: CatalogStat
           const from = $("catalog-from").value ? Date.parse($("catalog-from").value + "T00:00:00+08:00") : -Infinity, to = $("catalog-to").value ? Date.parse($("catalog-to").value + "T23:59:59+08:00") : Infinity;
           const rows = data.events.filter((event) => {
             const performances = event.performances || [], dates = performances.map((p) => date(p.startsAt)).filter(Number.isFinite), saleStarts = performances.map((p) => date(p.saleStart)).filter(Number.isFinite);
-            const text = (event.title + " " + (event.artist || "")).toLocaleLowerCase(), prices = performances.map((p) => p.maxPrice).filter((p) => typeof p === "number");
+            const text = (event.title + " " + (event.artist || "")).toLocaleLowerCase(), prices = performances.map((p) => p.minPrice).filter((p) => typeof p === "number");
             if (query && !text.includes(query) || $("catalog-platform").value && event.source !== $("catalog-platform").value || $("catalog-category").value && event.category !== $("catalog-category").value || $("catalog-city").value && ![event.city, ...performances.map((p) => p.city)].includes($("catalog-city").value)) return false;
             if (state.view === "upcoming" && !dates.some((d) => d >= now)) return false;
             if (state.view === "musicals" && event.category !== "musical" || state.view === "concerts" && event.category !== "concert") return false;
