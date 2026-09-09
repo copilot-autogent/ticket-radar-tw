@@ -7,6 +7,7 @@ export const CATALOG_DETAIL_CAP = 20;
 export const CATALOG_SITEMAP_CAP = 500;
 export const CATALOG_PAGE_SIZE = 20;
 export const CATALOG_MAX_RESPONSE_BYTES = 1_048_576;
+const responseBytes = (value: string): number => new TextEncoder().encode(value).byteLength;
 
 export type CatalogSource = "opentix" | "udn";
 export type ClassificationReason = "source-category" | "title-keyword-fallback" | "unknown";
@@ -211,7 +212,7 @@ export function catalogStateMateriallyEqual(a: CatalogState | null, b: CatalogSt
 }
 
 export function mergeCatalogState(previous: CatalogState | null, current: CatalogState): CatalogState {
-  if (!previous || current.completeness.scanState === "stale" || current.completeness.health !== "ok") return previous ?? current;
+  if (!previous) return current;
   const byId = new Map(previous.events.map((event) => [`${event.source}:${event.eventId}`, event]));
   for (const observed of current.events) {
     const key = `${observed.source}:${observed.eventId}`;
@@ -277,7 +278,7 @@ export async function discoverCatalog(source: CatalogSource, options: {
       pageCount++;
       if (!response.ok) throw new Error(`http-${response.status}`);
       const body = await response.text();
-      if (body.length > CATALOG_MAX_RESPONSE_BYTES) throw new Error("response-size");
+      if (responseBytes(body) > CATALOG_MAX_RESPONSE_BYTES) throw new Error("response-size");
       const structured = structuredSummaryLinks(jsonValue(body), source);
       const found = structured.length ? structured : eventLinks(body, source);
       for (const link of found) links.add(link);
@@ -293,10 +294,11 @@ export async function discoverCatalog(source: CatalogSource, options: {
       provenance: "official-listing-summary"
     }));
     let detailCount = 0;
+    let detailFailure = false;
     for (const url of urls.slice(0, CATALOG_DETAIL_CAP)) {
       const response = await fetchImpl(url, { headers: { accept: "text/html,application/xhtml+xml" }, redirect: "follow" });
       detailCount++;
-      if (!response.ok) continue;
+      if (!response.ok) { detailFailure = true; continue; }
       const html = await response.text();
       if (source === "opentix") {
         let parsed;
@@ -345,7 +347,7 @@ export async function discoverCatalog(source: CatalogSource, options: {
     const truncated = links.size >= CATALOG_EVENT_CAP || (!sourceEnded && pageCount >= CATALOG_PAGE_CAP);
     const knownPriceCount = events.reduce((sum, event) => sum + event.performances.filter((item) => item.minPrice != null).length, 0);
     const knownCategoryCount = events.filter((event) => event.classificationReason === "source-category").length;
-    return { schemaVersion: CATALOG_SCHEMA_VERSION, generatedAt: now.toISOString(), events, completeness: { source, fetchedAt: now.toISOString(), eventCount: events.length, pageCount, detailCount, stopReason: truncated ? "cap" : "normal-exhaustion", scanState: truncated ? "truncated" : "complete", summaryCount: events.length, knownPriceCount, knownCategoryCount, health: "ok" } };
+    return { schemaVersion: CATALOG_SCHEMA_VERSION, generatedAt: now.toISOString(), events, completeness: { source, fetchedAt: now.toISOString(), eventCount: events.length, pageCount, detailCount, stopReason: truncated ? "cap" : detailFailure ? "partial" : "normal-exhaustion", scanState: detailFailure ? "stale" : truncated ? "truncated" : "complete", summaryCount: events.length, knownPriceCount, knownCategoryCount, health: detailFailure ? "stale" : "ok" } };
   } catch (error) {
     return { schemaVersion: CATALOG_SCHEMA_VERSION, generatedAt: now.toISOString(), events: [], completeness: { source, fetchedAt: now.toISOString(), eventCount: 0, pageCount, detailCount: 0, stopReason: "error", scanState: "stale", health: "stale", error: error instanceof Error ? error.message : "unknown" } };
   }

@@ -9,11 +9,11 @@ export interface ReplayDemo {
   readonly kind: "replay-demo";
   readonly live: false;
   readonly fixtureId: string;
-  readonly frames: readonly ReplayFrame[];
+  readonly frames: readonly [ReplayFrame, ReplayFrame];
   readonly transition: Transition;
 }
 
-const replayFrames: readonly ReplayFrame[] = [
+const replayFrames: readonly [ReplayFrame, ReplayFrame] = [
   { observedAt: "2026-01-01T00:00:00Z", availability: "sold-out" },
   { observedAt: "2026-01-01T00:05:00Z", availability: "available" }
 ];
@@ -40,5 +40,7 @@ export function buildReplayDemo(): ReplayDemo {
 
 export function renderReplayDemo(demo = buildReplayDemo()): string {
   const escape = (value: string) => value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
-  return `<section aria-labelledby="replay-heading"><h2 id="replay-heading">DEMO — sold-out → available replay</h2><p><strong>DEMO</strong>: replayed fixture, not live inventory. No notification sent.</p><p>Fixture <code>${escape(demo.fixtureId)}</code> · ${escape(demo.frames[0]!.availability)} → ${escape(demo.frames[1]!.availability)}</p></section>`;
+  const from = demo.frames[0]?.availability ?? demo.transition.from;
+  const to = demo.frames[1]?.availability ?? demo.transition.to;
+  return `<section aria-labelledby="replay-heading"><h2 id="replay-heading">DEMO — sold-out → available replay</h2><p><strong>DEMO</strong>: replayed fixture, not live inventory. No notification sent.</p><p>Fixture <code>${escape(demo.fixtureId)}</code> · ${escape(from)} → ${escape(to)}</p></section>`;
 }
