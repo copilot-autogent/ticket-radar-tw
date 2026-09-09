@@ -8,7 +8,7 @@ import { writeJsonAtomic } from "./pipeline.js";
 import type { NormalizedEvent } from "./types.js";
 import { discoverUdnPerformance, fetchUdnPerformance } from "./udn.js";
 import { fetchTicketPlus } from "./ticketplus.js";
-import { discoverCatalog, type CatalogState } from "./catalog.js";
+import { discoverCatalog, mergeCatalogState, type CatalogState } from "./catalog.js";
 
 async function loadBuildState(root: string): Promise<{ event: NormalizedEvent | null; state: RuntimeState }> {
   const statePath = resolve(root, "generated/runtime-state.json");
@@ -80,8 +80,8 @@ async function monitor(root = process.cwd()): Promise<void> {
   const discoveredOpentix = await discoverCatalog("opentix", { now });
   const discoveredUdn = await discoverCatalog("udn", { now });
   const catalog = {
-    opentix: discoveredOpentix.completeness.health === "ok" && discoveredOpentix.events.length > 0 ? discoveredOpentix : priorCatalog.opentix,
-    udn: discoveredUdn.completeness.health === "ok" && discoveredUdn.events.length > 0 ? discoveredUdn : priorCatalog.udn
+    opentix: discoveredOpentix.completeness.health === "ok" ? mergeCatalogState(priorCatalog.opentix, discoveredOpentix) : priorCatalog.opentix,
+    udn: discoveredUdn.completeness.health === "ok" ? mergeCatalogState(priorCatalog.udn, discoveredUdn) : priorCatalog.udn
   };
   try {
     const latest = JSON.parse(await readFile(resolve(root, "generated/multi-source-state.json"), "utf8")) as MultiSourceRuntimeState;

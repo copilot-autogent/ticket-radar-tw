@@ -5,6 +5,8 @@ export const CATALOG_EVENT_CAP = 100;
 export const CATALOG_PAGE_CAP = 5;
 export const CATALOG_DETAIL_CAP = 20;
 export const CATALOG_SITEMAP_CAP = 500;
+export const CATALOG_PAGE_SIZE = 20;
+export const CATALOG_MAX_RESPONSE_BYTES = 1_048_576;
 
 export type CatalogSource = "opentix" | "udn";
 export type ClassificationReason = "source-category" | "title-keyword-fallback" | "unknown";
@@ -44,6 +46,8 @@ export interface CatalogEvent {
   firstSeenAt: string;
   catalogFetchedAt: string;
   performances: CatalogPerformance[];
+  detailEnrichedAt?: string;
+  provenance?: "official-listing-summary" | "official-detail-enrichment" | "unknown";
 }
 
 export interface CatalogCompleteness {
@@ -54,6 +58,10 @@ export interface CatalogCompleteness {
   detailCount: number;
   stopReason: "normal-exhaustion" | "cap" | "partial" | "backoff" | "error";
   health: "ok" | "stale" | "error" | "not-run";
+  scanState?: "complete" | "truncated" | "stale";
+  summaryCount?: number;
+  knownPriceCount?: number;
+  knownCategoryCount?: number;
   error?: string;
 }
 
@@ -76,7 +84,7 @@ export function classifyEvent(title: string, sourceCategory: string | undefined)
   return { category: "unknown", classificationReason: "unknown", classificationConfidence: "low" };
 }
 
-function sourceUrl(source: CatalogSource, id: string): string {
+export function sourceUrl(source: CatalogSource, id: string): string {
   return source === "opentix" ? `https://www.opentix.life/event/${id}` : `https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=${id}`;
 }
 
@@ -202,6 +210,43 @@ export function catalogStateMateriallyEqual(a: CatalogState | null, b: CatalogSt
   return JSON.stringify(comparable(a)) === JSON.stringify(comparable(b));
 }
 
+export function mergeCatalogState(previous: CatalogState | null, current: CatalogState): CatalogState {
+  if (!previous || current.completeness.scanState === "stale" || current.completeness.health !== "ok") return previous ?? current;
+  const byId = new Map(previous.events.map((event) => [`${event.source}:${event.eventId}`, event]));
+  for (const observed of current.events) {
+    const key = `${observed.source}:${observed.eventId}`;
+    const prior = byId.get(key);
+    const detailEnrichedAt = observed.detailEnrichedAt ?? prior?.detailEnrichedAt;
+    byId.set(key, {
+      ...(prior ?? observed),
+      ...observed,
+      firstSeenAt: prior?.firstSeenAt ?? observed.firstSeenAt,
+      performances: observed.performances.length ? observed.performances : (prior?.performances ?? []),
+      ...(detailEnrichedAt ? { detailEnrichedAt } : {}),
+      provenance: observed.provenance ?? prior?.provenance ?? "official-listing-summary"
+    });
+  }
+  return { ...current, events: [...byId.values()], completeness: { ...current.completeness, eventCount: byId.size } };
+}
+
+function structuredSummaryLinks(value: unknown, source: CatalogSource): string[] {
+  const items = Array.isArray(value) ? value : value && typeof value === "object"
+    ? Object.values(value as Record<string, unknown>).find(Array.isArray) ?? [] : [];
+  return (items as unknown[]).flatMap((item) => {
+    if (!item || typeof item !== "object") return [];
+    const row = item as Record<string, unknown>;
+    const id = String(row.id ?? row.eventId ?? row.productId ?? row.PRODUCT_ID ?? "").trim();
+    const url = typeof row.url === "string" ? row.url : typeof row.sourceUrl === "string" ? row.sourceUrl : "";
+    if (id) return [sourceUrl(source, id)];
+    if (url && /^https?:\/\//.test(url)) return [url];
+    return [];
+  });
+}
+
+function jsonValue(textValue: string): unknown {
+  try { return JSON.parse(textValue) as unknown; } catch { return null; }
+}
+
 export async function discoverCatalog(source: CatalogSource, options: {
   now?: Date;
   fetchImpl?: typeof fetch;
@@ -209,7 +254,9 @@ export async function discoverCatalog(source: CatalogSource, options: {
 } = {}): Promise<CatalogState> {
   const fetchImpl = options.fetchImpl ?? fetch;
   const now = options.now ?? new Date();
-  const indexUrls = options.indexUrls ?? (source === "opentix" ? ["https://www.opentix.life/"] : ["https://tickets.udnfunlife.com/"]);
+  const indexUrls = options.indexUrls ?? (source === "opentix"
+    ? ["https://www.opentix.life/api/events?sort=upcoming&page=1&pageSize=20"]
+    : ["https://tickets.udnfunlife.com/api/events?sort=upcoming&page=1&pageSize=20"]);
   const links = new Set<string>();
   let pageCount = 0;
   try {
@@ -217,12 +264,21 @@ export async function discoverCatalog(source: CatalogSource, options: {
       const response = await fetchImpl(index, { headers: { accept: "text/html,application/xhtml+xml" }, redirect: "follow" });
       pageCount++;
       if (!response.ok) throw new Error(`http-${response.status}`);
-      for (const link of eventLinks(await response.text(), source)) links.add(link);
+      const body = await response.text();
+      if (body.length > CATALOG_MAX_RESPONSE_BYTES) throw new Error("response-size");
+      const structured = structuredSummaryLinks(jsonValue(body), source);
+      for (const link of (structured.length ? structured : eventLinks(body, source))) links.add(link);
       if (links.size >= CATALOG_EVENT_CAP) break;
     }
-    const events: CatalogEvent[] = [];
+    const urls = deduplicateLinks([...links], source).slice(0, CATALOG_EVENT_CAP);
+    const events: CatalogEvent[] = urls.map((url) => ({
+      schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), sourceUrl: url,
+      title: "Summary-only event", category: "unknown", classificationReason: "unknown", classificationConfidence: "low",
+      firstSeenAt: now.toISOString(), catalogFetchedAt: now.toISOString(), performances: [],
+      provenance: "official-listing-summary"
+    }));
     let detailCount = 0;
-    for (const url of deduplicateLinks([...links], source).slice(0, CATALOG_DETAIL_CAP)) {
+    for (const url of urls.slice(0, CATALOG_DETAIL_CAP)) {
       const response = await fetchImpl(url, { headers: { accept: "text/html,application/xhtml+xml" }, redirect: "follow" });
       detailCount++;
       if (!response.ok) continue;
@@ -233,13 +289,15 @@ export async function discoverCatalog(source: CatalogSource, options: {
           const title = htmlTitle(html).replace(/\s*[—-]\s*OPENTIX.*$/i, "").trim();
           if (!title) continue;
           const classification = classifyEvent(title, undefined);
-          events.push({ schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), sourceUrl: url, title, ...classification, firstSeenAt: now.toISOString(), catalogFetchedAt: now.toISOString(), performances: [] });
+          const event = events.find((item) => item.eventId === eventIdFromUrl(url))!;
+          Object.assign(event, { title, ...classification, detailEnrichedAt: now.toISOString(), provenance: "official-detail-enrichment" });
           continue;
         }
         const classification = classifyEvent(parsed.title, undefined);
         const artist = htmlArtist(html);
         const city = cityFromAddress(parsed.venue.address);
-        events.push({
+        const event = events.find((item) => item.eventId === eventIdFromUrl(url))!;
+        Object.assign(event, {
           schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), sourceUrl: url,
           title: parsed.title, ...(artist ? { artist } : {}), venue: parsed.venue.name, ...(city ? { city } : {}),
           ...classification, firstSeenAt: now.toISOString(), catalogFetchedAt: now.toISOString(),
@@ -248,7 +306,7 @@ export async function discoverCatalog(source: CatalogSource, options: {
             sourceUrl: url, startsAt: item.startsAt, ...(item.endsAt ? { endsAt: item.endsAt } : {}),
             cancelled: false, ...(item.saleOpenAt ? { saleStart: item.saleOpenAt } : {}), ...(item.saleCloseAt ? { saleEnd: item.saleCloseAt } : {}),
             minPrice: item.price.min, maxPrice: item.price.max, currency: "TWD"
-          }))
+          })), detailEnrichedAt: now.toISOString(), provenance: "official-detail-enrichment"
         });
       } else {
         const title = htmlTitle(html);
@@ -265,11 +323,15 @@ export async function discoverCatalog(source: CatalogSource, options: {
         }
         const parsedPages = schedulePages.map((page) => parseUdnCatalogDetailHtml(page.html, page.url, now));
         const parsed = schedulePages.length ? { title, performances: parsedPages.flatMap((page) => page.performances) } : parseUdnCatalogDetailHtml(html, url, now);
-        events.push({ schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), sourceUrl: url, title: parsed.title || title, ...(artist ? { artist } : {}), ...classification, firstSeenAt: now.toISOString(), catalogFetchedAt: now.toISOString(), performances: parsed.performances });
+        const event = events.find((item) => item.eventId === eventIdFromUrl(url))!;
+        Object.assign(event, { title: parsed.title || title, ...(artist ? { artist } : {}), ...classification, performances: parsed.performances, detailEnrichedAt: now.toISOString(), provenance: "official-detail-enrichment" });
       }
     }
-    return { schemaVersion: CATALOG_SCHEMA_VERSION, generatedAt: now.toISOString(), events, completeness: { source, fetchedAt: now.toISOString(), eventCount: events.length, pageCount, detailCount, stopReason: links.size > CATALOG_DETAIL_CAP || events.length >= CATALOG_EVENT_CAP ? "cap" : "normal-exhaustion", health: "ok" } };
+    const truncated = links.size > CATALOG_EVENT_CAP || pageCount >= CATALOG_PAGE_CAP;
+    const knownPriceCount = events.reduce((sum, event) => sum + event.performances.filter((item) => item.minPrice != null).length, 0);
+    const knownCategoryCount = events.filter((event) => event.classificationReason === "source-category").length;
+    return { schemaVersion: CATALOG_SCHEMA_VERSION, generatedAt: now.toISOString(), events, completeness: { source, fetchedAt: now.toISOString(), eventCount: events.length, pageCount, detailCount, stopReason: truncated ? "cap" : "normal-exhaustion", scanState: truncated ? "truncated" : "complete", summaryCount: events.length, knownPriceCount, knownCategoryCount, health: "ok" } };
   } catch (error) {
-    return { schemaVersion: CATALOG_SCHEMA_VERSION, generatedAt: now.toISOString(), events: [], completeness: { source, fetchedAt: now.toISOString(), eventCount: 0, pageCount, detailCount: 0, stopReason: "error", health: "error", error: error instanceof Error ? error.message : "unknown" } };
+    return { schemaVersion: CATALOG_SCHEMA_VERSION, generatedAt: now.toISOString(), events: [], completeness: { source, fetchedAt: now.toISOString(), eventCount: 0, pageCount, detailCount: 0, stopReason: "error", scanState: "stale", health: "stale", error: error instanceof Error ? error.message : "unknown" } };
   }
 }
