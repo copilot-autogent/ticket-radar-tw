@@ -101,8 +101,15 @@ function evidence(label: string, value: string): string {
 function windowFrom(text: string, kind: TicketPlusLotteryRound["windows"][number]["kind"], label: RegExp): { kind: TicketPlusLotteryRound["windows"][number]["kind"]; startAt?: string; endAt?: string; evidenceId: string } | undefined {
   const match = label.exec(text);
   if (!match) return undefined;
-  const segment = text.slice(match.index, match.index + 500);
-  const dates = [...segment.matchAll(/(?:20\d{2}\s*(?:年|\/|-)\s*)?\d{1,2}\s*(?:月|\/|-)\s*\d{1,2}\s*日?\s*(?:\([^)]*\)|（[^）]*）)?\s*\d{1,2}[:：]\d{2}/g)].map((m) => timestamp((m[0]!.match(/^20\d{2}/) ? m[0]! : `2026/${m[0]!}`).replace(/[年月]/g, "-").replace(/日/g, " ").replace(/[()（）][^()（）]*[)）]/g, "")));
+  const segment = (match[0] ?? "").slice(0, 120);
+  const datePattern = /(?:20\d{2}\s*(?:年|\/|-)\s*)?\d{1,2}\s*(?:月|\/|-)\s*\d{1,2}\s*日?\s*(?:\([^)]*\)|（[^）]*）)?\s*\d{1,2}[:：]\d{2}/g;
+  const firstDate = datePattern.exec(segment);
+  const labels = /(?:登記時間|報名時間|登記抽選|結果公布|中選結果|抽選結果|繳費期限|付款期限|付款|一般販售|一般發售|條件一般)/gi;
+  labels.exec(segment);
+  const nextLabel = labels.exec(segment);
+  if (!firstDate || (nextLabel && nextLabel.index < firstDate.index)) return undefined;
+  datePattern.lastIndex = 0;
+  const dates = [firstDate, ...segment.slice(firstDate.index + firstDate[0].length).matchAll(datePattern)].map((m) => timestamp((m[0]!.match(/^20\d{2}/) ? m[0]! : `2026/${m[0]!}`).replace(/[年月]/g, "-").replace(/日/g, " ").replace(/[()（）][^()（）]*[)）]/g, ""))).filter((date): date is string => Boolean(date));
   if (!dates.length) return undefined;
   return { kind, ...(dates[0] ? { startAt: dates[0] } : {}), ...(dates[1] ? { endAt: dates[1] } : {}), evidenceId: evidence(kind, match[0] ?? "") };
 }
@@ -131,8 +138,6 @@ function deriveLotteryState(rounds: TicketPlusLotteryRound[], text: string, now:
   const knownEnds = windows.map((window) => window.endAt ?? window.startAt).filter((value): value is string => Boolean(value));
   if (knownEnds.length && knownEnds.every((value) => Date.parse(value) <= at)) return "ended";
   if (text.includes("登記截止")) return "registration-closed";
-  if (text.includes("付款")) return "payment-window";
-  if (text.includes("一般販售")) return "general-sale-scheduled";
   return "unknown";
 }
 export function parseTicketPlusLotteryHtml(body: string, observedAt = new Date().toISOString(), now = new Date()): TicketPlusLotteryObservation {
@@ -154,7 +159,7 @@ export function parseTicketPlusLotteryHtml(body: string, observedAt = new Date()
   });
   if (!rounds.length) throw new Error("ticket-plus-parse-failure: missing-lottery-windows");
   if (!rounds.some((round) => round.windows.length)) {
-    if (!roundSections(text).some((round) => round.roundId !== "initial")) throw new Error("ticket-plus-parse-failure: missing-lottery-windows");
+    if (!/(?:登記截止|付款|一般販售|一般發售)/i.test(text) && !roundSections(text).some((round) => round.roundId !== "initial")) throw new Error("ticket-plus-parse-failure: missing-lottery-windows");
   }
   const state = deriveLotteryState(rounds, text, now);
   for (const round of rounds) round.state = deriveLotteryState([round], "", now);

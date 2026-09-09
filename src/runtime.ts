@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { OPENTIX_SOURCE, NORMALIZED_SCHEMA_VERSION, MULTI_SOURCE_SCHEMA_VERSION, UDN_EVENT_ID, UDN_PROVIDER, TICKET_PLUS_SOURCE, type HealthCategory, type NormalizedEvent, type NormalizedPerformance, type UdnObservation, type TicketPlusRuntimeState, type TicketPlusOrdinaryObservation, type TicketPlusLotteryObservation } from "./types.js";
+import { OPENTIX_SOURCE, NORMALIZED_SCHEMA_VERSION, MULTI_SOURCE_SCHEMA_VERSION, UDN_EVENT_ID, UDN_PROVIDER, TICKET_PLUS_SOURCE, TICKET_PLUS_ORDINARY_ACTIVITY, TICKET_PLUS_ORDINARY_EVENT, TICKET_PLUS_LOTTERY_ACTIVITY, type HealthCategory, type NormalizedEvent, type NormalizedPerformance, type UdnObservation, type TicketPlusRuntimeState, type TicketPlusOrdinaryObservation, type TicketPlusLotteryObservation } from "./types.js";
 import { backoffMs, isEligible, nextEligibleAt, MIN_INTERVAL_MS, type PollResult } from "./opentix.js";
 import { writeJsonAtomic } from "./pipeline.js";
 
@@ -128,6 +128,51 @@ export function validateMultiSourceState(value: unknown): asserts value is Multi
   if (state.sources.udn.provider !== UDN_PROVIDER || state.sources.udn.eventId !== UDN_EVENT_ID || !state.sources.udn.health || !Array.isArray(state.sources.udn.history)) throw new Error("validation: udn-state");
   if (state.sources.udn.snapshot) validateUdnObservation(state.sources.udn.snapshot);
   if (state.sources.ticketPlus.source !== TICKET_PLUS_SOURCE || !state.sources.ticketPlus.health || !Array.isArray(state.sources.ticketPlus.history) || !Array.isArray(state.sources.ticketPlus.pairings) || !Array.isArray(state.sources.ticketPlus.conflicts)) throw new Error("validation: ticket-plus-state");
+  validateTicketPlusHealth(state.sources.ticketPlus.health);
+  for (const item of state.sources.ticketPlus.history) {
+    if (!item || typeof item !== "object" || !isIso(item.observedAt) || typeof item.ordinary !== "boolean" || typeof item.lottery !== "boolean") throw new Error("validation: ticket-plus-history");
+  }
+  if (state.sources.ticketPlus.ordinary) validateTicketPlusOrdinary(state.sources.ticketPlus.ordinary);
+  if (state.sources.ticketPlus.lottery) validateTicketPlusLottery(state.sources.ticketPlus.lottery);
+  for (const pairing of state.sources.ticketPlus.pairings) {
+    if (!pairing || typeof pairing !== "object" || pairing.lotteryActivityId !== TICKET_PLUS_LOTTERY_ACTIVITY || pairing.ordinaryActivityId !== TICKET_PLUS_ORDINARY_ACTIVITY || !["high", "medium", "low"].includes(pairing.confidence) || !Array.isArray(pairing.evidence) || pairing.evidence.some((item) => typeof item !== "string" || !item.trim()) || typeof pairing.automationEligible !== "boolean") throw new Error("validation: ticket-plus-pairing");
+  }
+  for (const conflict of state.sources.ticketPlus.conflicts) {
+    if (!conflict || typeof conflict !== "object" || !conflict.id || !conflict.field || typeof conflict.previous !== "string" || typeof conflict.current !== "string" || !conflict.evidenceId || typeof conflict.correction !== "boolean" || !isIso(conflict.observedAt)) throw new Error("validation: ticket-plus-conflict");
+  }
+}
+
+const ticketPlusStates = ["announced", "sale-scheduled", "on-sale", "sale-closed", "ended", "unknown"] as const;
+const lotteryStates = ["registration-scheduled", "registration-open", "registration-closed", "results-pending", "payment-window", "general-sale-scheduled", "ended", "unknown"] as const;
+const lotteryKinds = ["registration", "results", "payment", "general-sale"] as const;
+function isIso(value: unknown): value is string { return typeof value === "string" && /^\d{4}-\d\d-\d\dT\d\d:\d\d(?::\d\d)?(?:\.\d+)?(?:Z|[+-]\d\d:\d\d)$/.test(value) && Number.isFinite(Date.parse(value)); }
+function isUrl(value: unknown): value is string { return typeof value === "string" && /^https:\/\//.test(value); }
+function validateTicketPlusHealth(value: unknown): void {
+  if (!value || typeof value !== "object") throw new Error("validation: ticket-plus-health");
+  const health = value as TicketPlusRuntimeState["health"];
+  if (!["ok", "stale", "error", "not-run"].includes(health.category) || (health.error !== undefined && (typeof health.error !== "string" || health.error.length > 500)) || (health.lastAttemptAt !== null && !isIso(health.lastAttemptAt)) || (health.lastSuccessfulAt !== null && !isIso(health.lastSuccessfulAt))) throw new Error("validation: ticket-plus-health");
+}
+function validateTicketPlusOrdinary(value: unknown): asserts value is TicketPlusOrdinaryObservation {
+  if (!value || typeof value !== "object") throw new Error("validation: ticket-plus-ordinary");
+  const observation = value as TicketPlusOrdinaryObservation;
+  if (observation.source !== TICKET_PLUS_SOURCE || observation.activityId !== TICKET_PLUS_ORDINARY_ACTIVITY || observation.eventId !== TICKET_PLUS_ORDINARY_EVENT || !observation.title || !isIso(observation.observedAt) || !observation.parserVersion || !isUrl(observation.sourceUrl) || !Array.isArray(observation.sessions) || observation.sessions.length === 0) throw new Error("validation: ticket-plus-ordinary");
+  for (const session of observation.sessions) {
+    if (!session || typeof session !== "object" || session.activityId !== TICKET_PLUS_ORDINARY_ACTIVITY || session.eventId !== TICKET_PLUS_ORDINARY_EVENT || !session.sessionId || typeof session.status !== "string" || !ticketPlusStates.includes(session.lifecycle) || !isUrl(session.sourceUrl)) throw new Error("validation: ticket-plus-session");
+    const dates = [session.exposureStartAt, session.exposureEndAt, session.saleStartAt, session.saleEndAt, session.startsAt, session.endsAt];
+    if (dates.some((date) => date !== undefined && !isIso(date))) throw new Error("validation: ticket-plus-session-date");
+    if (session.saleStartAt && session.saleEndAt && Date.parse(session.saleStartAt) > Date.parse(session.saleEndAt)) throw new Error("validation: ticket-plus-session-window");
+  }
+}
+function validateTicketPlusLottery(value: unknown): asserts value is TicketPlusLotteryObservation {
+  if (!value || typeof value !== "object") throw new Error("validation: ticket-plus-lottery");
+  const observation = value as TicketPlusLotteryObservation;
+  if (observation.source !== TICKET_PLUS_SOURCE || observation.activityId !== TICKET_PLUS_LOTTERY_ACTIVITY || !observation.title || !isIso(observation.observedAt) || !observation.parseVersion || !isUrl(observation.sourceUrl) || !lotteryStates.includes(observation.currentState) || !Array.isArray(observation.rounds) || observation.rounds.length === 0 || !Array.isArray(observation.evidenceIds) || observation.evidenceIds.some((item) => typeof item !== "string" || !item.trim())) throw new Error("validation: ticket-plus-lottery");
+  for (const round of observation.rounds) {
+    if (!round || typeof round !== "object" || !round.roundId || !["initial", "second", "other"].includes(round.kind) || !lotteryStates.includes(round.state) || !Number.isInteger(round.version) || round.version < 1 || !Array.isArray(round.windows)) throw new Error("validation: ticket-plus-round");
+    for (const window of round.windows) {
+      if (!window || typeof window !== "object" || !lotteryKinds.includes(window.kind) || !Number.isInteger(window.version) || window.version < 1 || !window.evidenceId || typeof window.evidenceId !== "string" || (window.startAt === undefined && window.endAt === undefined) || (window.startAt !== undefined && !isIso(window.startAt)) || (window.endAt !== undefined && !isIso(window.endAt)) || (window.startAt && window.endAt && Date.parse(window.startAt) > Date.parse(window.endAt))) throw new Error("validation: ticket-plus-window");
+    }
+  }
 }
 export function applyTicketPlusPoll(input: TicketPlusRuntimeState, result: { ordinary?: TicketPlusOrdinaryObservation; lottery?: TicketPlusLotteryObservation; errors: string[] }, now = new Date()): TicketPlusRuntimeState {
   const state = structuredClone(input); const attempt = now.toISOString(); state.lastAttemptAt = attempt; state.health.lastAttemptAt = attempt;

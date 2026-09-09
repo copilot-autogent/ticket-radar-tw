@@ -38,6 +38,16 @@ describe("Ticket Plus lifecycle adapter", () => {
     expect(result.rounds[1]?.windows).toEqual([]);
     expect(result.rounds[1]?.state).toBe("unknown");
   });
+  it("does not let undated historical prose claim an active lifecycle", () => {
+    const result = parseTicketPlusLotteryHtml("<main>付款已完成。一般販售資訊請見官網。</main>", undefined, new Date("2026-09-04T00:00:00Z"));
+    expect(result.currentState).toBe("unknown");
+  });
+  it("does not leak dates from adjacent labeled sections or rounds", () => {
+    const result = parseTicketPlusLotteryHtml("<main>第一輪 付款：請留意公告；一般販售：2026/09/20 12:00。第二輪 付款：2026/10/01 12:00。</main>", undefined, new Date("2026-09-04T00:00:00Z"));
+    expect(result.rounds[0]?.windows.find((item) => item.kind === "payment")).toBeUndefined();
+    expect(result.rounds[0]?.windows.find((item) => item.kind === "general-sale")?.startAt).toContain("2026-09-20");
+    expect(result.rounds[1]?.windows.find((item) => item.kind === "payment")?.startAt).toContain("2026-10-01");
+  });
   it.each([
     ["historical", "2026-09-04T00:00:00Z", "results-pending"],
     ["current", "2026-09-02T00:00:00Z", "registration-open"],
@@ -67,5 +77,13 @@ describe("Ticket Plus lifecycle adapter", () => {
     expect(state.health.category).toBe("error");
     expect(migrated.sources.opentix).toEqual(legacy);
     expect(migrated.sources.ticketPlus.ordinary).toBeNull();
+  });
+  it("rejects malformed persisted Ticket Plus observations before dashboard rendering", () => {
+    const state = migrateRuntimeState(emptyState());
+    state.sources.ticketPlus.ordinary = { ...parseTicketPlusOrdinaryJson(ordinary), sessions: [{ ...parseTicketPlusOrdinaryJson(ordinary).sessions[0]!, saleStartAt: "not-a-date" }] };
+    expect(() => validateMultiSourceState(state)).toThrow("ticket-plus-session-date");
+    state.sources.ticketPlus.ordinary = null;
+    state.sources.ticketPlus.lottery = { ...parseTicketPlusLotteryHtml(lottery), rounds: [{ ...parseTicketPlusLotteryHtml(lottery).rounds[0]!, windows: [{ ...parseTicketPlusLotteryHtml(lottery).rounds[0]!.windows[0]!, evidenceId: "" }] }] };
+    expect(() => validateMultiSourceState(state)).toThrow("ticket-plus-window");
   });
 });
