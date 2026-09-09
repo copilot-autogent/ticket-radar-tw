@@ -78,7 +78,7 @@ export function validateFixture(value: unknown): Fixture {
     if (tier.performanceId !== performanceId) fail(`$.tiers[${index}].performanceId`, "must match performance");
     stringValue(tier.tierId, `$.tiers[${index}].tierId`);
     stringValue(tier.label, `$.tiers[${index}].label`);
-    if (typeof tier.price !== "number" || tier.price < 0) fail(`$.tiers[${index}].price`, "expected non-negative number");
+    if (typeof tier.price !== "number" || !Number.isFinite(tier.price) || tier.price < 0) fail(`$.tiers[${index}].price`, "expected finite non-negative number");
     return tier;
   });
   if (!fixture.lifecycle || typeof fixture.lifecycle !== "object") fail("$.lifecycle", "expected object");
@@ -87,10 +87,12 @@ export function validateFixture(value: unknown): Fixture {
   if (lifecycle.source !== source || lifecycle.performanceId !== performanceId) fail("$.lifecycle", "identity must match performance");
   timestamp(lifecycle.salesOpenAt, "$.lifecycle.salesOpenAt");
   timestamp(lifecycle.salesCloseAt, "$.lifecycle.salesCloseAt");
+  if (Date.parse(String(lifecycle.salesCloseAt)) < Date.parse(String(lifecycle.salesOpenAt))) fail("$.lifecycle", "salesCloseAt must not precede salesOpenAt");
   const observations = fixture.observations.map((item, index) => snapshot(item, `$.observations[${index}]`));
   for (const [index, item] of observations.entries()) {
     if (item.source !== source) fail(`$.observations[${index}].source`, "must match performance source");
     if (item.performanceId !== performanceId) fail(`$.observations[${index}].performanceId`, "must match performance");
+    if (!tiers.some((tier) => tier.tierId === item.tierId)) fail(`$.observations[${index}].tierId`, "must reference a known tier");
   }
   if (!Array.isArray(fixture.watchRules)) fail("$.watchRules", "expected array");
   const watchRules = fixture.watchRules.map((item, index) => {
@@ -130,6 +132,10 @@ function isPositive(value: Availability): boolean {
   return value === "available";
 }
 
+function isSoldOut(value: Availability): boolean {
+  return value === "sold-out" || value === "zero";
+}
+
 export function processFixture(fixture: Fixture): PipelineOutput {
   const state = new Map<string, AvailabilitySnapshot>();
   const history: AvailabilitySnapshot[] = [];
@@ -142,7 +148,7 @@ export function processFixture(fixture: Fixture): PipelineOutput {
     history.push(observation);
     if (history.length > MAX_HISTORY) history.splice(0, history.length - MAX_HISTORY);
     if (!previous || previous.observationVersion === observation.observationVersion) continue;
-    if (!watched.has(itemKey) || isPositive(previous.availability) || !isPositive(observation.availability)) continue;
+    if (!watched.has(itemKey) || !isSoldOut(previous.availability) || !isPositive(observation.availability)) continue;
     const transition: Transition = {
       schemaVersion: SCHEMA_VERSION,
       source: observation.source,

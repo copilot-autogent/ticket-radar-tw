@@ -11,8 +11,8 @@ export async function renderDashboard(root: string, fixture: Fixture, output: Pi
   const transition = output.transitions[0];
   const marker = transition?.idempotencyKey ?? "no-transition";
   const title = escapeHtml(fixture.event.title);
-  const transitionText = transition
-    ? `${escapeHtml(transition.tierId)} changed from ${escapeHtml(transition.from)} to ${escapeHtml(transition.to)}`
+  const transitionText = output.transitions.length
+    ? output.transitions.map((item) => `${escapeHtml(item.tierId)} changed from ${escapeHtml(item.from)} to ${escapeHtml(item.to)}`).join(" · ")
     : "No new transitions";
   const html = `<!doctype html>
 <html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
