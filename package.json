@@ -8,7 +8,9 @@
     "lint": "eslint .",
     "build": "tsc && node dist/cli.js build",
     "test": "vitest run",
-    "test:coverage": "vitest run --coverage"
+    "test:coverage": "vitest run --coverage",
+    "monitor": "npm run build:js -- monitor",
+    "build:js": "tsc"
   },
   "devDependencies": {
     "@eslint/js": "^9.20.0",

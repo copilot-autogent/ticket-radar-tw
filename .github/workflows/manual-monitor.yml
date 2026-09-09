@@ -1,16 +1,50 @@
-name: Manual fixture monitor
+name: OPENTIX monitor
 on:
+  schedule:
+    - cron: "*/30 * * * *"
   workflow_dispatch:
+    inputs:
+      threshold:
+        description: "Availability threshold (positive remaining tickets)"
+        required: false
+        default: "1"
 permissions:
-  contents: read
+  contents: write
+  issues: write
+concurrency:
+  group: opentix-monitor
+  cancel-in-progress: false
 jobs:
-  fixture:
+  monitor:
     runs-on: ubuntu-latest
+    timeout-minutes: 10
     steps:
       - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0
       - uses: actions/setup-node@v4
         with:
           node-version: 22
           cache: npm
       - run: npm ci
-      - run: npm run build
+      - name: Poll public OPENTIX page
+        env:
+          AVAILABILITY_THRESHOLD: ${{ inputs.threshold || '1' }}
+          OPENTIX_ISSUE_NUMBER: "3"
+          GITHUB_TOKEN: ${{ github.token }}
+        run: npm run monitor
+      - name: Commit durable state
+        run: |
+          git add generated public
+          if git diff --cached --quiet; then exit 0; fi
+          git stash push --include-untracked -m "monitor state before rebase"
+          git fetch origin
+          git rebase "origin/${GITHUB_REF_NAME}"
+          git stash apply
+          git add generated public
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git commit -m "chore: update OPENTIX monitor state" -m "Co-authored-by: Copilot <223556219+Copilot@users.noreply.github.com>"
+          git stash drop
+          for attempt in 1 2 3; do git push origin "HEAD:${GITHUB_REF_NAME}" && exit 0; git fetch origin && git rebase "origin/${GITHUB_REF_NAME}"; done
+          exit 1

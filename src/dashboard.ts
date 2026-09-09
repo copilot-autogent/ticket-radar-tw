@@ -1,28 +1,13 @@
 import { resolve } from "node:path";
-import type { Fixture, PipelineOutput } from "./types.js";
+import type { NormalizedEvent } from "./types.js";
+import type { RuntimeState } from "./runtime.js";
 import { writeJsonAtomic, writeTextAtomic } from "./pipeline.js";
-
-function escapeHtml(value: string): string {
-  return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
-}
-
-export async function renderDashboard(root: string, fixture: Fixture, output: PipelineOutput): Promise<void> {
-  const path = resolve(root, "public/index.html");
-  const transition = output.transitions[0];
-  const marker = transition?.idempotencyKey ?? "no-transition";
-  const title = escapeHtml(fixture.event.title);
-  const transitionText = output.transitions.length
-    ? output.transitions.map((item) => `${escapeHtml(item.tierId)} changed from ${escapeHtml(item.from)} to ${escapeHtml(item.to)}`).join(" · ")
-    : "No new transitions";
-  const html = `<!doctype html>
-<html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
-<base href="/ticket-radar-tw/"><title>Ticket Radar TW</title><style>
-:root{font-family:system-ui,sans-serif;color:#172033;background:#f5f7fb}body{margin:0}main{max-width: seventyrem;max-width:70rem;margin:auto;padding:1rem}header,section{background:#fff;border:1px solid #dce2ee;border-radius:.75rem;padding:1rem;margin-block:1rem}h1{font-size:clamp(1.6rem,5vw,2.5rem);margin:.2rem 0}.badge{display:inline-block;background:#dff7e8;color:#146c38;border-radius:99px;padding:.3rem .65rem;font-weight:700}ul{padding-left:1.2rem}li{margin:.7rem 0;overflow-wrap:anywhere}@media(max-width:40rem){main{padding:.6rem}header,section{margin-block:.6rem;padding:.8rem}}
-</style></head><body><main><header><p class="badge">Fixture-backed monitor</p><h1>Ticket Radar TW</h1><p>Normalized public performance availability for Taiwan.</p></header>
-<section aria-labelledby="event"><h2 id="event">${title}</h2><p>Deterministic transition evidence from the checked-in fixture.</p>
-<ul><li data-transition-marker="${escapeHtml(marker)}">${transitionText}</li></ul></section>
-<section><h2>Scope</h2><p>No live adapters, purchasing, reservation, login, CAPTCHA bypass, or queue bypass are included in this scaffold.</p></section>
-</main></body></html>`;
-  await writeTextAtomic(path, html);
-  await writeJsonAtomic(resolve(root, "public/data/dashboard.json"), { fixture: fixture.event, transitions: output.transitions });
+function escapeHtml(value: string): string { return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;"); }
+function display(value: string | number | null | undefined): string { return value === null || value === undefined ? "unknown" : escapeHtml(String(value)); }
+export async function renderLiveDashboard(root: string, event: NormalizedEvent | null, state: RuntimeState): Promise<void> {
+  const title = escapeHtml(event?.title ?? state.snapshot?.title ?? "OPENTIX monitor"); const performances = event?.performances ?? state.snapshot?.performances ?? [];
+  const rows = performances.map((item) => `<tr><td>${display(item.startsAt)}</td><td>${escapeHtml(item.lifecycle)}</td><td>${display(item.remaining)}</td><td>${display(item.price.min)}–${display(item.price.max)} TWD</td></tr>`).join("");
+  const html = `<!doctype html><html lang="zh-Hant"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><base href="/ticket-radar-tw/"><title>Ticket Radar TW — OPENTIX</title><style>:root{font-family:system-ui,sans-serif;color:#172033;background:#f5f7fb}body{margin:0}main{max-width:70rem;margin:auto;padding:1rem}header,section{background:#fff;border:1px solid #dce2ee;border-radius:.75rem;padding:1rem;margin-block:1rem}h1{font-size:clamp(1.5rem,5vw,2.5rem);margin:.2rem 0}a{overflow-wrap:anywhere}table{border-collapse:collapse;width:100%;display:block;overflow-x:auto}th,td{border-bottom:1px solid #dce2ee;padding:.55rem;text-align:left;white-space:nowrap}.health{font-weight:700;color:${state.health.category === "ok" ? "#146c38" : "#8a3b12"}}ul{padding-left:1.2rem}@media(max-width:40rem){main{padding:.6rem}header,section{margin-block:.6rem;padding:.8rem}}</style></head><body><main><header><p class="health">Health: ${escapeHtml(state.health.category)}</p><h1>${title}</h1><p>Public OPENTIX data · schema ${state.snapshot?.parserVersion ?? "not observed"}</p><p><a href="${escapeHtml(event?.source ?? state.source)}">Source event page</a></p></header><section><h2>Freshness</h2><ul><li>Last attempt: ${display(state.lastAttemptAt)}</li><li>Last successful: ${display(state.lastSuccessfulAt)}</li><li>Retained data: ${display(state.retainedDataAt)}</li><li>Next eligible: ${display(state.nextEligibleAt)}</li><li>Error category: ${display(state.health.error)}</li></ul></section><section><h2>Performances</h2><p>Venue: ${escapeHtml(event?.venue.name ?? state.snapshot?.venue.name ?? "unknown")} · ${escapeHtml(event?.venue.timeZone ?? "Asia/Taipei")} · Aggregate remaining: ${display(event?.remainingTotal ?? state.snapshot?.remainingTotal)}</p><table><thead><tr><th>Starts (Asia/Taipei)</th><th>Lifecycle</th><th>Remaining</th><th>Price</th></tr></thead><tbody>${rows || "<tr><td colspan=4>No validated observation; retained data is not available.</td></tr>"}</tbody></table></section><section><h2>Transition history</h2><ul>${state.transitions.slice(-20).map((item) => `<li>${escapeHtml(item.kind)} · ${escapeHtml(item.performanceId)} · ${display(item.from)} → ${display(item.to)} · ${escapeHtml(item.observedAt)}</li>`).join("") || "<li>No actionable transitions.</li>"}</ul></section></main></body></html>`;
+  await writeTextAtomic(resolve(root, "public/index.html"), html);
+  await writeJsonAtomic(resolve(root, "public/data/dashboard.json"), { source: state.source, parserVersion: state.snapshot?.parserVersion ?? null, event: event ?? state.snapshot, health: state.health, lastAttemptAt: state.lastAttemptAt, lastSuccessfulAt: state.lastSuccessfulAt, retainedDataAt: state.retainedDataAt, transitions: state.transitions.slice(-20) });
 }

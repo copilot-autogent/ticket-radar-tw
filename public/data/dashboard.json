@@ -1,22 +1,580 @@
 {
-  "fixture": {
-    "schemaVersion": 1,
-    "source": "fixture",
-    "upstreamEventId": "fixture-event-001",
-    "title": "Taipei <img src=x onerror=alert(1)> Showcase",
-    "venue": "Taipei Arena"
+  "source": "https://www.opentix.life/event/2054406826574860289",
+  "parserVersion": "opentix-jsonld-v1",
+  "event": {
+    "schemaVersion": 2,
+    "source": "https://www.opentix.life/event/2054406826574860289",
+    "eventId": "2054406826574860289",
+    "title": "C MUSICAL 韓國授權音樂劇《我的遺願清單》",
+    "venue": {
+      "name": "西門紅樓二樓劇場",
+      "address": "萬華區成都路10號",
+      "timeZone": "Asia/Taipei"
+    },
+    "performances": [
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823252089376769",
+        "startsAt": "2026-09-09T19:30:00+08:00",
+        "endsAt": "2026-09-09T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-05-25T13:30:00+08:00",
+        "saleCloseAt": "2026-09-09T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 120
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823253292605440",
+        "startsAt": "2026-09-10T19:30:00+08:00",
+        "endsAt": "2026-09-10T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-05-25T13:30:00+08:00",
+        "saleCloseAt": "2026-09-10T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 68
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823253309919233",
+        "startsAt": "2026-09-11T14:30:00+08:00",
+        "endsAt": "2026-09-11T16:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-05-25T13:30:00+08:00",
+        "saleCloseAt": "2026-09-11T16:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 118
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823253304532992",
+        "startsAt": "2026-09-11T19:30:00+08:00",
+        "endsAt": "2026-09-11T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-05-25T13:30:00+08:00",
+        "saleCloseAt": "2026-09-11T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 69
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823253300338688",
+        "startsAt": "2026-09-12T14:30:00+08:00",
+        "endsAt": "2026-09-12T16:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-05-25T13:30:00+08:00",
+        "saleCloseAt": "2026-09-12T16:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 40
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823253296144384",
+        "startsAt": "2026-09-12T19:30:00+08:00",
+        "endsAt": "2026-09-12T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-05-25T13:30:00+08:00",
+        "saleCloseAt": "2026-09-12T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 46
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823253290360832",
+        "startsAt": "2026-09-13T14:30:00+08:00",
+        "endsAt": "2026-09-13T16:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-05-25T13:30:00+08:00",
+        "saleCloseAt": "2026-09-13T16:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 74
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823259573428225",
+        "startsAt": "2026-09-13T19:30:00+08:00",
+        "endsAt": "2026-09-13T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-05-25T13:30:00+08:00",
+        "saleCloseAt": "2026-09-13T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 34
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823260804603904",
+        "startsAt": "2026-09-16T14:30:00+08:00",
+        "endsAt": "2026-09-16T16:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-16T16:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 62
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823260848381952",
+        "startsAt": "2026-09-16T19:30:00+08:00",
+        "endsAt": "2026-09-16T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-16T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 44
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823260850487296",
+        "startsAt": "2026-09-17T19:30:00+08:00",
+        "endsAt": "2026-09-17T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-17T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 188
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823260850741248",
+        "startsAt": "2026-09-18T14:30:00+08:00",
+        "endsAt": "2026-09-18T16:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-18T16:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 76
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823260852576256",
+        "startsAt": "2026-09-18T19:30:00+08:00",
+        "endsAt": "2026-09-18T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-18T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 21
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823260830306304",
+        "startsAt": "2026-09-19T14:30:00+08:00",
+        "endsAt": "2026-09-19T16:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-19T16:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 141
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2059098706303377409",
+        "startsAt": "2026-09-19T19:30:00+08:00",
+        "endsAt": "2026-09-19T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-19T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 81
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2059098708010459136",
+        "startsAt": "2026-09-20T14:30:00+08:00",
+        "endsAt": "2026-09-20T16:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-20T16:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 192
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2059098708012818432",
+        "startsAt": "2026-09-20T19:30:00+08:00",
+        "endsAt": "2026-09-20T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-20T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 106
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2059098708014768128",
+        "startsAt": "2026-09-23T14:30:00+08:00",
+        "endsAt": "2026-09-23T16:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-23T16:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 23
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2059098708010459137",
+        "startsAt": "2026-09-23T19:30:00+08:00",
+        "endsAt": "2026-09-23T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-23T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 160
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2059098707958292480",
+        "startsAt": "2026-09-24T19:30:00+08:00",
+        "endsAt": "2026-09-24T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-24T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 88
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2059098708000235520",
+        "startsAt": "2026-09-25T14:30:00+08:00",
+        "endsAt": "2026-09-25T16:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-25T16:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 43
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823266488422401",
+        "startsAt": "2026-09-25T19:30:00+08:00",
+        "endsAt": "2026-09-25T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-25T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 194
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823267978813440",
+        "startsAt": "2026-09-26T14:30:00+08:00",
+        "endsAt": "2026-09-26T16:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-26T16:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 107
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823267972415488",
+        "startsAt": "2026-09-26T19:30:00+08:00",
+        "endsAt": "2026-09-26T21:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-26T21:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 175
+      },
+      {
+        "schemaVersion": 2,
+        "source": "https://www.opentix.life/event/2054406826574860289",
+        "eventId": "2054406826574860289",
+        "performanceId": "2058823267981058049",
+        "startsAt": "2026-09-27T14:30:00+08:00",
+        "endsAt": "2026-09-27T16:10:00+08:00",
+        "venue": {
+          "name": "西門紅樓二樓劇場",
+          "address": "萬華區成都路10號",
+          "timeZone": "Asia/Taipei"
+        },
+        "lifecycle": "on-sale",
+        "saleOpenAt": "2026-06-29T20:00:00+08:00",
+        "saleCloseAt": "2026-09-27T16:10:00+08:00",
+        "price": {
+          "currency": "TWD",
+          "min": 1200,
+          "max": 2200
+        },
+        "remaining": 65
+      }
+    ],
+    "remainingTotal": 2335,
+    "observedAt": "2026-09-09T01:45:00Z",
+    "parserVersion": "opentix-jsonld-v1"
   },
-  "transitions": [
-    {
-      "schemaVersion": 1,
-      "source": "fixture",
-      "performanceId": "fixture-performance-001",
-      "tierId": "tier-standard",
-      "from": "sold-out",
-      "to": "available",
-      "observedAt": "2026-09-09T08:05:00+08:00",
-      "observationVersion": 2,
-      "idempotencyKey": "fixture-performance-001:tier-standard:sold-out:available:v2"
-    }
-  ]
+  "health": {
+    "category": "ok",
+    "lastAttemptAt": "2026-09-09T01:45:00.000Z",
+    "lastSuccessfulAt": "2026-09-09T01:45:00.000Z",
+    "nextEligibleAt": "2026-09-09T02:15:00.000Z"
+  },
+  "lastAttemptAt": "2026-09-09T01:45:00.000Z",
+  "lastSuccessfulAt": "2026-09-09T01:45:00.000Z",
+  "retainedDataAt": "2026-09-09T01:45:00Z",
+  "transitions": []
 }
