@@ -573,6 +573,18 @@
     "lastSuccessfulAt": "2026-09-09T02:18:42.437Z",
     "nextEligibleAt": "2026-09-09T02:48:42.437Z"
   },
+  "history": [
+    {
+      "observedAt": "2026-09-09T01:45:00Z",
+      "performanceCount": 25,
+      "totalRemaining": 2335
+    },
+    {
+      "observedAt": "2026-09-09T02:18:42.437Z",
+      "performanceCount": 25,
+      "totalRemaining": 2334
+    }
+  ],
   "lastAttemptAt": "2026-09-09T02:18:42.437Z",
   "lastSuccessfulAt": "2026-09-09T02:18:42.437Z",
   "retainedDataAt": "2026-09-09T02:18:42.437Z",

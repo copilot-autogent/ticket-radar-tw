@@ -38,5 +38,5 @@ npm run build
 npm run test:coverage
 ```
 
-`npm run monitor` performs one live public poll. `npm run build` regenerates deterministic committed
-fixture data and the dashboard.
+`npm run monitor` performs one live public poll. `npm run build` regenerates the Pages artifact from the
+validated committed runtime state; it uses the fixture only when that state is absent.
