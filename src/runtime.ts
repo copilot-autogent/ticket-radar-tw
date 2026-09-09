@@ -110,6 +110,16 @@ export interface MultiSourceRuntimeState {
   schemaVersion: typeof MULTI_SOURCE_SCHEMA_VERSION;
   sources: { opentix: RuntimeState; udn: UdnRuntimeState; ticketPlus: TicketPlusRuntimeState };
 }
+/** Merge generated output without allowing a stale checkout to resurrect quarantined source rows. */
+export function mergeMultiSourceState(authoritative: MultiSourceRuntimeState, candidate: MultiSourceRuntimeState): MultiSourceRuntimeState {
+  validateMultiSourceState(authoritative);
+  validateMultiSourceState(candidate);
+  const authoritativeAttempt = Date.parse(authoritative.sources.ticketPlus.lastAttemptAt ?? "1970-01-01T00:00:00Z");
+  const candidateAttempt = Date.parse(candidate.sources.ticketPlus.lastAttemptAt ?? "1970-01-01T00:00:00Z");
+  return candidateAttempt >= authoritativeAttempt
+    ? candidate
+    : { ...candidate, sources: { ...candidate.sources, ticketPlus: structuredClone(authoritative.sources.ticketPlus) } };
+}
 export function emptyUdnState(): UdnRuntimeState {
   return { provider: UDN_PROVIDER, eventId: UDN_EVENT_ID, snapshot: null, history: [], health: { category: "not-run", lastAttemptAt: null, lastSuccessfulAt: null }, lastAttemptAt: null, lastSuccessfulAt: null };
 }
