@@ -36,6 +36,7 @@ function catalogMarkup(catalog: { opentix: CatalogState | null; udn: CatalogStat
         cities.forEach((city) => { const option = document.createElement("option"); option.value = city; option.textContent = city; $("catalog-city").append(option); });
         const now = Date.now(), in14 = now + 14 * 86400000;
         const date = (v) => v ? Date.parse(v) : NaN;
+        const esc = (value) => String(value ?? "").replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;").replaceAll('"',"&quot;").replaceAll("'","&#39;");
         function render() {
           const query = $("catalog-search").value.trim().toLocaleLowerCase(), max = Number($("catalog-max-price").value), includeUnknown = $("catalog-unknown-price").checked;
           const from = $("catalog-from").value ? Date.parse($("catalog-from").value + "T00:00:00+08:00") : -Infinity, to = $("catalog-to").value ? Date.parse($("catalog-to").value + "T23:59:59+08:00") : Infinity;
@@ -49,7 +50,7 @@ function catalogMarkup(catalog: { opentix: CatalogState | null; udn: CatalogStat
             if (state.view === "sale-soon" && !saleStarts.some((d) => d > now && d <= in14)) return false;
             if (state.view === "watched" && !data.watchedIds.includes(event.source + ":" + event.eventId)) return false;
             if (!dates.some((d) => d >= from && d <= to) && (from !== -Infinity || to !== Infinity)) return false;
-            if ($("catalog-max-price").value && !prices.some((p) => p <= max) && !(includeUnknown && performances.some((p) => p.maxPrice == null))) return false;
+            if ($("catalog-max-price").value && !prices.some((p) => p <= max) && !(includeUnknown && performances.some((p) => p.minPrice == null || p.maxPrice == null))) return false;
             return true;
           }).sort((a,b) => {
             const ad = Math.min(...a.performances.map((p) => date(p.startsAt)).filter(Number.isFinite), Infinity), bd = Math.min(...b.performances.map((p) => date(p.startsAt)).filter(Number.isFinite), Infinity);
@@ -58,7 +59,7 @@ function catalogMarkup(catalog: { opentix: CatalogState | null; udn: CatalogStat
           $("catalog-count").textContent = rows.length + " events shown";
           $("catalog-results").innerHTML = rows.length ? "<table><caption>Catalog results</caption><thead><tr><th>Platform</th><th>Event</th><th>Category</th><th>Performances</th><th>Dates / prices</th><th>Watch</th></tr></thead><tbody>" + rows.map((e) => {
             const request = "https://github.com/copilot-autogent/ticket-radar-tw/issues/new?labels=watch-request&title=" + encodeURIComponent("Watch request: " + e.title) + "&body=" + encodeURIComponent("source=" + e.source + "\\neventId=" + e.eventId + "\\nurl=" + e.sourceUrl + "\\nManual maintainer validation and commit required.");
-            return "<tr><td>" + e.source + "</td><td><a href='" + e.sourceUrl + "'>" + e.title + "</a></td><td>" + e.category + "</td><td>" + e.performances.length + "</td><td>" + (e.performances.length ? e.performances.map((p) => (p.startsAt || "date unknown") + " · " + (p.minPrice == null ? "price unknown" : p.minPrice + "–" + p.maxPrice + " TWD")).join("<br>") : "Details incomplete") + "</td><td><a href='" + request + "'>Request watch</a></td></tr>";
+            return "<tr><td>" + esc(e.source) + "</td><td><a href='" + esc(e.sourceUrl) + "'>" + esc(e.title) + "</a></td><td>" + esc(e.category) + "</td><td>" + e.performances.length + "</td><td>" + (e.performances.length ? e.performances.map((p) => esc((p.startsAt || "date unknown") + " · " + (p.minPrice == null ? "price unknown" : p.maxPrice == null ? p.minPrice + "–unknown TWD" : p.minPrice + "–" + p.maxPrice + " TWD"))).join("<br>") : "Details incomplete") + "</td><td><a href='" + esc(request) + "'>Request watch</a></td></tr>";
           }).join("") + "</tbody></table>" : "<p>No events match these filters.</p>";
         }
         document.querySelectorAll("[data-view]").forEach((button) => button.addEventListener("click", () => { state.view = button.dataset.view; document.querySelectorAll("[data-view]").forEach((b) => b.setAttribute("aria-pressed", String(b === button))); render(); }));

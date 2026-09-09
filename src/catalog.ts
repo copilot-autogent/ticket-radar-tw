@@ -91,6 +91,9 @@ function htmlTitle(html: string): string {
   return (/<meta[^>]+(?:property|name)=["']og:title["'][^>]+content=["']([^"']+)/i.exec(html)?.[1]
     ?? /<title[^>]*>([^<]+)/i.exec(html)?.[1] ?? "").replace(/\s+/g, " ").trim();
 }
+function htmlArtist(html: string): string | undefined {
+  return /<meta[^>]+(?:property|name)=["'](?:music:musician|event:performer|artist)["'][^>]+content=["']([^"']+)/i.exec(html)?.[1]?.trim() || undefined;
+}
 
 function deduplicateLinks(links: string[], source: CatalogSource): string[] {
   const seen = new Set<string>();
@@ -133,7 +136,7 @@ export function parseUdnCatalogDetailHtml(html: string, eventUrl: string, _now =
   const sourceBlocks = blocks.filter((block) => isoDate(block) || /\d{4}[-/]\d{1,2}[-/]\d{1,2}/.test(block));
   const performanceCount = Math.max(uniqueLinks.length, sourceBlocks.length);
   const performances = Array.from({ length: performanceCount }, (_, index) => {
-    const block = sourceBlocks[index] ?? plainText(html);
+    const block = sourceBlocks[index] ?? "";
     const startsAt = isoDate(block);
     const id = new URL(uniqueLinks[index] ?? eventUrl).searchParams.get("PERFORMANCE_ID") ?? `${eventId}-performance-${index + 1}`;
     const prices = priceRange(block);
@@ -197,9 +200,10 @@ export async function discoverCatalog(source: CatalogSource, options: {
           continue;
         }
         const classification = classifyEvent(parsed.title, undefined);
+        const artist = htmlArtist(html);
         events.push({
           schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), sourceUrl: url,
-          title: parsed.title, venue: parsed.venue.name, ...(parsed.venue.address?.split(/[ ,，]/)[0] ? { city: parsed.venue.address.split(/[ ,，]/)[0] } : {}),
+          title: parsed.title, ...(artist ? { artist } : {}), venue: parsed.venue.name, ...(parsed.venue.address?.split(/[ ,，]/)[0] ? { city: parsed.venue.address.split(/[ ,，]/)[0] } : {}),
           ...classification, firstSeenAt: now.toISOString(), catalogFetchedAt: now.toISOString(),
           performances: parsed.performances.map((item) => ({
             schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), performanceId: item.performanceId,
@@ -212,7 +216,9 @@ export async function discoverCatalog(source: CatalogSource, options: {
         const title = htmlTitle(html);
         if (!title) continue;
         const classification = classifyEvent(title, undefined);
-        const scheduleLinks = [...new Set([...html.matchAll(/(?:https?:\/\/tickets\.udnfunlife\.com)?\/Application\/UTK02\/UTK0204_(?:000)?\.aspx\?[^"' <]+/gi)].map((match) => new URL(match[0]!.replace(/&amp;/g, "&"), "https://tickets.udnfunlife.com").toString()))].slice(0, CATALOG_DETAIL_CAP - detailCount);
+        const artist = htmlArtist(html);
+        const remainingDetailCap = Math.max(0, CATALOG_DETAIL_CAP - detailCount);
+        const scheduleLinks = [...new Set([...html.matchAll(/(?:https?:\/\/tickets\.udnfunlife\.com)?\/Application\/UTK02\/UTK0204_(?:000)?\.aspx\?[^"' <]+/gi)].map((match) => new URL(match[0]!.replace(/&amp;/g, "&"), "https://tickets.udnfunlife.com").toString()))].slice(0, remainingDetailCap);
         const schedulePages: string[] = [];
         for (const scheduleUrl of scheduleLinks) {
           const scheduleResponse = await fetchImpl(scheduleUrl, { headers: { accept: "text/html,application/xhtml+xml" }, redirect: "follow" });
@@ -220,7 +226,7 @@ export async function discoverCatalog(source: CatalogSource, options: {
           if (scheduleResponse.ok) schedulePages.push(await scheduleResponse.text());
         }
         const parsed = parseUdnCatalogDetailHtml(schedulePages.join("\n") || html, url, now);
-        events.push({ schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), sourceUrl: url, title: parsed.title || title, ...classification, firstSeenAt: now.toISOString(), catalogFetchedAt: now.toISOString(), performances: parsed.performances });
+        events.push({ schemaVersion: CATALOG_SCHEMA_VERSION, source, eventId: eventIdFromUrl(url), sourceUrl: url, title: parsed.title || title, ...(artist ? { artist } : {}), ...classification, firstSeenAt: now.toISOString(), catalogFetchedAt: now.toISOString(), performances: parsed.performances });
       }
     }
     return { schemaVersion: CATALOG_SCHEMA_VERSION, generatedAt: now.toISOString(), events, completeness: { source, fetchedAt: now.toISOString(), eventCount: events.length, pageCount, detailCount, stopReason: links.size > CATALOG_DETAIL_CAP || events.length >= CATALOG_EVENT_CAP ? "cap" : "normal-exhaustion", health: "ok" } };
