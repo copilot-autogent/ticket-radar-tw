@@ -32,7 +32,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 91
+        "remaining": 90
       },
       {
         "schemaVersion": 2,
@@ -76,7 +76,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 110
+        "remaining": 117
       },
       {
         "schemaVersion": 2,
@@ -98,7 +98,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 118
+        "remaining": 68
       },
       {
         "schemaVersion": 2,
@@ -120,7 +120,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 69
+        "remaining": 80
       },
       {
         "schemaVersion": 2,
@@ -142,7 +142,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 79
+        "remaining": 41
       },
       {
         "schemaVersion": 2,
@@ -186,7 +186,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 183
+        "remaining": 73
       },
       {
         "schemaVersion": 2,
@@ -208,7 +208,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 90
+        "remaining": 60
       },
       {
         "schemaVersion": 2,
@@ -230,7 +230,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 34
+        "remaining": 185
       },
       {
         "schemaVersion": 2,
@@ -252,7 +252,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 134
+        "remaining": 34
       },
       {
         "schemaVersion": 2,
@@ -274,7 +274,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 75
+        "remaining": 134
       },
       {
         "schemaVersion": 2,
@@ -296,7 +296,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 132
+        "remaining": 75
       },
       {
         "schemaVersion": 2,
@@ -318,7 +318,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 42
+        "remaining": 131
       },
       {
         "schemaVersion": 2,
@@ -340,7 +340,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 189
+        "remaining": 72
       },
       {
         "schemaVersion": 2,
@@ -362,7 +362,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 106
+        "remaining": 42
       },
       {
         "schemaVersion": 2,
@@ -384,7 +384,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 154
+        "remaining": 189
       },
       {
         "schemaVersion": 2,
@@ -406,7 +406,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 87
+        "remaining": 106
       },
       {
         "schemaVersion": 2,
@@ -428,7 +428,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 192
+        "remaining": 153
       },
       {
         "schemaVersion": 2,
@@ -450,7 +450,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 107
+        "remaining": 87
       },
       {
         "schemaVersion": 2,
@@ -472,7 +472,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 174
+        "remaining": 192
       },
       {
         "schemaVersion": 2,
@@ -494,7 +494,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 45
+        "remaining": 107
       },
       {
         "schemaVersion": 2,
@@ -516,7 +516,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 127
+        "remaining": 174
       },
       {
         "schemaVersion": 2,
@@ -538,14 +538,14 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 58
+        "remaining": 45
       }
     ],
-    "remainingTotal": 2494,
-    "observedAt": "2026-09-09T16:48:07.170Z",
+    "remainingTotal": 2353,
+    "observedAt": "2026-09-09T19:33:27.143Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-09T16:48:07.170Z",
+  "retainedDataAt": "2026-09-09T19:33:27.143Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -601,6 +601,11 @@
       "observedAt": "2026-09-09T16:48:07.170Z",
       "performanceCount": 24,
       "totalRemaining": 2494
+    },
+    {
+      "observedAt": "2026-09-09T19:33:27.143Z",
+      "performanceCount": 24,
+      "totalRemaining": 2353
     }
   ],
   "transitions": [
@@ -655,12 +660,12 @@
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-09T16:48:07.170Z",
-    "lastSuccessfulAt": "2026-09-09T16:48:07.170Z",
-    "nextEligibleAt": "2026-09-09T17:18:07.170Z"
+    "lastAttemptAt": "2026-09-09T19:33:27.143Z",
+    "lastSuccessfulAt": "2026-09-09T19:33:27.143Z",
+    "nextEligibleAt": "2026-09-09T20:03:27.143Z"
   },
   "cache": {
-    "etag": "\"130c2e-IdMmDHHbjMLQuvcGLbnVcNA3M24\""
+    "etag": "\"130c33-AKbpiCwNuEBS8Y/bP06TKtSI2j0\""
   },
   "outbox": [
     {
@@ -738,7 +743,7 @@
       "updatedAt": "2026-09-09T14:10:23.942Z"
     }
   },
-  "lastAttemptAt": "2026-09-09T16:48:07.170Z",
-  "lastSuccessfulAt": "2026-09-09T16:48:07.170Z",
-  "nextEligibleAt": "2026-09-09T17:18:07.170Z"
+  "lastAttemptAt": "2026-09-09T19:33:27.143Z",
+  "lastSuccessfulAt": "2026-09-09T19:33:27.143Z",
+  "nextEligibleAt": "2026-09-09T20:03:27.143Z"
 }
