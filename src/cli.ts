@@ -80,8 +80,8 @@ async function monitor(root = process.cwd()): Promise<void> {
   const discoveredOpentix = await discoverCatalog("opentix", { now });
   const discoveredUdn = await discoverCatalog("udn", { now });
   const catalog = {
-    opentix: discoveredOpentix.completeness.health === "ok" ? mergeCatalogState(priorCatalog.opentix, discoveredOpentix) : priorCatalog.opentix,
-    udn: discoveredUdn.completeness.health === "ok" ? mergeCatalogState(priorCatalog.udn, discoveredUdn) : priorCatalog.udn
+    opentix: mergeCatalogState(priorCatalog.opentix, discoveredOpentix),
+    udn: mergeCatalogState(priorCatalog.udn, discoveredUdn)
   };
   try {
     const latest = JSON.parse(await readFile(resolve(root, "generated/multi-source-state.json"), "utf8")) as MultiSourceRuntimeState;

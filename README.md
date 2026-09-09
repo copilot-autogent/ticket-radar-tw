@@ -40,3 +40,9 @@ npm run test:coverage
 
 `npm run monitor` performs one live public poll. `npm run build` regenerates the Pages artifact from the
 validated committed runtime state; it uses the fixture only when that state is absent.
+
+### Catalog discovery and presentation
+
+Catalog discovery first reads official structured summaries, at most 20 summaries per page across five pages (100 summaries/source). It then enriches at most 20 prioritized events (watched, matching interests, sale-soon, then stable title order). Each row is explicitly marked `discovered-summary` or `detail-enriched`; completeness is `complete`, `truncated`, or `stale`, and source URL/parser provenance plus summary/detail, performance, price, and category coverage are retained.
+
+Catalog state is merged non-destructively: a failed or partial refresh marks retained data stale instead of deleting the last validated summaries or details. UDN’s default view contains only exact-positive and clearly labelled hot-selling tiers; unavailable tiers are behind **Show unavailable tiers**, while the cheapest unrestricted exact-positive tier links to the official source. OPENTIX values are labelled **advertised price range** and never presented as purchasable tiers. The replay demonstration is isolated and performs no delivery or network operation.
