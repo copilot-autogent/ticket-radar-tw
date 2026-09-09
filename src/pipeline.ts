@@ -60,20 +60,64 @@ export function validateFixture(value: unknown): Fixture {
   if (!performance || typeof performance !== "object") fail("$.performance", "expected object");
   const source = stringValue(performance.source, "$.performance.source");
   const performanceId = stringValue(performance.performanceId, "$.performance.performanceId");
+  for (const [path, item] of [["$.event", event], ["$.performance", performance]] as const) {
+    if (item.schemaVersion !== SCHEMA_VERSION) fail(`${path}.schemaVersion`, "unsupported schema version");
+    stringValue(item.source, `${path}.source`);
+    stringValue(item.upstreamEventId, `${path}.upstreamEventId`);
+  }
   stringValue(event.title, "$.event.title");
+  stringValue(event.venue, "$.event.venue");
+  stringValue(performance.eventTitle, "$.performance.eventTitle");
   timestamp(performance.startsAt, "$.performance.startsAt");
+  if (!Array.isArray(fixture.tiers)) fail("$.tiers", "expected array");
+  const tiers = fixture.tiers.map((item, index) => {
+    if (!item || typeof item !== "object") fail(`$.tiers[${index}]`, "expected object");
+    const tier = item as Record<string, unknown>;
+    if (tier.schemaVersion !== SCHEMA_VERSION) fail(`$.tiers[${index}].schemaVersion`, "unsupported schema version");
+    if (tier.source !== source) fail(`$.tiers[${index}].source`, "must match performance source");
+    if (tier.performanceId !== performanceId) fail(`$.tiers[${index}].performanceId`, "must match performance");
+    stringValue(tier.tierId, `$.tiers[${index}].tierId`);
+    stringValue(tier.label, `$.tiers[${index}].label`);
+    if (typeof tier.price !== "number" || tier.price < 0) fail(`$.tiers[${index}].price`, "expected non-negative number");
+    return tier;
+  });
+  if (!fixture.lifecycle || typeof fixture.lifecycle !== "object") fail("$.lifecycle", "expected object");
+  const lifecycle = fixture.lifecycle as Record<string, unknown>;
+  if (lifecycle.schemaVersion !== SCHEMA_VERSION) fail("$.lifecycle.schemaVersion", "unsupported schema version");
+  if (lifecycle.source !== source || lifecycle.performanceId !== performanceId) fail("$.lifecycle", "identity must match performance");
+  timestamp(lifecycle.salesOpenAt, "$.lifecycle.salesOpenAt");
+  timestamp(lifecycle.salesCloseAt, "$.lifecycle.salesCloseAt");
   const observations = fixture.observations.map((item, index) => snapshot(item, `$.observations[${index}]`));
   for (const [index, item] of observations.entries()) {
     if (item.source !== source) fail(`$.observations[${index}].source`, "must match performance source");
     if (item.performanceId !== performanceId) fail(`$.observations[${index}].performanceId`, "must match performance");
   }
-  const watchRules = Array.isArray(fixture.watchRules) ? fixture.watchRules : [];
+  if (!Array.isArray(fixture.watchRules)) fail("$.watchRules", "expected array");
+  const watchRules = fixture.watchRules.map((item, index) => {
+    if (!item || typeof item !== "object") fail(`$.watchRules[${index}]`, "expected object");
+    const rule = item as Record<string, unknown>;
+    if (rule.source !== source || rule.performanceId !== performanceId) fail(`$.watchRules[${index}]`, "identity must match performance");
+    stringValue(rule.acceptableTierId, `$.watchRules[${index}].acceptableTierId`);
+    if (!tiers.some((tier) => tier.tierId === rule.acceptableTierId)) fail(`$.watchRules[${index}].acceptableTierId`, "must reference a known tier");
+    return rule;
+  });
+  const priorVersions = new Map<string, number>();
+  const seenVersions = new Map<string, AvailabilitySnapshot>();
+  for (const [index, item] of observations.entries()) {
+    const itemKey = `${item.performanceId}:${item.tierId}`;
+    const priorVersion = priorVersions.get(itemKey) ?? 0;
+    if (item.observationVersion < priorVersion) fail(`$.observations[${index}].observationVersion`, "must not go backwards");
+    const seen = seenVersions.get(`${item.performanceId}:${item.tierId}:${item.observationVersion}`);
+    if (seen && seen.availability !== item.availability) fail(`$.observations[${index}].availability`, "conflicting replay for observation version");
+    seenVersions.set(`${item.performanceId}:${item.tierId}:${item.observationVersion}`, item);
+    priorVersions.set(itemKey, Math.max(priorVersion, item.observationVersion));
+  }
   return {
     event: event as unknown as Fixture["event"],
     performance: performance as unknown as Fixture["performance"],
-    tiers: Array.isArray(fixture.tiers) ? fixture.tiers as Fixture["tiers"] : [],
-    lifecycle: fixture.lifecycle as Fixture["lifecycle"],
-    watchRules: watchRules as Fixture["watchRules"],
+    tiers: tiers as unknown as Fixture["tiers"],
+    lifecycle: lifecycle as unknown as Fixture["lifecycle"],
+    watchRules: watchRules as unknown as Fixture["watchRules"],
     observations
   };
 }
@@ -128,6 +172,13 @@ export async function writeJsonAtomic(path: string, value: unknown): Promise<voi
   await mkdir(dirname(path), { recursive: true });
   const temporary = `${path}.tmp-${process.pid}`;
   await writeFile(temporary, `${JSON.stringify(value, null, 2)}\n`, "utf8");
+  await rename(temporary, path);
+}
+
+export async function writeTextAtomic(path: string, value: string): Promise<void> {
+  await mkdir(dirname(path), { recursive: true });
+  const temporary = `${path}.tmp-${process.pid}`;
+  await writeFile(temporary, value, "utf8");
   await rename(temporary, path);
 }
 

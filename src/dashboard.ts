@@ -1,6 +1,6 @@
-import { mkdir, writeFile } from "node:fs/promises";
-import { dirname, resolve } from "node:path";
+import { resolve } from "node:path";
 import type { Fixture, PipelineOutput } from "./types.js";
+import { writeJsonAtomic, writeTextAtomic } from "./pipeline.js";
 
 function escapeHtml(value: string): string {
   return value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
@@ -23,8 +23,6 @@ export async function renderDashboard(root: string, fixture: Fixture, output: Pi
 <ul><li data-transition-marker="${escapeHtml(marker)}">${transitionText}</li></ul></section>
 <section><h2>Scope</h2><p>No live adapters, purchasing, reservation, login, CAPTCHA bypass, or queue bypass are included in this scaffold.</p></section>
 </main></body></html>`;
-  await mkdir(dirname(path), { recursive: true });
-  await mkdir(resolve(root, "public/data"), { recursive: true });
-  await writeFile(path, html, "utf8");
-  await writeFile(resolve(root, "public/data/dashboard.json"), `${JSON.stringify({ fixture: fixture.event, transitions: output.transitions }, null, 2)}\n`, "utf8");
+  await writeTextAtomic(path, html);
+  await writeJsonAtomic(resolve(root, "public/data/dashboard.json"), { fixture: fixture.event, transitions: output.transitions });
 }
