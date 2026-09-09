@@ -91,8 +91,9 @@ export function parseTicketPlusOrdinaryJson(body: string, observedAt = new Date(
 }
 
 function evidence(label: string, value: string): string {
-  const dates = [...value.matchAll(/(?:20\d{2}[年/-])?\d{1,2}[月/-]\d{1,2}\s*(?:日\s*)?(?:\([^)]*\)|（[^）]*）)?\s*\d{1,2}[:：]\d{2}/g)].map((match) => match[0]!.replace(/\s+/g, ""));
-  return `${label}:${dates.slice(0, 2).join(",") || "label-present"}`;
+  let hash = 2166136261;
+  for (const char of value.replace(/\s+/g, " ").trim().slice(0, 500)) hash = Math.imul(hash ^ char.charCodeAt(0), 16777619);
+  return `${label}:fp-${(hash >>> 0).toString(16)}`;
 }
 function windowFrom(text: string, kind: TicketPlusLotteryRound["windows"][number]["kind"], label: RegExp): { kind: TicketPlusLotteryRound["windows"][number]["kind"]; startAt?: string; endAt?: string; evidenceId: string } | undefined {
   const match = label.exec(text);
