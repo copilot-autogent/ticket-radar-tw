@@ -1,0 +1,70 @@
+{
+  "event": {
+    "schemaVersion": 1,
+    "source": "fixture",
+    "upstreamEventId": "fixture-event-001",
+    "title": "Taipei <img src=x onerror=alert(1)> Showcase",
+    "venue": "Taipei Arena"
+  },
+  "performance": {
+    "schemaVersion": 1,
+    "source": "fixture",
+    "performanceId": "fixture-performance-001",
+    "upstreamEventId": "fixture-event-001",
+    "eventTitle": "Taipei Showcase",
+    "startsAt": "2026-10-10T19:30:00+08:00"
+  },
+  "tiers": [
+    {
+      "schemaVersion": 1,
+      "source": "fixture",
+      "performanceId": "fixture-performance-001",
+      "tierId": "tier-standard",
+      "label": "Standard",
+      "price": 1800
+    }
+  ],
+  "lifecycle": {
+    "schemaVersion": 1,
+    "source": "fixture",
+    "performanceId": "fixture-performance-001",
+    "salesOpenAt": "2026-09-10T12:00:00+08:00",
+    "salesCloseAt": "2026-10-10T19:00:00+08:00"
+  },
+  "watchRules": [
+    {
+      "source": "fixture",
+      "performanceId": "fixture-performance-001",
+      "acceptableTierId": "tier-standard"
+    }
+  ],
+  "observations": [
+    {
+      "schemaVersion": 1,
+      "source": "fixture",
+      "performanceId": "fixture-performance-001",
+      "tierId": "tier-standard",
+      "availability": "sold-out",
+      "observedAt": "2026-09-09T08:00:00+08:00",
+      "observationVersion": 1
+    },
+    {
+      "schemaVersion": 1,
+      "source": "fixture",
+      "performanceId": "fixture-performance-001",
+      "tierId": "tier-standard",
+      "availability": "available",
+      "observedAt": "2026-09-09T08:05:00+08:00",
+      "observationVersion": 2
+    },
+    {
+      "schemaVersion": 1,
+      "source": "fixture",
+      "performanceId": "fixture-performance-001",
+      "tierId": "tier-standard",
+      "availability": "available",
+      "observedAt": "2026-09-09T08:05:00+08:00",
+      "observationVersion": 2
+    }
+  ]
+}
