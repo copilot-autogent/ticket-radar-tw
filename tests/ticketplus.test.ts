@@ -29,7 +29,7 @@ describe("Ticket Plus lifecycle adapter", () => {
     expect(() => parseTicketPlusLotteryHtml("<main>no dates</main>")).toThrow("missing-lottery-windows");
   });
   it("isolates partial fetch failures and conservative pairing", async () => {
-    const result = await fetchTicketPlus(async (url) => url.includes(".json") ? new Response(ordinary) : new Response(lottery));
+    const result = await fetchTicketPlus(async (url) => url.includes("sessions.json") ? new Response(ordinary) : new Response(lottery));
     expect(result.ordinary?.sessions).toHaveLength(2);
     expect(result.lottery?.rounds).toHaveLength(2);
     expect(pairTicketPlus(result.ordinary!, result.lottery!)[0]?.automationEligible).toBe(false);
