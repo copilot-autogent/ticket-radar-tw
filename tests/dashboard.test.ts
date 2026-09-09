@@ -11,7 +11,7 @@ describe("catalog dashboard controls and source truthfulness", () => {
     try {
       const state = emptyState();
       const catalog = {
-        opentix: { schemaVersion: 1 as const, generatedAt: "2026-09-09T00:00:00Z", events: [{ schemaVersion: 1 as const, source: "opentix" as const, eventId: "1", sourceUrl: "https://www.opentix.life/event/1", title: "A Concert", category: "concert" as const, classificationReason: "title-keyword-fallback" as const, classificationConfidence: "medium" as const, firstSeenAt: "2026-09-09T00:00:00Z", catalogFetchedAt: "2026-09-09T00:00:00Z", performances: [] }], completeness: { source: "opentix" as const, fetchedAt: "2026-09-09T00:00:00Z", eventCount: 1, pageCount: 1, detailCount: 1, stopReason: "normal-exhaustion" as const, health: "ok" as const } },
+        opentix: { schemaVersion: 1 as const, generatedAt: "2026-09-09T00:00:00Z", events: [{ schemaVersion: 1 as const, source: "opentix" as const, eventId: "1", sourceUrl: "https://www.opentix.life/event/1", title: "A Concert", category: "concert" as const, classificationReason: "title-keyword-fallback" as const, classificationConfidence: "medium" as const, firstSeenAt: "2026-09-09T00:00:00Z", catalogFetchedAt: "2026-09-09T00:00:00Z", performances: [], detailStatus: "discovered-summary", provenance: { source: "opentix" as const, sourceUrl: "https://www.opentix.life/event/1", retrievedAt: "2026-09-09T00:00:00Z", discoveryMethod: "structured-summary", parserVersion: "test" } }], completeness: { source: "opentix" as const, fetchedAt: "2026-09-09T00:00:00Z", eventCount: 1, pageCount: 1, detailCount: 1, stopReason: "normal-exhaustion" as const, status: "complete" as const, health: "ok" as const }, coverage: { summariesDiscovered: 1, detailEnriched: 0, performancesDiscovered: 0, pricesKnown: 0, categoriesKnown: 1 } },
         udn: null
       };
       await renderLiveDashboard(root, null, state, emptyUdnState(), emptyTicketPlusState(), catalog);
@@ -22,6 +22,8 @@ describe("catalog dashboard controls and source truthfulness", () => {
       expect(html).toContain('id="catalog-reset"');
       expect(html).toContain("GitHub sign-in plus maintainer manual validation");
       expect(html).toContain("events shown");
+      expect(html).toContain("known minimum advertised prices/enriched performances");
+      expect(html).toContain("source-evidenced categories/discovered summaries");
       expect(html).toContain('rel="icon" href="data:image/svg+xml');
       expect(html).toContain(".catalog-results,section>table{max-width:100%");
     } finally {

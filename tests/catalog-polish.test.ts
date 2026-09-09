@@ -32,6 +32,20 @@ describe("catalog polish boundaries", () => {
     expect(merged.completeness.status).toBe("stale");
   });
 
+  it("migrates legacy capped metadata into truthful summary coverage", async () => {
+    const legacy = {
+      schemaVersion: 1,
+      generatedAt: "2026-09-09T12:25:42.464Z",
+      events: [{ schemaVersion: 1, source: "opentix", eventId: "legacy-1", sourceUrl: "https://www.opentix.life/event/legacy-1", title: "Legacy event", category: "unknown", classificationReason: "unknown", classificationConfidence: "low", firstSeenAt: "2026-09-09T12:25:42.464Z", catalogFetchedAt: "2026-09-09T12:25:42.464Z", performances: [] }],
+      completeness: { source: "opentix", fetchedAt: "2026-09-09T12:25:42.464Z", eventCount: 20, pageCount: 1, detailCount: 20, stopReason: "cap", health: "ok" }
+    } as unknown as CatalogState;
+    const current = await discoverCatalog("opentix", { indexUrls: ["https://index.test/"], fetchImpl: async () => new Response("") });
+    const migrated = mergeCatalogState(legacy, current);
+    expect(migrated.completeness.status).toBe("complete");
+    expect(migrated.completeness.eventCount).toBe(migrated.coverage.summariesDiscovered);
+    expect(migrated.events.every((event) => event.detailStatus)).toBe(true);
+  });
+
   it("defaults UDN to exact-positive and hot-selling tiers and finds the cheapest unrestricted exact tier", () => {
     const tiers = [
       { availability: "exact", exactCount: 0, priceTwd: 1000 },
