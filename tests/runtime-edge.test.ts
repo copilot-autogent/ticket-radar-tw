@@ -1,5 +1,5 @@
 import { describe, expect, it } from "vitest";
-import { readFile, rm, unlink, writeFile } from "node:fs/promises";
+import { mkdir, readFile, rm, unlink, writeFile } from "node:fs/promises";
 import { fetchOpentix, parseOpentixHtml } from "../src/opentix.js";
 import { applyPoll, emptyState, loadState, validateState, eligibleToPoll, reconcileNotifications, MAX_OUTBOX, validateNormalizedEvent, validateThreshold } from "../src/runtime.js";
 import fixture from "../fixtures/opentix-event.json";
@@ -60,6 +60,25 @@ describe("OPENTIX transport and failure edges", () => {
       await renderLiveDashboard(root, null, state);
       const html = await readFile(root + "/public/index.html", "utf8");
       expect(html).toContain("<h1>" + fixture.title + "</h1>");
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+
+  it("builds Pages from the validated runtime state when present", async () => {
+    const root = "generated/test-cli-build";
+    const runtime = applyPoll(emptyState(), { kind: "success", status: 200, observation: fixture }, new Date("2026-09-09T01:00:00Z"));
+    runtime.snapshot = { ...runtime.snapshot!, title: "Validated monitor snapshot" };
+    runtime.health = { ...runtime.health, category: "stale", error: "upstream-5xx" };
+    try {
+      await mkdir(root + "/generated", { recursive: true });
+      await writeFile(root + "/generated/runtime-state.json", JSON.stringify(runtime), "utf8");
+      const { build } = await import("../src/cli.js");
+      await build(root);
+      const dashboard = JSON.parse(await readFile(root + "/public/data/dashboard.json", "utf8")) as { event: { title: string }; health: { category: string }; history: unknown[] };
+      expect(dashboard.event.title).toBe("Validated monitor snapshot");
+      expect(dashboard.health.category).toBe("stale");
+      expect(dashboard.history).toEqual(runtime.history);
     } finally {
       await rm(root, { recursive: true, force: true });
     }
