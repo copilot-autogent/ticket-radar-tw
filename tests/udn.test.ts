@@ -27,7 +27,7 @@ describe("UDN public performance adapter", () => {
     const failed = applyUdnPoll(state, { kind: "failure", errorCategory: "parse-failure" }, new Date("2026-09-09T02:30:00Z"));
     expect(failed.snapshot).toEqual(state.snapshot);
     const migrated = migrateRuntimeState(applyState());
-    expect(migrated.schemaVersion).toBe(3);
+    expect(migrated.schemaVersion).toBe(4);
     expect(migrated.sources.opentix.snapshot?.eventId).toBe(fixture.eventId);
   });
 });

@@ -32,6 +32,8 @@ jobs:
           AVAILABILITY_THRESHOLD: ${{ inputs.threshold || '1' }}
           OPENTIX_ISSUE_NUMBER: "3"
           UDN_PERFORMANCE_URL: "https://tickets.udnfunlife.com/Application/UTK02/UTK0204_.aspx?PERFORMANCE_ID=P1AFIPX7&PRODUCT_ID=P1AEBJG5"
+          TICKET_PLUS_ORDINARY_API_URL: "https://ticketplus.com.tw/activity/df31f9384cf60a3110dbf9607e780a1b.json"
+          TICKET_PLUS_LOTTERY_URL: "https://ticketplus.com.tw/activity/6c3d8c24e0f00c9c84777615c001bebe"
           GITHUB_TOKEN: ${{ github.token }}
         run: npm run monitor
       - name: Commit durable state

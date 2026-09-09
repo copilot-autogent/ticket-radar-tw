@@ -1,5 +1,5 @@
 {
-  "schemaVersion": 3,
+  "schemaVersion": 4,
   "sources": {
     "opentix": {
       "schemaVersion": 2,
@@ -1161,6 +1161,21 @@
       },
       "lastAttemptAt": "2026-09-09T02:45:28.916Z",
       "lastSuccessfulAt": "2026-09-09T02:45:28.916Z"
+    },
+    "ticketPlus": {
+      "source": "ticket-plus",
+      "ordinary": null,
+      "lottery": null,
+      "pairings": [],
+      "conflicts": [],
+      "history": [],
+      "health": {
+        "category": "not-run",
+        "lastAttemptAt": null,
+        "lastSuccessfulAt": null
+      },
+      "lastAttemptAt": null,
+      "lastSuccessfulAt": null
     }
   }
 }

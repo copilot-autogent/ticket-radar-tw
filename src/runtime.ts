@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { OPENTIX_SOURCE, NORMALIZED_SCHEMA_VERSION, MULTI_SOURCE_SCHEMA_VERSION, UDN_EVENT_ID, UDN_PROVIDER, type HealthCategory, type NormalizedEvent, type NormalizedPerformance, type UdnObservation } from "./types.js";
+import { OPENTIX_SOURCE, NORMALIZED_SCHEMA_VERSION, MULTI_SOURCE_SCHEMA_VERSION, UDN_EVENT_ID, UDN_PROVIDER, TICKET_PLUS_SOURCE, type HealthCategory, type NormalizedEvent, type NormalizedPerformance, type UdnObservation, type TicketPlusRuntimeState, type TicketPlusOrdinaryObservation, type TicketPlusLotteryObservation } from "./types.js";
 import { backoffMs, isEligible, nextEligibleAt, MIN_INTERVAL_MS, type PollResult } from "./opentix.js";
 import { writeJsonAtomic } from "./pipeline.js";
 
@@ -108,22 +108,38 @@ export interface UdnRuntimeState {
 }
 export interface MultiSourceRuntimeState {
   schemaVersion: typeof MULTI_SOURCE_SCHEMA_VERSION;
-  sources: { opentix: RuntimeState; udn: UdnRuntimeState };
+  sources: { opentix: RuntimeState; udn: UdnRuntimeState; ticketPlus: TicketPlusRuntimeState };
 }
 export function emptyUdnState(): UdnRuntimeState {
   return { provider: UDN_PROVIDER, eventId: UDN_EVENT_ID, snapshot: null, history: [], health: { category: "not-run", lastAttemptAt: null, lastSuccessfulAt: null }, lastAttemptAt: null, lastSuccessfulAt: null };
 }
+export function emptyTicketPlusState(): TicketPlusRuntimeState {
+  return { source: TICKET_PLUS_SOURCE, ordinary: null, lottery: null, pairings: [], conflicts: [], history: [], health: { category: "not-run", lastAttemptAt: null, lastSuccessfulAt: null }, lastAttemptAt: null, lastSuccessfulAt: null };
+}
 export function migrateRuntimeState(legacy: RuntimeState): MultiSourceRuntimeState {
   validateState(legacy);
-  return { schemaVersion: MULTI_SOURCE_SCHEMA_VERSION, sources: { opentix: structuredClone(legacy), udn: emptyUdnState() } };
+  return { schemaVersion: MULTI_SOURCE_SCHEMA_VERSION, sources: { opentix: structuredClone(legacy), udn: emptyUdnState(), ticketPlus: emptyTicketPlusState() } };
 }
 export function validateMultiSourceState(value: unknown): asserts value is MultiSourceRuntimeState {
   if (!value || typeof value !== "object") throw new Error("validation: multi-source-state");
   const state = value as MultiSourceRuntimeState;
-  if (state.schemaVersion !== MULTI_SOURCE_SCHEMA_VERSION || !state.sources?.opentix || !state.sources?.udn) throw new Error("validation: multi-source-schema-version");
+  if (state.schemaVersion !== MULTI_SOURCE_SCHEMA_VERSION || !state.sources?.opentix || !state.sources?.udn || !state.sources?.ticketPlus) throw new Error("validation: multi-source-schema-version");
   validateState(state.sources.opentix);
   if (state.sources.udn.provider !== UDN_PROVIDER || state.sources.udn.eventId !== UDN_EVENT_ID || !state.sources.udn.health || !Array.isArray(state.sources.udn.history)) throw new Error("validation: udn-state");
   if (state.sources.udn.snapshot) validateUdnObservation(state.sources.udn.snapshot);
+  if (state.sources.ticketPlus.source !== TICKET_PLUS_SOURCE || !state.sources.ticketPlus.health || !Array.isArray(state.sources.ticketPlus.history) || !Array.isArray(state.sources.ticketPlus.pairings) || !Array.isArray(state.sources.ticketPlus.conflicts)) throw new Error("validation: ticket-plus-state");
+}
+export function applyTicketPlusPoll(input: TicketPlusRuntimeState, result: { ordinary?: TicketPlusOrdinaryObservation; lottery?: TicketPlusLotteryObservation; errors: string[] }, now = new Date()): TicketPlusRuntimeState {
+  const state = structuredClone(input); const attempt = now.toISOString(); state.lastAttemptAt = attempt; state.health.lastAttemptAt = attempt;
+  if (result.ordinary || result.lottery) {
+    if (result.ordinary) state.ordinary = result.ordinary;
+    if (result.lottery) state.lottery = result.lottery;
+    state.pairings = (state.ordinary && state.lottery) ? [{ lotteryActivityId: state.lottery.activityId, ordinaryActivityId: state.ordinary.activityId, confidence: "low", evidence: ["conservative-unverified"], automationEligible: false }] : [];
+    state.history = [...state.history, { observedAt: attempt, ordinary: Boolean(result.ordinary), lottery: Boolean(result.lottery) }].slice(-MAX_HISTORY);
+    state.lastSuccessfulAt = attempt; state.health.lastSuccessfulAt = attempt; state.health.category = result.errors.length ? "stale" : "ok";
+    if (result.errors.length) state.health.error = result.errors.join(";").slice(0, 500); else delete state.health.error;
+  } else { state.health.category = state.lastSuccessfulAt ? "stale" : "error"; state.health.error = result.errors.join(";").slice(0, 500) || "poll-failure"; }
+  return state;
 }
 export function validateUdnObservation(value: unknown): asserts value is UdnObservation {
   if (!value || typeof value !== "object") throw new Error("validation: udn-observation");

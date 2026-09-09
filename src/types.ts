@@ -119,7 +119,7 @@ export interface NormalizedObservation {
   observedAt: string;
 }
 
-export const MULTI_SOURCE_SCHEMA_VERSION = 3 as const;
+export const MULTI_SOURCE_SCHEMA_VERSION = 4 as const;
 export const UDN_PROVIDER = "udn" as const;
 export const UDN_EVENT_ID = "P1AEBJG5" as const;
 export const UDN_EVENT_SOURCE = "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5" as const;
@@ -145,4 +145,89 @@ export interface UdnObservation {
   observedAt: string;
   parserVersion: string;
   tiers: UdnTier[];
+}
+
+export const TICKET_PLUS_SOURCE = "ticket-plus" as const;
+export const TICKET_PLUS_ORDINARY_ACTIVITY = "df31f9384cf60a3110dbf9607e780a1b" as const;
+export const TICKET_PLUS_ORDINARY_EVENT = "e000001508" as const;
+export const TICKET_PLUS_LOTTERY_ACTIVITY = "6c3d8c24e0f00c9c84777615c001bebe" as const;
+export type TicketPlusOrdinaryLifecycle = "announced" | "sale-scheduled" | "on-sale" | "sale-closed" | "ended" | "unknown";
+export type TicketPlusLotteryState = "registration-scheduled" | "registration-open" | "registration-closed" | "results-pending" | "payment-window" | "general-sale-scheduled" | "ended" | "unknown";
+export interface TicketPlusSession {
+  activityId: string;
+  eventId: string;
+  sessionId: string;
+  status: string;
+  lifecycle: TicketPlusOrdinaryLifecycle;
+  exposureStartAt?: string;
+  exposureEndAt?: string;
+  saleStartAt?: string;
+  saleEndAt?: string;
+  startsAt?: string;
+  endsAt?: string;
+  venue?: string;
+  sourceUrl: string;
+}
+export interface TicketPlusOrdinaryObservation {
+  source: typeof TICKET_PLUS_SOURCE;
+  activityId: string;
+  eventId: string;
+  title: string;
+  sessions: TicketPlusSession[];
+  observedAt: string;
+  parserVersion: string;
+  sourceUrl: string;
+}
+export type TicketPlusRoundKind = "initial" | "second" | "other";
+export interface TicketPlusLotteryWindow {
+  kind: "registration" | "results" | "payment" | "general-sale";
+  startAt?: string;
+  endAt?: string;
+  version: number;
+  evidenceId: string;
+}
+export interface TicketPlusLotteryRound {
+  roundId: string;
+  kind: TicketPlusRoundKind;
+  windows: TicketPlusLotteryWindow[];
+  state: TicketPlusLotteryState;
+  version: number;
+}
+export interface TicketPlusLotteryObservation {
+  source: typeof TICKET_PLUS_SOURCE;
+  activityId: string;
+  title: string;
+  rounds: TicketPlusLotteryRound[];
+  currentState: TicketPlusLotteryState;
+  parseVersion: string;
+  evidenceIds: string[];
+  observedAt: string;
+  sourceUrl: string;
+}
+export interface TicketPlusPairingCandidate {
+  lotteryActivityId: string;
+  ordinaryActivityId: string;
+  confidence: "high" | "medium" | "low";
+  evidence: string[];
+  automationEligible: boolean;
+}
+export interface TicketPlusConflict {
+  id: string;
+  field: string;
+  previous: string;
+  current: string;
+  evidenceId: string;
+  correction: boolean;
+  observedAt: string;
+}
+export interface TicketPlusRuntimeState {
+  source: typeof TICKET_PLUS_SOURCE;
+  ordinary: TicketPlusOrdinaryObservation | null;
+  lottery: TicketPlusLotteryObservation | null;
+  pairings: TicketPlusPairingCandidate[];
+  conflicts: TicketPlusConflict[];
+  history: Array<{ observedAt: string; ordinary: boolean; lottery: boolean }>;
+  health: { category: HealthCategory; error?: string; lastAttemptAt: string | null; lastSuccessfulAt: string | null };
+  lastAttemptAt: string | null;
+  lastSuccessfulAt: string | null;
 }
