@@ -34,4 +34,14 @@ describe("catalog discovery", () => {
     expect(incomplete.performances[0]).not.toHaveProperty("startsAt");
     expect(incomplete.performances[0]).toHaveProperty("performanceId", "P3");
   });
+
+  it("parses multiple public UDN structured performances with source-visible facts", () => {
+    const html = `<meta property="og:title" content="UDN show | udn售票網">
+      <script type="application/ld+json">{"@type":"TheaterEvent","name":"UDN show","startDate":"2026/11/20(五)19:30","location":{"name":"大劇院","address":"台北市信義區"},"offers":[{"price":1200}]}</script>
+      <script type="application/ld+json">{"@type":"TheaterEvent","name":"UDN show","startDate":"2026/11/21(六)14:00","location":{"name":"大劇院","address":"台北市信義區"},"offers":[{"price":800},{"price":1200}]}</script>`;
+    const parsed = parseUdnCatalogDetailHtml(html, "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5");
+    expect(parsed.performances).toHaveLength(2);
+    expect(parsed.performances.map((item) => item.startsAt)).toEqual(["2026-11-20T19:30:00+08:00", "2026-11-21T14:00:00+08:00"]);
+    expect(parsed.performances[1]).toMatchObject({ city: "台北市", minPrice: 800, maxPrice: 1200 });
+  });
 });

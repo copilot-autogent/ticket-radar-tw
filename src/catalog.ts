@@ -128,10 +128,44 @@ function cityFromAddress(value: string | undefined): string | undefined {
   return value?.match(/台北市|新北市|桃園市|台中市|台南市|高雄市|基隆市|新竹市|嘉義市|新竹縣|苗栗縣|彰化縣|南投縣|雲林縣|嘉義縣|屏東縣|宜蘭縣|花蓮縣|台東縣|澎湖縣|金門縣|連江縣/)?.[0];
 }
 
+function parseUdnDate(value: string): string | undefined {
+  return isoDate(value.replace(/年/g, "/").replace(/月/g, "/").replace(/日/g, "").replace(/\([^)]*\)/g, " "));
+}
+
 /** Extracts only source-visible schedule facts; absent facts remain null/undefined. */
 export function parseUdnCatalogDetailHtml(html: string, eventUrl: string, _now = new Date()): { title: string; performances: CatalogPerformance[] } {
   const eventId = eventIdFromUrl(eventUrl);
   const title = htmlTitle(html).replace(/\s*[|｜]\s*udn.*$/i, "").trim();
+  const structured = [...html.matchAll(/<script\b[^>]*type=["']application\/ld\+json["'][^>]*>([\s\S]*?)<\/script>/gi)]
+    .flatMap((match) => {
+      try {
+        const value = JSON.parse(match[1] ?? "") as Record<string, unknown>;
+        return value["@type"] === "TheaterEvent" || value["@type"] === "Event" ? [value] : [];
+      } catch {
+        return [];
+      }
+    });
+  const structuredPerformances = structured.flatMap((item, index) => {
+    const location = item.location && typeof item.location === "object" ? item.location as Record<string, unknown> : {};
+    const address = typeof location.address === "string" ? location.address : undefined;
+    const city = address ? cityFromAddress(address) : undefined;
+    const startsAt = typeof item.startDate === "string" ? parseUdnDate(item.startDate) : undefined;
+    const offers = Array.isArray(item.offers) ? item.offers : item.offers ? [item.offers] : [];
+    const prices = offers
+      .map((offer) => offer && typeof offer === "object" ? Number((offer as Record<string, unknown>).price) : NaN)
+      .filter((price) => Number.isFinite(price) && price >= 0);
+    return [{
+      schemaVersion: CATALOG_SCHEMA_VERSION, source: "udn" as const, eventId,
+      performanceId: `${eventId}-performance-${index + 1}`, sourceUrl: eventUrl,
+      ...(startsAt ? { startsAt } : {}), cancelled: typeof item.eventStatus === "string" && /cancel/i.test(item.eventStatus),
+      ...(typeof location.name === "string" ? { venue: location.name } : {}),
+      ...(city ? { city } : {}),
+      minPrice: prices.length ? Math.min(...prices) : null, maxPrice: prices.length ? Math.max(...prices) : null, currency: "TWD" as const
+    }];
+  });
+  if (structuredPerformances.length > 0) {
+    return { title: title || (typeof structured[0]?.name === "string" ? structured[0].name : ""), performances: structuredPerformances };
+  }
   const links = [...html.matchAll(/(?:https?:\/\/tickets\.udnfunlife\.com)?\/Application\/UTK02\/UTK0204_(?:000)?\.aspx\?[^"' <]+/gi)]
     .map((match) => new URL(match[0]!.replace(/&amp;/g, "&"), "https://tickets.udnfunlife.com").toString());
   const uniqueLinks = [...new Map(links.map((url) => [new URL(url).searchParams.get("PERFORMANCE_ID") ?? url, url])).values()];
