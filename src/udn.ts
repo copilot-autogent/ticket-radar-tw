@@ -30,12 +30,21 @@ function availability(value: string): { kind: UdnAvailabilityKind; count: number
 function tierId(label: string, price: number): string {
   return `${label.normalize("NFKC").replace(/\s+/g, " ").trim().toLowerCase()}|${price}`;
 }
+function metaContent(html: string, key: string): string {
+  const tags = [...html.matchAll(/<meta\b[^>]*>/gi)].map((match) => match[0]!);
+  for (const tag of tags) {
+    const keyMatch = /(?:property|name)\s*=\s*["']([^"']+)["']/i.exec(tag);
+    const contentMatch = /content\s*=\s*["']([^"']*)["']/i.exec(tag);
+    if (keyMatch?.[1]?.toLowerCase() === key.toLowerCase() && contentMatch) return contentMatch[1]!;
+  }
+  return "";
+}
 
 export function parseUdnPerformanceHtml(html: string, url: string, observedAt = new Date().toISOString(), performanceId?: string): UdnObservation {
   if (typeof html !== "string" || html.length === 0 || html.length > MAX_UDN_RESPONSE_BYTES) fail("response-size");
   const parsedUrl = expectedUrl(url, performanceId);
   if (/<(?:title|h1)[^>]*>[^<]*(?:登入|login|captcha|challenge|access denied)/i.test(html)) fail("challenge-or-login");
-  const title = text(/<meta[^>]+(?:property|name)=["'](?:og:title|title)["'][^>]+content=["']([^"']*)["']/i.exec(html)?.[1] ?? "");
+  const title = text(metaContent(html, "og:title") || metaContent(html, "title"));
   const rows = [...html.matchAll(/<tr\b[^>]*>\s*<td\b[^>]*>([\s\S]*?)<\/td>\s*<td\b[^>]*>([\s\S]*?)<\/td>\s*<td\b[^>]*>([\s\S]*?)<\/td>\s*<\/tr>/gi)]
     .map((match) => ({ label: text(match[1] ?? ""), priceText: text(match[2] ?? ""), stateText: text(match[3] ?? "") }))
     .filter((row) => row.label && row.priceText && row.stateText && /\d/.test(row.priceText));
@@ -77,17 +86,28 @@ export async function fetchUdnPerformance(performanceUrl: string, options: { fet
   } finally { clearTimeout(timeout); }
 }
 
-export async function discoverUdnPerformance(fetchImpl: typeof fetch = fetch): Promise<string> {
-  const response = await fetchImpl(UDN_EVENT_SOURCE, { redirect: "follow", headers: { accept: "text/html,application/xhtml+xml" } });
+export async function discoverUdnPerformance(fetchImpl: typeof fetch = fetch, timeoutMs = 20_000): Promise<string> {
+  const controller = new AbortController(); const timeout = setTimeout(() => controller.abort(), timeoutMs);
+  const request = (url: string) => fetchImpl(url, { redirect: "follow", headers: { accept: "text/html,application/xhtml+xml" }, signal: controller.signal });
+  try {
+  const response = await request(UDN_EVENT_SOURCE);
   if (!response.ok || new URL(response.url).hostname !== UDN_HOST) fail("event-page-redirect");
   let html = await response.text();
-  let match = /UTK0204_\.aspx\?PERFORMANCE_ID=([A-Z0-9]+)\s*&amp;\s*PRODUCT_ID=P1AEBJG5/i.exec(html) ?? /UTK0204_\.aspx\?PERFORMANCE_ID=([A-Z0-9]+)\s*&\s*PRODUCT_ID=P1AEBJG5/i.exec(html);
+  const findLink = (value: string): string | undefined => {
+    for (const match of value.matchAll(/(?:https?:\/\/tickets\.udnfunlife\.com)?(?:\/?Application\/UTK02\/)?UTK0204_(?:000)?\.aspx\?[^"' <]+/gi)) {
+      const candidate = new URL(decode(match[0]!.replace(/&amp;/g, "&")), "https://tickets.udnfunlife.com");
+      if (candidate.hostname === UDN_HOST && candidate.searchParams.get("PRODUCT_ID") === UDN_EVENT_ID && candidate.searchParams.get("PERFORMANCE_ID")) return candidate.searchParams.get("PERFORMANCE_ID")!;
+    }
+    return undefined;
+  };
+  let match = findLink(html);
   if (!match) {
-    const performanceList = await fetchImpl(`${new URL(UDN_EVENT_SOURCE).origin}/Application/UTK02/UTK0203_.aspx?PRODUCT_ID=${UDN_EVENT_ID}`, { redirect: "follow", headers: { accept: "text/html,application/xhtml+xml" } });
+    const performanceList = await request(`${new URL(UDN_EVENT_SOURCE).origin}/Application/UTK02/UTK0203_.aspx?PRODUCT_ID=${UDN_EVENT_ID}`);
     if (!performanceList.ok || new URL(performanceList.url).hostname !== UDN_HOST) fail("performance-page-redirect");
     html = await performanceList.text();
-    match = /UTK0204_\.aspx\?PERFORMANCE_ID=([A-Z0-9]+)\s*&\s*PRODUCT_ID=P1AEBJG5/i.exec(html);
+    match = findLink(html);
   }
   if (!match) fail("missing-performance-link");
-  return `https://${UDN_HOST}${UDN_PERFORMANCE_PATH}?PERFORMANCE_ID=${match[1]}&PRODUCT_ID=${UDN_EVENT_ID}`;
+  return `https://${UDN_HOST}${UDN_PERFORMANCE_PATH}?PERFORMANCE_ID=${match}&PRODUCT_ID=${UDN_EVENT_ID}`;
+  } finally { clearTimeout(timeout); }
 }

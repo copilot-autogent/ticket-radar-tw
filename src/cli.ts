@@ -42,8 +42,13 @@ async function monitor(root = process.cwd()): Promise<void> {
     state = applyPoll(state, result, now, Number(process.env.AVAILABILITY_THRESHOLD ?? "1"));
     state = await reconcileNotifications(state, { ...(process.env.GITHUB_TOKEN ? { token: process.env.GITHUB_TOKEN } : {}), ...(process.env.GITHUB_REPOSITORY ? { repository: process.env.GITHUB_REPOSITORY } : {}), issueNumber: Number(process.env.OPENTIX_ISSUE_NUMBER ?? "3") });
   }
-  const performanceUrl = process.env.UDN_PERFORMANCE_URL ?? await discoverUdnPerformance();
-  const udnResult = await fetchUdnPerformance(performanceUrl, { now });
+  let udnResult: Awaited<ReturnType<typeof fetchUdnPerformance>>;
+  try {
+    const performanceUrl = process.env.UDN_PERFORMANCE_URL ?? await discoverUdnPerformance();
+    udnResult = await fetchUdnPerformance(performanceUrl, { now });
+  } catch (error) {
+    udnResult = { kind: "failure", status: 0, errorCategory: error instanceof Error ? error.name === "AbortError" ? "timeout" : "discovery-failure" : "discovery-failure" };
+  }
   multi.sources.opentix = state;
   multi.sources.udn = applyUdnPoll(multi.sources.udn ?? emptyUdnState(), udnResult, now);
   await saveState(statePath, state);
