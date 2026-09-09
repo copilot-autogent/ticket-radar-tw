@@ -90,7 +90,10 @@ export function parseTicketPlusOrdinaryJson(body: string, observedAt = new Date(
   return { source: TICKET_PLUS_SOURCE, activityId: TICKET_PLUS_ORDINARY_ACTIVITY, eventId: TICKET_PLUS_ORDINARY_EVENT, title, sessions: parsed, observedAt, parserVersion: TICKET_PLUS_PARSER_VERSION, sourceUrl: TICKET_PLUS_ORDINARY_URL };
 }
 
-function evidence(label: string, value: string): string { return `${label}:${value.replace(/\s+/g, " ").trim().slice(0, 120)}`; }
+function evidence(label: string, value: string): string {
+  const dates = [...value.matchAll(/(?:20\d{2}[年/-])?\d{1,2}[月/-]\d{1,2}\s*(?:日\s*)?(?:\([^)]*\)|（[^）]*）)?\s*\d{1,2}[:：]\d{2}/g)].map((match) => match[0]!.replace(/\s+/g, ""));
+  return `${label}:${dates.slice(0, 2).join(",") || "label-present"}`;
+}
 function windowFrom(text: string, kind: TicketPlusLotteryRound["windows"][number]["kind"], label: RegExp): { kind: TicketPlusLotteryRound["windows"][number]["kind"]; startAt?: string; endAt?: string; evidenceId: string } | undefined {
   const match = label.exec(text);
   if (!match) return undefined;
