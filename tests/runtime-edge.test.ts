@@ -1,7 +1,7 @@
 import { describe, expect, it } from "vitest";
 import { mkdir, readFile, rm, unlink, writeFile } from "node:fs/promises";
 import { fetchOpentix, parseOpentixHtml } from "../src/opentix.js";
-import { applyPoll, emptyState, loadState, validateState, eligibleToPoll, reconcileNotifications, MAX_OUTBOX, validateNormalizedEvent, validateThreshold } from "../src/runtime.js";
+import { applyPoll, emptyState, loadState, validateState, eligibleToPoll, reconcileNotifications, MAX_OUTBOX, validateNormalizedEvent, validateThreshold, emptyUdnState, emptyTicketPlusState } from "../src/runtime.js";
 import fixture from "../fixtures/opentix-event.json";
 
 const jsonld = (name: string, start: string, end = "2026-10-10T21:10:00") => JSON.stringify({ "@type": "Event", name, startDate: start, endDate: end, location: { name: "Venue & Hall", address: { streetAddress: "Taipei" } }, offers: { lowPrice: 100, highPrice: 200, validFrom: "2026-01-01T00:00:00", availabilityEnds: end } });
@@ -60,6 +60,23 @@ describe("OPENTIX transport and failure edges", () => {
       await renderLiveDashboard(root, null, state);
       const html = await readFile(root + "/public/index.html", "utf8");
       expect(html).toContain("<h1>" + fixture.title + "</h1>");
+    } finally {
+      await rm(root, { recursive: true, force: true });
+    }
+  });
+
+  it("colors each source health independently", async () => {
+    const root = "generated/test-dashboard-health";
+    const { renderLiveDashboard } = await import("../src/dashboard.js");
+    const udn = emptyUdnState();
+    udn.health.category = "ok";
+    const ticketPlus = emptyTicketPlusState();
+    ticketPlus.health.category = "error";
+    try {
+      await renderLiveDashboard(root, null, emptyState(), udn, ticketPlus);
+      const html = await readFile(root + "/public/index.html", "utf8");
+      expect(html).toContain(".source-health.udn{color:#146c38}");
+      expect(html).toContain(".source-health.ticket-plus{color:#b42318}");
     } finally {
       await rm(root, { recursive: true, force: true });
     }
