@@ -1889,7 +1889,7 @@
   },
   "udn": {
     "schemaVersion": 1,
-    "generatedAt": "2026-09-09T19:33:27.143Z",
+    "generatedAt": "2026-09-09T22:05:11.828Z",
     "events": [
       {
         "schemaVersion": 1,
@@ -3015,7 +3015,7 @@
     ],
     "completeness": {
       "source": "udn",
-      "fetchedAt": "2026-09-09T19:33:27.143Z",
+      "fetchedAt": "2026-09-09T22:05:11.828Z",
       "eventCount": 20,
       "pageCount": 1,
       "detailCount": 0,
