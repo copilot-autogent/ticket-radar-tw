@@ -32,7 +32,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 91
+        "remaining": 55
       },
       {
         "schemaVersion": 2,
@@ -54,7 +54,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 55
+        "remaining": 119
       },
       {
         "schemaVersion": 2,
@@ -76,7 +76,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 119
+        "remaining": 68
       },
       {
         "schemaVersion": 2,
@@ -98,7 +98,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 68
+        "remaining": 118
       },
       {
         "schemaVersion": 2,
@@ -120,7 +120,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 118
+        "remaining": 69
       },
       {
         "schemaVersion": 2,
@@ -142,7 +142,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 69
+        "remaining": 40
       },
       {
         "schemaVersion": 2,
@@ -164,7 +164,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 40
+        "remaining": 41
       },
       {
         "schemaVersion": 2,
@@ -186,7 +186,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 41
+        "remaining": 73
       },
       {
         "schemaVersion": 2,
@@ -208,7 +208,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 73
+        "remaining": 116
       },
       {
         "schemaVersion": 2,
@@ -230,7 +230,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 116
+        "remaining": 62
       },
       {
         "schemaVersion": 2,
@@ -252,7 +252,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 62
+        "remaining": 187
       },
       {
         "schemaVersion": 2,
@@ -274,7 +274,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 187
+        "remaining": 93
       },
       {
         "schemaVersion": 2,
@@ -296,7 +296,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 93
+        "remaining": 76
       },
       {
         "schemaVersion": 2,
@@ -318,7 +318,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 76
+        "remaining": 141
       },
       {
         "schemaVersion": 2,
@@ -340,7 +340,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 141
+        "remaining": 42
       },
       {
         "schemaVersion": 2,
@@ -362,7 +362,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 42
+        "remaining": 106
       },
       {
         "schemaVersion": 2,
@@ -384,7 +384,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 106
+        "remaining": 23
       },
       {
         "schemaVersion": 2,
@@ -406,7 +406,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 23
+        "remaining": 160
       },
       {
         "schemaVersion": 2,
@@ -428,7 +428,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 160
+        "remaining": 88
       },
       {
         "schemaVersion": 2,
@@ -450,7 +450,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 88
+        "remaining": 43
       },
       {
         "schemaVersion": 2,
@@ -472,7 +472,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 43
+        "remaining": 107
       },
       {
         "schemaVersion": 2,
@@ -494,7 +494,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 107
+        "remaining": 175
       },
       {
         "schemaVersion": 2,
@@ -516,7 +516,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 175
+        "remaining": 65
       },
       {
         "schemaVersion": 2,
@@ -538,7 +538,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 65
+        "remaining": 193
       },
       {
         "schemaVersion": 2,
@@ -560,14 +560,14 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 193
+        "remaining": 108
       }
     ],
-    "remainingTotal": 2351,
-    "observedAt": "2026-09-09T09:10:28.775Z",
+    "remainingTotal": 2368,
+    "observedAt": "2026-09-09T10:17:21.538Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-09T09:10:28.775Z",
+  "retainedDataAt": "2026-09-09T10:17:21.538Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -603,21 +603,26 @@
       "observedAt": "2026-09-09T09:10:28.775Z",
       "performanceCount": 25,
       "totalRemaining": 2351
+    },
+    {
+      "observedAt": "2026-09-09T10:17:21.538Z",
+      "performanceCount": 25,
+      "totalRemaining": 2368
     }
   ],
   "transitions": [],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-09T09:10:28.775Z",
-    "lastSuccessfulAt": "2026-09-09T09:10:28.775Z",
-    "nextEligibleAt": "2026-09-09T09:40:28.775Z"
+    "lastAttemptAt": "2026-09-09T10:17:21.538Z",
+    "lastSuccessfulAt": "2026-09-09T10:17:21.538Z",
+    "nextEligibleAt": "2026-09-09T10:47:21.538Z"
   },
   "cache": {
-    "etag": "\"13965c-6hgr9QaVeggObtVb5tV9bUwwqBs\""
+    "etag": "\"139662-9G3oGQQdU+4KWP43cnFzwoFePOA\""
   },
   "outbox": [],
   "ledger": {},
-  "lastAttemptAt": "2026-09-09T09:10:28.775Z",
-  "lastSuccessfulAt": "2026-09-09T09:10:28.775Z",
-  "nextEligibleAt": "2026-09-09T09:40:28.775Z"
+  "lastAttemptAt": "2026-09-09T10:17:21.538Z",
+  "lastSuccessfulAt": "2026-09-09T10:17:21.538Z",
+  "nextEligibleAt": "2026-09-09T10:47:21.538Z"
 }
