@@ -21,9 +21,6 @@ jobs:
           cache: npm
       - run: npm ci
       - run: npm run build
-      - uses: actions/configure-pages@v5
-        with:
-          static_site_generator: custom
       - uses: actions/upload-pages-artifact@v3
         with:
           path: public
