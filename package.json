@@ -9,7 +9,7 @@
     "build": "tsc && node dist/cli.js build",
     "test": "vitest run",
     "test:coverage": "vitest run --coverage",
-    "monitor": "npm run build:js -- monitor",
+    "monitor": "npm run build:js && node dist/cli.js monitor",
     "build:js": "tsc"
   },
   "devDependencies": {
