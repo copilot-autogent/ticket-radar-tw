@@ -22,6 +22,8 @@ describe("catalog dashboard controls and source truthfulness", () => {
       expect(html).toContain('id="catalog-reset"');
       expect(html).toContain("GitHub sign-in plus maintainer manual validation");
       expect(html).toContain("events shown");
+      expect(html).toContain('rel="icon" href="data:image/svg+xml');
+      expect(html).toContain(".catalog-results,section>table{max-width:100%");
     } finally {
       await rm(root, { recursive: true, force: true });
     }
