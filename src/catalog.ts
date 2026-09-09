@@ -217,9 +217,20 @@ export function mergeCatalogState(previous: CatalogState | null, current: Catalo
     const key = `${observed.source}:${observed.eventId}`;
     const prior = byId.get(key);
     const detailEnrichedAt = observed.detailEnrichedAt ?? prior?.detailEnrichedAt;
+    const summaryOnly = observed.provenance === "official-listing-summary";
     byId.set(key, {
       ...(prior ?? observed),
       ...observed,
+      ...(summaryOnly && prior ? {
+        title: prior.title,
+        ...(prior.artist ? { artist: prior.artist } : {}),
+        ...(prior.venue ? { venue: prior.venue } : {}),
+        ...(prior.city ? { city: prior.city } : {}),
+        ...(prior.sourceCategory ? { sourceCategory: prior.sourceCategory } : {}),
+        category: prior.category,
+        classificationReason: prior.classificationReason,
+        classificationConfidence: prior.classificationConfidence
+      } : {}),
       firstSeenAt: prior?.firstSeenAt ?? observed.firstSeenAt,
       performances: observed.performances.length ? observed.performances : (prior?.performances ?? []),
       ...(detailEnrichedAt ? { detailEnrichedAt } : {}),
@@ -254,11 +265,12 @@ export async function discoverCatalog(source: CatalogSource, options: {
 } = {}): Promise<CatalogState> {
   const fetchImpl = options.fetchImpl ?? fetch;
   const now = options.now ?? new Date();
-  const indexUrls = options.indexUrls ?? (source === "opentix"
-    ? ["https://www.opentix.life/api/events?sort=upcoming&page=1&pageSize=20"]
-    : ["https://tickets.udnfunlife.com/api/events?sort=upcoming&page=1&pageSize=20"]);
+  const indexUrls = options.indexUrls ?? Array.from({ length: CATALOG_PAGE_CAP }, (_, index) => source === "opentix"
+    ? `https://www.opentix.life/api/events?sort=upcoming&page=${index + 1}&pageSize=${CATALOG_PAGE_SIZE}`
+    : `https://tickets.udnfunlife.com/api/events?sort=upcoming&page=${index + 1}&pageSize=${CATALOG_PAGE_SIZE}`);
   const links = new Set<string>();
   let pageCount = 0;
+  let sourceEnded = false;
   try {
     for (const index of indexUrls.slice(0, CATALOG_PAGE_CAP)) {
       const response = await fetchImpl(index, { headers: { accept: "text/html,application/xhtml+xml" }, redirect: "follow" });
@@ -267,8 +279,11 @@ export async function discoverCatalog(source: CatalogSource, options: {
       const body = await response.text();
       if (body.length > CATALOG_MAX_RESPONSE_BYTES) throw new Error("response-size");
       const structured = structuredSummaryLinks(jsonValue(body), source);
-      for (const link of (structured.length ? structured : eventLinks(body, source))) links.add(link);
+      const found = structured.length ? structured : eventLinks(body, source);
+      for (const link of found) links.add(link);
+      if (found.length < CATALOG_PAGE_SIZE) sourceEnded = true;
       if (links.size >= CATALOG_EVENT_CAP) break;
+      if (sourceEnded) break;
     }
     const urls = deduplicateLinks([...links], source).slice(0, CATALOG_EVENT_CAP);
     const events: CatalogEvent[] = urls.map((url) => ({
@@ -327,7 +342,7 @@ export async function discoverCatalog(source: CatalogSource, options: {
         Object.assign(event, { title: parsed.title || title, ...(artist ? { artist } : {}), ...classification, performances: parsed.performances, detailEnrichedAt: now.toISOString(), provenance: "official-detail-enrichment" });
       }
     }
-    const truncated = links.size > CATALOG_EVENT_CAP || pageCount >= CATALOG_PAGE_CAP;
+    const truncated = links.size >= CATALOG_EVENT_CAP || (!sourceEnded && pageCount >= CATALOG_PAGE_CAP);
     const knownPriceCount = events.reduce((sum, event) => sum + event.performances.filter((item) => item.minPrice != null).length, 0);
     const knownCategoryCount = events.filter((event) => event.classificationReason === "source-category").length;
     return { schemaVersion: CATALOG_SCHEMA_VERSION, generatedAt: now.toISOString(), events, completeness: { source, fetchedAt: now.toISOString(), eventCount: events.length, pageCount, detailCount, stopReason: truncated ? "cap" : "normal-exhaustion", scanState: truncated ? "truncated" : "complete", summaryCount: events.length, knownPriceCount, knownCategoryCount, health: "ok" } };

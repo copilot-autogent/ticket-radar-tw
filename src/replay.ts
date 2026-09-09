@@ -39,5 +39,6 @@ export function buildReplayDemo(): ReplayDemo {
 }
 
 export function renderReplayDemo(demo = buildReplayDemo()): string {
-  return `<section aria-labelledby="replay-heading"><h2 id="replay-heading">DEMO — sold-out → available replay</h2><p><strong>DEMO</strong>: replayed fixture, not live inventory. No notification sent.</p><p>Fixture <code>${demo.fixtureId}</code> · ${demo.frames[0]!.availability} → ${demo.frames[1]!.availability}</p></section>`;
+  const escape = (value: string) => value.replaceAll("&", "&amp;").replaceAll("<", "&lt;").replaceAll(">", "&gt;").replaceAll('"', "&quot;").replaceAll("'", "&#39;");
+  return `<section aria-labelledby="replay-heading"><h2 id="replay-heading">DEMO — sold-out → available replay</h2><p><strong>DEMO</strong>: replayed fixture, not live inventory. No notification sent.</p><p>Fixture <code>${escape(demo.fixtureId)}</code> · ${escape(demo.frames[0]!.availability)} → ${escape(demo.frames[1]!.availability)}</p></section>`;
 }
