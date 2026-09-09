@@ -1,6 +1,6 @@
 import { readFile } from "node:fs/promises";
 import { resolve } from "node:path";
-import { OPENTIX_SOURCE, NORMALIZED_SCHEMA_VERSION, type HealthCategory, type NormalizedEvent, type NormalizedPerformance } from "./types.js";
+import { OPENTIX_SOURCE, NORMALIZED_SCHEMA_VERSION, MULTI_SOURCE_SCHEMA_VERSION, UDN_EVENT_ID, UDN_PROVIDER, type HealthCategory, type NormalizedEvent, type NormalizedPerformance, type UdnObservation } from "./types.js";
 import { backoffMs, isEligible, nextEligibleAt, MIN_INTERVAL_MS, type PollResult } from "./opentix.js";
 import { writeJsonAtomic } from "./pipeline.js";
 
@@ -95,4 +95,54 @@ export async function reconcileNotifications(state: RuntimeState, options: Notif
 export function eligibleToPoll(state: RuntimeState, now = Date.now()): boolean {
   const nextEligible = state.nextEligibleAt ? Date.parse(state.nextEligibleAt) : Number.NaN;
   return Number.isFinite(nextEligible) ? now >= nextEligible : isEligible(state.lastAttemptAt ?? undefined, now);
+}
+
+export interface UdnRuntimeState {
+  provider: typeof UDN_PROVIDER;
+  eventId: typeof UDN_EVENT_ID;
+  snapshot: UdnObservation | null;
+  history: UdnObservation[];
+  health: { category: HealthCategory; error?: string; lastAttemptAt: string | null; lastSuccessfulAt: string | null };
+  lastAttemptAt: string | null;
+  lastSuccessfulAt: string | null;
+}
+export interface MultiSourceRuntimeState {
+  schemaVersion: typeof MULTI_SOURCE_SCHEMA_VERSION;
+  sources: { opentix: RuntimeState; udn: UdnRuntimeState };
+}
+export function emptyUdnState(): UdnRuntimeState {
+  return { provider: UDN_PROVIDER, eventId: UDN_EVENT_ID, snapshot: null, history: [], health: { category: "not-run", lastAttemptAt: null, lastSuccessfulAt: null }, lastAttemptAt: null, lastSuccessfulAt: null };
+}
+export function migrateRuntimeState(legacy: RuntimeState): MultiSourceRuntimeState {
+  validateState(legacy);
+  return { schemaVersion: MULTI_SOURCE_SCHEMA_VERSION, sources: { opentix: structuredClone(legacy), udn: emptyUdnState() } };
+}
+export function validateMultiSourceState(value: unknown): asserts value is MultiSourceRuntimeState {
+  if (!value || typeof value !== "object") throw new Error("validation: multi-source-state");
+  const state = value as MultiSourceRuntimeState;
+  if (state.schemaVersion !== MULTI_SOURCE_SCHEMA_VERSION || !state.sources?.opentix || !state.sources?.udn) throw new Error("validation: multi-source-schema-version");
+  validateState(state.sources.opentix);
+  if (state.sources.udn.provider !== UDN_PROVIDER || state.sources.udn.eventId !== UDN_EVENT_ID || !state.sources.udn.health || !Array.isArray(state.sources.udn.history)) throw new Error("validation: udn-state");
+  if (state.sources.udn.snapshot) validateUdnObservation(state.sources.udn.snapshot);
+}
+export function validateUdnObservation(value: unknown): asserts value is UdnObservation {
+  if (!value || typeof value !== "object") throw new Error("validation: udn-observation");
+  const observation = value as UdnObservation;
+  if (observation.provider !== UDN_PROVIDER || observation.eventId !== UDN_EVENT_ID || !observation.performanceId || !observation.title || !observation.sourceUrl || !Array.isArray(observation.tiers) || observation.tiers.length === 0) throw new Error("validation: udn-contract");
+  const ids = new Set<string>();
+  for (const tier of observation.tiers) {
+    if (tier.provider !== UDN_PROVIDER || tier.eventId !== UDN_EVENT_ID || tier.performanceId !== observation.performanceId || !tier.tierId || !tier.label || !Number.isFinite(tier.priceTwd) || tier.priceTwd < 0 || !["exact", "sold-out", "hot-selling-unknown", "unknown"].includes(tier.availability)) throw new Error("validation: udn-tier");
+    if (tier.availability === "exact" && (!Number.isInteger(tier.exactCount) || tier.exactCount! < 0)) throw new Error("validation: udn-exact-count");
+    if (tier.availability !== "exact" && tier.exactCount !== null) throw new Error("validation: udn-unknown-count");
+    if (ids.has(tier.tierId)) throw new Error("validation: udn-duplicate-tier");
+    ids.add(tier.tierId);
+  }
+}
+export function applyUdnPoll(input: UdnRuntimeState, result: { kind: "success" | "failure" | "retryable"; observation?: UdnObservation; errorCategory?: string }, now = new Date()): UdnRuntimeState {
+  const state = structuredClone(input); const attempt = now.toISOString(); state.lastAttemptAt = attempt; state.health.lastAttemptAt = attempt;
+  if (result.kind === "success" && result.observation) {
+    validateUdnObservation(result.observation);
+    state.snapshot = result.observation; state.history = [...state.history, result.observation].slice(-MAX_HISTORY); state.lastSuccessfulAt = attempt; state.health.lastSuccessfulAt = attempt; state.health.category = "ok"; delete state.health.error; return state;
+  }
+  state.health.category = state.snapshot ? "stale" : "error"; state.health.error = result.errorCategory ?? "poll-failure"; return state;
 }

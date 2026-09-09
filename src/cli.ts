@@ -3,9 +3,10 @@ import { resolve } from "node:path";
 import { pathToFileURL } from "node:url";
 import { renderLiveDashboard } from "./dashboard.js";
 import { fetchOpentix } from "./opentix.js";
-import { applyPoll, emptyState, eligibleToPoll, loadState, reconcileNotifications, saveState, type RuntimeState } from "./runtime.js";
+import { applyPoll, applyUdnPoll, emptyState, emptyUdnState, eligibleToPoll, loadState, migrateRuntimeState, reconcileNotifications, saveState, validateMultiSourceState, type MultiSourceRuntimeState, type RuntimeState } from "./runtime.js";
 import { writeJsonAtomic } from "./pipeline.js";
 import type { NormalizedEvent } from "./types.js";
+import { discoverUdnPerformance, fetchUdnPerformance } from "./udn.js";
 
 async function loadBuildState(root: string): Promise<{ event: NormalizedEvent | null; state: RuntimeState }> {
   const statePath = resolve(root, "generated/runtime-state.json");
@@ -25,13 +26,34 @@ async function loadBuildState(root: string): Promise<{ event: NormalizedEvent | 
 export async function build(root = process.cwd()): Promise<void> {
   const statePath = resolve(root, "generated/runtime-state.json");
   const { event, state } = await loadBuildState(root);
+  let multi: MultiSourceRuntimeState;
+  try { multi = JSON.parse(await readFile(resolve(root, "generated/multi-source-state.json"), "utf8")) as MultiSourceRuntimeState; validateMultiSourceState(multi); } catch (error) { if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") multi = migrateRuntimeState(state); else throw error; }
   await mkdir(resolve(root, "generated"), { recursive: true }); await mkdir(resolve(root, "public/data"), { recursive: true });
-  await Promise.all([writeJsonAtomic(resolve(root, "generated/normalized-snapshot.json"), event), writeJsonAtomic(resolve(root, "generated/state.json"), state), writeJsonAtomic(resolve(root, "generated/history.json"), state.history), writeJsonAtomic(resolve(root, "generated/transitions.json"), state.transitions), saveState(statePath, state)]); await renderLiveDashboard(root, event, state);
+  await Promise.all([writeJsonAtomic(resolve(root, "generated/normalized-snapshot.json"), event), writeJsonAtomic(resolve(root, "generated/state.json"), state), writeJsonAtomic(resolve(root, "generated/history.json"), state.history), writeJsonAtomic(resolve(root, "generated/transitions.json"), state.transitions), writeJsonAtomic(resolve(root, "generated/multi-source-state.json"), multi), saveState(statePath, state)]); await renderLiveDashboard(root, event, state, multi.sources.udn);
 }
 async function monitor(root = process.cwd()): Promise<void> {
   const statePath = resolve(root, "generated/runtime-state.json");
-  let state: RuntimeState = await loadState(statePath); const now = new Date(); if (!eligibleToPoll(state, now.getTime())) { await writeJsonAtomic(resolve(root, "generated/state.json"), state); await renderLiveDashboard(root, state.snapshot, state); return; }
-  const result = await fetchOpentix(undefined, { ...(state.cache.etag ? { etag: state.cache.etag } : {}), ...(state.cache.lastModified ? { lastModified: state.cache.lastModified } : {}), now }); state = applyPoll(state, result, now, Number(process.env.AVAILABILITY_THRESHOLD ?? "1")); state = await reconcileNotifications(state, { ...(process.env.GITHUB_TOKEN ? { token: process.env.GITHUB_TOKEN } : {}), ...(process.env.GITHUB_REPOSITORY ? { repository: process.env.GITHUB_REPOSITORY } : {}), issueNumber: Number(process.env.OPENTIX_ISSUE_NUMBER ?? "3") }); await saveState(statePath, state); await Promise.all([writeJsonAtomic(resolve(root, "generated/normalized-snapshot.json"), state.snapshot), writeJsonAtomic(resolve(root, "generated/state.json"), state), writeJsonAtomic(resolve(root, "generated/history.json"), state.history), writeJsonAtomic(resolve(root, "generated/transitions.json"), state.transitions)]); await renderLiveDashboard(root, state.snapshot, state);
+  let state: RuntimeState = await loadState(statePath);
+  let multi: MultiSourceRuntimeState;
+  try { multi = JSON.parse(await readFile(resolve(root, "generated/multi-source-state.json"), "utf8")) as MultiSourceRuntimeState; validateMultiSourceState(multi); } catch (error) { if (error && typeof error === "object" && "code" in error && error.code === "ENOENT") multi = migrateRuntimeState(state); else throw error; }
+  const now = new Date();
+  if (eligibleToPoll(state, now.getTime())) {
+    const result = await fetchOpentix(undefined, { ...(state.cache.etag ? { etag: state.cache.etag } : {}), ...(state.cache.lastModified ? { lastModified: state.cache.lastModified } : {}), now });
+    state = applyPoll(state, result, now, Number(process.env.AVAILABILITY_THRESHOLD ?? "1"));
+    state = await reconcileNotifications(state, { ...(process.env.GITHUB_TOKEN ? { token: process.env.GITHUB_TOKEN } : {}), ...(process.env.GITHUB_REPOSITORY ? { repository: process.env.GITHUB_REPOSITORY } : {}), issueNumber: Number(process.env.OPENTIX_ISSUE_NUMBER ?? "3") });
+  }
+  let udnResult: Awaited<ReturnType<typeof fetchUdnPerformance>>;
+  try {
+    const performanceUrl = process.env.UDN_PERFORMANCE_URL ?? await discoverUdnPerformance();
+    udnResult = await fetchUdnPerformance(performanceUrl, { now });
+  } catch (error) {
+    udnResult = { kind: "failure", status: 0, errorCategory: error instanceof Error ? error.name === "AbortError" ? "timeout" : "discovery-failure" : "discovery-failure" };
+  }
+  multi.sources.opentix = state;
+  multi.sources.udn = applyUdnPoll(multi.sources.udn ?? emptyUdnState(), udnResult, now);
+  await saveState(statePath, state);
+  await Promise.all([writeJsonAtomic(resolve(root, "generated/normalized-snapshot.json"), state.snapshot), writeJsonAtomic(resolve(root, "generated/state.json"), state), writeJsonAtomic(resolve(root, "generated/history.json"), state.history), writeJsonAtomic(resolve(root, "generated/transitions.json"), state.transitions), writeJsonAtomic(resolve(root, "generated/multi-source-state.json"), multi)]);
+  await renderLiveDashboard(root, state.snapshot, state, multi.sources.udn);
 }
 const command = process.argv[2];
 if (command === "build") await build(); else if (command === "monitor") await monitor(); else if (import.meta.url === pathToFileURL(process.argv[1] ?? "").href) { console.error("Usage: node dist/cli.js build|monitor"); process.exitCode = 2; }
