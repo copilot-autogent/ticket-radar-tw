@@ -1,0 +1,22 @@
+{
+  "fixture": {
+    "schemaVersion": 1,
+    "source": "fixture",
+    "upstreamEventId": "fixture-event-001",
+    "title": "Taipei <img src=x onerror=alert(1)> Showcase",
+    "venue": "Taipei Arena"
+  },
+  "transitions": [
+    {
+      "schemaVersion": 1,
+      "source": "fixture",
+      "performanceId": "fixture-performance-001",
+      "tierId": "tier-standard",
+      "from": "sold-out",
+      "to": "available",
+      "observedAt": "2026-09-09T08:05:00+08:00",
+      "observationVersion": 2,
+      "idempotencyKey": "fixture-performance-001:tier-standard:sold-out:available:v2"
+    }
+  ]
+}
