@@ -1,7 +1,7 @@
 import { OPENTIX_SOURCE, OPENTIX_TIME_ZONE, NORMALIZED_SCHEMA_VERSION, type LifecycleState, type NormalizedEvent, type NormalizedPerformance } from "./types.js";
 
 export const PARSER_VERSION = "opentix-jsonld-v1";
-export const MAX_RESPONSE_BYTES = 2_000_000;
+export const MAX_RESPONSE_BYTES = 1_048_576;
 export const MIN_INTERVAL_MS = 30 * 60 * 1000;
 
 export interface FetchResult { status: number; body?: string; etag?: string; lastModified?: string; retryAfterMs?: number; }
@@ -107,11 +107,14 @@ export async function fetchOpentix(url = OPENTIX_SOURCE, options: FetchOptions =
   try {
     const headers: Record<string, string> = { accept: "text/html,application/xhtml+xml" }; if (options.etag) headers["if-none-match"] = options.etag; if (options.lastModified) headers["if-modified-since"] = options.lastModified;
     const response = await fetchImpl(url, { headers, signal: controller.signal, redirect: "follow" });
+    if (response.url && new URL(response.url).hostname !== new URL(url).hostname) return { kind: "failure", status: response.status, errorCategory: "redirect-outside-allowlist" };
     const retryAfterMs = parseRetryAfter(response.headers.get("retry-after"), options.now ?? new Date());
     const validators = { ...(response.headers.get("etag") ? { etag: response.headers.get("etag")! } : {}), ...(response.headers.get("last-modified") ? { lastModified: response.headers.get("last-modified")! } : {}) };
     if (response.status === 304) return { kind: "not-modified", status: 304, validators };
     if (response.status === 429 || response.status >= 500) return { kind: "retryable", status: response.status, ...(retryAfterMs !== undefined ? { retryAfterMs } : {}), validators, errorCategory: response.status === 429 ? "rate-limited" : "upstream-5xx" };
     if (!response.ok) return { kind: "failure", status: response.status, validators, errorCategory: `http-${response.status}` };
+    const contentType = response.headers.get("content-type") ?? "";
+    if (contentType && !/(?:text\/html|application\/xhtml\+xml|text\/plain)/i.test(contentType)) return { kind: "failure", status: response.status, validators, errorCategory: "unexpected-content-type" };
     const body = await response.text(); if (body.length > MAX_RESPONSE_BYTES) return { kind: "failure", status: response.status, validators, errorCategory: "response-size" };
     return { kind: "success", status: response.status, validators, observation: parseOpentixHtml(body, (options.now ?? new Date()).toISOString(), options.now ?? new Date()) };
   } catch (error) {

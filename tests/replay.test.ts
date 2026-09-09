@@ -1,12 +1,13 @@
 import { describe, expect, it } from "vitest";
-import { buildReplayDemo, renderReplayDemo } from "../src/replay.js";
+import fixture from "../fixtures/observations.json";
+import { replayHasNoDeliverySurface, runIsolatedReplayDemo } from "../src/replay.js";
 
 describe("isolated replay demo", () => {
-  it("is immutable, visibly non-live, and uses only the pure transition renderer", () => {
-    const demo = buildReplayDemo();
-    expect(demo.live).toBe(false);
-    expect(demo.frames.map((frame) => frame.availability)).toEqual(["sold-out", "available"]);
-    expect(renderReplayDemo(demo)).toContain("not live inventory");
-    expect(renderReplayDemo(demo)).toContain("No notification sent");
+  it("replays one deterministic transition without a delivery surface", () => {
+    const output = runIsolatedReplayDemo(fixture);
+    expect(output.transitions).toHaveLength(1);
+    expect(output.transitions[0]?.from).toBe("sold-out");
+    expect(output.transitions[0]?.to).toBe("available");
+    expect(replayHasNoDeliverySurface()).toBe(true);
   });
 });
