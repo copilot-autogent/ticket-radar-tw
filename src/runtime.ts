@@ -1,0 +1,63 @@
+import { readFile } from "node:fs/promises";
+import { resolve } from "node:path";
+import { OPENTIX_SOURCE, NORMALIZED_SCHEMA_VERSION, type HealthCategory, type NormalizedEvent, type NormalizedPerformance } from "./types.js";
+import { backoffMs, isEligible, nextEligibleAt, MIN_INTERVAL_MS, type PollResult } from "./opentix.js";
+import { writeJsonAtomic } from "./pipeline.js";
+
+export const MAX_HISTORY = 200;
+export const MAX_OUTBOX = 100;
+export interface TransitionRecord { key: string; kind: "new-performance" | "sale-open" | "became-available" | "threshold"; performanceId: string; from: number | string | null; to: number | string | null; observedAt: string; }
+export interface RuntimeState {
+  schemaVersion: typeof NORMALIZED_SCHEMA_VERSION; source: typeof OPENTIX_SOURCE; snapshot: NormalizedEvent | null; retainedDataAt: string | null;
+  history: Array<{ observedAt: string; performanceCount: number; totalRemaining: number | null }>;
+  transitions: TransitionRecord[]; health: { category: HealthCategory; error?: string; lastAttemptAt: string | null; lastSuccessfulAt: string | null; nextEligibleAt: string | null };
+  cache: { etag?: string; lastModified?: string }; outbox: TransitionRecord[]; ledger: Record<string, { status: "pending" | "sent"; updatedAt: string }>;
+  lastAttemptAt: string | null; lastSuccessfulAt: string | null; nextEligibleAt: string | null;
+}
+export function emptyState(): RuntimeState { return { schemaVersion: NORMALIZED_SCHEMA_VERSION, source: OPENTIX_SOURCE, snapshot: null, retainedDataAt: null, history: [], transitions: [], health: { category: "not-run", lastAttemptAt: null, lastSuccessfulAt: null, nextEligibleAt: null }, cache: {}, outbox: [], ledger: {}, lastAttemptAt: null, lastSuccessfulAt: null, nextEligibleAt: null }; }
+function total(event: NormalizedEvent): number | null { const values = event.performances.map((item) => item.remaining); return values.some((value) => value === null) ? null : values.reduce<number>((sum, value) => sum + (value ?? 0), 0); }
+function validPerformance(item: NormalizedPerformance): boolean { return item.schemaVersion === NORMALIZED_SCHEMA_VERSION && item.source === OPENTIX_SOURCE && /^\d{4}-\d\d-\d\dT\d\d:\d\d:\d\d(?:\.\d+)?[+-]\d\d:\d\d$/.test(item.startsAt) && (item.remaining === null || Number.isInteger(item.remaining) && (item.remaining as number) >= 0); }
+export function validateNormalizedEvent(event: unknown): NormalizedEvent {
+  if (!event || typeof event !== "object") throw new Error("validation: event-object"); const value = event as NormalizedEvent;
+  if (value.schemaVersion !== NORMALIZED_SCHEMA_VERSION || value.source !== OPENTIX_SOURCE || !value.eventId || !value.title || !value.venue?.name || value.venue.timeZone !== "Asia/Taipei" || !Array.isArray(value.performances) || value.performances.length === 0 || (value.remainingTotal !== null && (!Number.isInteger(value.remainingTotal) || value.remainingTotal < 0))) throw new Error("validation: event-contract");
+  if (value.performances.some((item) => !validPerformance(item) || item.eventId !== value.eventId || item.venue.name !== value.venue.name || item.price.currency !== "TWD" || item.price.min < 0 || item.price.max < item.price.min)) throw new Error("validation: performance-contract");
+  return value;
+}
+function transition(key: string, kind: TransitionRecord["kind"], performanceId: string, from: TransitionRecord["from"], to: TransitionRecord["to"], observedAt: string): TransitionRecord { return { key, kind, performanceId, from, to, observedAt }; }
+function transitionsFor(previous: NormalizedEvent | null, current: NormalizedEvent, threshold: number): TransitionRecord[] {
+  const result: TransitionRecord[] = []; const old = new Map(previous?.performances.map((item) => [item.performanceId, item]) ?? []);
+  for (const item of current.performances) {
+    const before = old.get(item.performanceId);
+    if (!before) { if (item.remaining !== null && item.remaining >= threshold) result.push(transition(`${item.performanceId}:new`, "new-performance", item.performanceId, null, item.remaining, current.observedAt)); continue; }
+    if (before.lifecycle !== "on-sale" && item.lifecycle === "on-sale") result.push(transition(`${item.performanceId}:sale-open`, "sale-open", item.performanceId, before.lifecycle, item.lifecycle, current.observedAt));
+    if (before.remaining !== null && item.remaining !== null && before.remaining < threshold && item.remaining >= threshold) result.push(transition(`${item.performanceId}:threshold:${threshold}`, "threshold", item.performanceId, before.remaining, item.remaining, current.observedAt));
+    if (before.remaining === 0 && item.remaining !== null && item.remaining > 0) result.push(transition(`${item.performanceId}:available`, "became-available", item.performanceId, before.remaining, item.remaining, current.observedAt));
+  }
+  return result;
+}
+export function applyPoll(input: RuntimeState, result: PollResult, now = new Date(), threshold = 1): RuntimeState {
+  const state = structuredClone(input); const attempt = now.toISOString(); state.lastAttemptAt = attempt; state.health.lastAttemptAt = attempt;
+  if (result.kind === "success" && result.observation) {
+    const observation = validateNormalizedEvent(result.observation); const transitions = state.snapshot ? transitionsFor(state.snapshot, observation, threshold) : [];
+    state.snapshot = observation; state.retainedDataAt = observation.observedAt; state.lastSuccessfulAt = attempt; state.health.lastSuccessfulAt = attempt; state.health.category = "ok"; delete state.health.error; state.cache = result.validators ?? {};
+    state.lastAttemptAt = attempt; state.nextEligibleAt = new Date(now.getTime() + MIN_INTERVAL_MS).toISOString(); state.health.nextEligibleAt = state.nextEligibleAt;
+    state.history.push({ observedAt: observation.observedAt, performanceCount: observation.performances.length, totalRemaining: total(observation) }); state.history = state.history.slice(-MAX_HISTORY);
+    for (const item of transitions) { if (!state.transitions.some((old) => old.key === item.key)) state.transitions.push(item); if (!state.ledger[item.key]) { state.ledger[item.key] = { status: "pending", updatedAt: attempt }; state.outbox.push(item); } }
+    state.transitions = state.transitions.slice(-MAX_HISTORY); state.outbox = state.outbox.slice(-MAX_OUTBOX); return state;
+  }
+  if (result.kind === "not-modified") { state.health.category = state.snapshot ? "ok" : "stale"; delete state.health.error; state.cache = result.validators ?? state.cache; state.nextEligibleAt = new Date(now.getTime() + MIN_INTERVAL_MS).toISOString(); state.health.nextEligibleAt = state.nextEligibleAt; return state; }
+  state.health.category = state.snapshot ? "stale" : "error"; state.health.error = result.errorCategory ?? `http-${result.status}`; const delay = backoffMs(1, result.retryAfterMs); state.nextEligibleAt = nextEligibleAt(attempt, delay); state.health.nextEligibleAt = state.nextEligibleAt; return state;
+}
+export async function loadState(path: string): Promise<RuntimeState> { try { const value = JSON.parse(await readFile(path, "utf8")) as RuntimeState; validateState(value); return value; } catch { return emptyState(); } }
+export function validateState(value: unknown): asserts value is RuntimeState { if (!value || typeof value !== "object") throw new Error("validation: state"); const state = value as RuntimeState; if (state.schemaVersion !== NORMALIZED_SCHEMA_VERSION || state.source !== OPENTIX_SOURCE || !state.health || !Array.isArray(state.history) || !Array.isArray(state.transitions) || !Array.isArray(state.outbox) || !state.ledger) throw new Error("validation: state-contract"); if (state.snapshot) validateNormalizedEvent(state.snapshot); }
+export async function saveState(path: string, state: RuntimeState): Promise<void> { validateState(state); await writeJsonAtomic(resolve(path), state); }
+
+export interface NotificationOptions { token?: string; repository?: string; issueNumber?: number; fetchImpl?: typeof fetch; }
+export async function reconcileNotifications(state: RuntimeState, options: NotificationOptions = {}): Promise<RuntimeState> {
+  if (!options.token || !options.repository || !options.issueNumber) return state;
+  const fetchImpl = options.fetchImpl ?? fetch; const endpoint = `https://api.github.com/repos/${options.repository}/issues/${options.issueNumber}/comments`; const headers = { authorization: `Bearer ${options.token}`, accept: "application/vnd.github+json", "content-type": "application/json" };
+  let comments: Array<{ body?: string }> = []; try { const response = await fetchImpl(endpoint, { headers }); if (!response.ok) return state; comments = await response.json() as Array<{ body?: string }>; } catch { return state; }
+  const next = structuredClone(state); for (const item of next.outbox) { if (next.ledger[item.key]?.status === "sent") continue; const marker = `<!-- ticket-radar-transition:${item.key} -->`; if (comments.some((comment) => comment.body?.includes(marker))) { next.ledger[item.key] = { status: "sent", updatedAt: new Date().toISOString() }; continue; } const body = `${marker}\nOPENTIX availability transition for performance \`${item.performanceId}\`: ${String(item.from)} → ${String(item.to)}.`; try { const response = await fetchImpl(endpoint, { method: "POST", headers, body: JSON.stringify({ body }) }); if (response.ok) next.ledger[item.key] = { status: "sent", updatedAt: new Date().toISOString() }; } catch { /* leave pending for the next run */ } }
+  return next;
+}
+export function eligibleToPoll(state: RuntimeState, now = Date.now()): boolean { return isEligible(state.lastAttemptAt ?? undefined, now); }

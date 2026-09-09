@@ -1,31 +1,42 @@
 # Ticket Radar TW
 
-Fixture-backed scaffold for a low-maintenance Taiwan performance and ticket-availability radar.
+A narrow, public OPENTIX monitor for [C MUSICAL《我的遺願清單》](https://www.opentix.life/event/2054406826574860289).
+The adapter reads only bounded public HTML/JSON-LD, never logs or persists upstream HTML, and never
+logs in, reserves, purchases, bypasses a queue, or calls protected endpoints.
 
-## Runtime
+## Data and safety
 
-The checked-in fixture at `fixtures/observations.json` is the authoritative input. `npm run build`
-validates and normalizes it, then atomically writes bounded generated state to:
+`src/opentix.ts` normalizes the event, 25 performances, venue and `Asia/Taipei` timestamps, lifecycle,
+TWD price range, remaining totals, source identity, and schema/parser versions. Missing or ambiguous
+fields remain `unknown`/`null`; malformed, challenge, login, partial, oversized, or drifted pages fail
+closed. `generated/runtime-state.json` is the durable authority and atomically retains the last valid
+snapshot, bounded history, health/freshness, ETag/Last-Modified cache, transition outbox, and marker
+ledger. The first valid poll is a baseline. Subsequent zero-to-positive, sale-open, new-performance,
+and threshold transitions are deterministic and deduplicated.
 
-- `generated/normalized-snapshot.json`
-- `generated/state.json`
-- `generated/history.json`
-- `generated/transitions.json`
-- `public/index.html` and `public/data/dashboard.json`
+The monitor enforces a 30-minute minimum interval, conditional requests, timeout handling, 429/5xx
+retry classification, `Retry-After`, capped backoff, and retained stale data. GitHub issue notification
+reconciliation is a safe no-op without a token and uses hidden deterministic markers when configured.
 
-The first observation is a baseline. A watched tier changing from `sold-out` or `zero` to
-`available` emits one deterministic transition; an identical observation replay emits none.
-Generated assets are checked in so CI can detect drift. Actions temporary files are never durable
-state.
+## Actions and dashboard
 
-## Scope and ethics
-
-This sprint has no live adapters, polling schedule, database, API server, notifications, login,
-reservation, purchase, CAPTCHA bypass, queue bypass, or protected-seat scraping. Future adapters
-must use public, respectful access and preserve source attribution and stable upstream identities.
-Fixture strings are untrusted and escaped before rendering.
+`.github/workflows/manual-monitor.yml` runs only on a 30-minute schedule or manual dispatch, shares a
+non-cancelling concurrency group, uses least required `contents`/`issues` permissions, and commits
+state with remote-head reconciliation. It never triggers on push. Pages renders the checked-in
+normalized snapshot and clearly labels stale/error health, retained-data timestamps, freshness,
+source URL, lifecycle, prices, remaining totals, and bounded transition history.
 
 ## Development
 
-Requires Node 22. Run `npm ci`, then `npm run lint`, `npm run build`, and `npm run test:coverage`.
-GitHub Pages is deployed from the `public` artifact by Actions under `/ticket-radar-tw/`.
+Requires Node 22. Run:
+
+```sh
+npm ci
+npm test
+npm run lint
+npm run build
+npm run test:coverage
+```
+
+`npm run monitor` performs one live public poll. `npm run build` regenerates deterministic committed
+fixture data and the dashboard.

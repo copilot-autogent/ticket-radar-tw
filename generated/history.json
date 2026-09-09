@@ -1,29 +1,7 @@
 [
   {
-    "schemaVersion": 1,
-    "source": "fixture",
-    "performanceId": "fixture-performance-001",
-    "tierId": "tier-standard",
-    "availability": "sold-out",
-    "observedAt": "2026-09-09T08:00:00+08:00",
-    "observationVersion": 1
-  },
-  {
-    "schemaVersion": 1,
-    "source": "fixture",
-    "performanceId": "fixture-performance-001",
-    "tierId": "tier-standard",
-    "availability": "available",
-    "observedAt": "2026-09-09T08:05:00+08:00",
-    "observationVersion": 2
-  },
-  {
-    "schemaVersion": 1,
-    "source": "fixture",
-    "performanceId": "fixture-performance-001",
-    "tierId": "tier-standard",
-    "availability": "available",
-    "observedAt": "2026-09-09T08:05:00+08:00",
-    "observationVersion": 2
+    "observedAt": "2026-09-09T01:45:00Z",
+    "performanceCount": 25,
+    "totalRemaining": 2335
   }
 ]
