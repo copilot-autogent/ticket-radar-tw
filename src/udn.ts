@@ -3,7 +3,7 @@ import { UDN_EVENT_ID, UDN_EVENT_SOURCE, UDN_PROVIDER, type UdnAvailabilityKind,
 export const UDN_PARSER_VERSION = "udn-utk0204-table-v1";
 export const UDN_HOST = "tickets.udnfunlife.com";
 export const UDN_PERFORMANCE_PATH = "/Application/UTK02/UTK0204_.aspx";
-export const MAX_UDN_RESPONSE_BYTES = 2_000_000;
+export const MAX_UDN_RESPONSE_BYTES = 1_048_576;
 
 function decode(value: string): string {
   return value.replace(/&amp;/g, "&").replace(/&quot;/g, '"').replace(/&#39;/g, "'").replace(/&lt;/g, "<").replace(/&gt;/g, ">");
@@ -76,8 +76,11 @@ export async function fetchUdnPerformance(performanceUrl: string, options: { fet
   try {
     const expected = expectedUrl(performanceUrl);
     const response = await fetchImpl(expected.toString(), { headers: { accept: "text/html,application/xhtml+xml" }, redirect: "follow", signal: controller.signal });
+    if (response.url && new URL(response.url).hostname !== UDN_HOST) return { kind: "failure", status: response.status, errorCategory: "redirect-outside-allowlist", finalUrl: response.url };
     if (response.status === 429 || response.status >= 500) return { kind: "retryable", status: response.status, errorCategory: "upstream-retryable", finalUrl: response.url };
     if (!response.ok) return { kind: "failure", status: response.status, errorCategory: `http-${response.status}`, finalUrl: response.url };
+    const contentType = response.headers.get("content-type") ?? "";
+    if (contentType && !/(?:text\/html|application\/xhtml\+xml|text\/plain)/i.test(contentType)) return { kind: "failure", status: response.status, errorCategory: "unexpected-content-type", finalUrl: response.url };
     const body = await response.text();
     const observation = parseUdnPerformanceHtml(body, response.url, (options.now ?? new Date()).toISOString(), expected.searchParams.get("PERFORMANCE_ID")!);
     return { kind: "success", status: response.status, observation, finalUrl: response.url };
@@ -92,7 +95,7 @@ export async function discoverUdnPerformance(fetchImpl: typeof fetch = fetch, ti
   try {
   const response = await request(UDN_EVENT_SOURCE);
   if (!response.ok || new URL(response.url).hostname !== UDN_HOST) fail("event-page-redirect");
-  let html = await response.text();
+  let html = await response.text(); if (html.length > MAX_UDN_RESPONSE_BYTES) fail("response-size");
   const findLink = (value: string): string | undefined => {
     for (const match of value.matchAll(/(?:https?:\/\/tickets\.udnfunlife\.com)?(?:\/?Application\/UTK02\/)?UTK0204_(?:000)?\.aspx\?[^"' <]+/gi)) {
       const candidate = new URL(decode(match[0]!.replace(/&amp;/g, "&")), "https://tickets.udnfunlife.com");
@@ -104,7 +107,7 @@ export async function discoverUdnPerformance(fetchImpl: typeof fetch = fetch, ti
   if (!match) {
     const performanceList = await request(`${new URL(UDN_EVENT_SOURCE).origin}/Application/UTK02/UTK0203_.aspx?PRODUCT_ID=${UDN_EVENT_ID}`);
     if (!performanceList.ok || new URL(performanceList.url).hostname !== UDN_HOST) fail("performance-page-redirect");
-    html = await performanceList.text();
+    html = await performanceList.text(); if (html.length > MAX_UDN_RESPONSE_BYTES) fail("response-size");
     match = findLink(html);
   }
   if (!match) fail("missing-performance-link");

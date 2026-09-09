@@ -41,7 +41,7 @@ describe("catalog polish boundaries", () => {
     } as unknown as CatalogState;
     const current = await discoverCatalog("opentix", { indexUrls: ["https://index.test/"], fetchImpl: async () => new Response("") });
     const migrated = mergeCatalogState(legacy, current);
-    expect(migrated.completeness.status).toBe("complete");
+    expect(migrated.completeness.status).toBe("truncated");
     expect(migrated.completeness.eventCount).toBe(migrated.coverage.summariesDiscovered);
     expect(migrated.events.every((event) => event.detailStatus)).toBe(true);
   });

@@ -151,7 +151,15 @@
             "maxPrice": 3000,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2064989613489934337",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -181,7 +189,15 @@
             "maxPrice": 1500,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2077607839858749441",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -331,7 +347,15 @@
             "maxPrice": 3500,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2009991201670881281",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -451,7 +475,15 @@
             "maxPrice": 2000,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -511,7 +543,15 @@
             "maxPrice": 1600,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2070445180942770176",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -556,7 +596,15 @@
             "maxPrice": 2000,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2072638218921242625",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -569,7 +617,15 @@
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
         "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
-        "performances": []
+        "performances": [],
+        "detailStatus": "discovered-summary",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2028779666870386688",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -599,7 +655,15 @@
             "maxPrice": 1200,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2069316509112156161",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -629,7 +693,15 @@
             "maxPrice": 3600,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2066450884948570113",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -659,7 +731,15 @@
             "maxPrice": 200,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2083080153702313985",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -689,7 +769,15 @@
             "maxPrice": 2500,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2078021008845074433",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -719,7 +807,15 @@
             "maxPrice": 700,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2083083444863610881",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -779,7 +875,15 @@
             "maxPrice": 3600,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2011666592979537921",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -839,7 +943,15 @@
             "maxPrice": 2600,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2085664559789076480",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -1529,7 +1641,15 @@
             "maxPrice": 1200,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2085252055415214081",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -1559,7 +1679,15 @@
             "maxPrice": 300,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2095352621671849984",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -1589,7 +1717,15 @@
             "maxPrice": 1200,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2095032675222945793",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -1754,7 +1890,15 @@
             "maxPrice": 350,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2084178428940558336",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -1814,7 +1958,15 @@
             "maxPrice": 1200,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2089184609844899841",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -1874,7 +2026,15 @@
             "maxPrice": 1000,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2090271128120614912",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       }
     ],
     "completeness": {
@@ -1885,6 +2045,434 @@
       "detailCount": 20,
       "stopReason": "cap",
       "health": "ok"
+    },
+    "summaries": [
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2064989613489934337",
+        "sourceUrl": "https://www.opentix.life/event/2064989613489934337",
+        "title": "2026朱宗慶打擊樂團擊樂劇場《六部曲》",
+        "venue": "國家戲劇院",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2064989613489934337",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2077607839858749441",
+        "sourceUrl": "https://www.opentix.life/event/2077607839858749441",
+        "title": "【TCO】聽見蘇文慶－2026/27樂季開季音樂會",
+        "venue": "國家音樂廳",
+        "category": "concert",
+        "classificationReason": "title-keyword-fallback",
+        "classificationConfidence": "medium",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2077607839858749441",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2009991201670881281",
+        "sourceUrl": "https://www.opentix.life/event/2009991201670881281",
+        "title": "《西門町一番地》2026好評回歸雙十同慶",
+        "venue": "西門紅樓二樓劇場",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2009991201670881281",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2048966343179272192",
+        "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
+        "title": "【相聲瓦舍】《啖噓呵嘻吸吹呼》",
+        "venue": "中壢藝術館音樂廳",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2070445180942770176",
+        "sourceUrl": "https://www.opentix.life/event/2070445180942770176",
+        "title": "2026秋天藝術節 卡羅琳．居拉．阮 《眼淚》",
+        "venue": "國家戲劇院",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2070445180942770176",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2072638218921242625",
+        "sourceUrl": "https://www.opentix.life/event/2072638218921242625",
+        "title": "誠品動漫祭《日本動畫交響音樂會—宮崎駿と新海誠篇》",
+        "venue": "誠品表演廳",
+        "category": "concert",
+        "classificationReason": "title-keyword-fallback",
+        "classificationConfidence": "medium",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2072638218921242625",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2028779666870386688",
+        "sourceUrl": "https://www.opentix.life/event/2028779666870386688",
+        "title": "冠名贊助：卡洛塔妮 〈島影情深 III 余曉怡管風琴音樂會 · 人文關懷之夜〉",
+        "category": "concert",
+        "classificationReason": "title-keyword-fallback",
+        "classificationConfidence": "medium",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "discovered-summary",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2028779666870386688",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2069316509112156161",
+        "sourceUrl": "https://www.opentix.life/event/2069316509112156161",
+        "title": "【2026聲浪藝術節】優人神鼓×桑布伊《我回來了－做一部作品給自己的靈魂！》",
+        "venue": "恆春文化中心劇場館表演廳",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2069316509112156161",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2066450884948570113",
+        "sourceUrl": "https://www.opentix.life/event/2066450884948570113",
+        "title": "科瓦勒夫亞洲巡迴 - 臺灣首演",
+        "venue": "衛武營國家藝術文化中心音樂廳",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2066450884948570113",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2083080153702313985",
+        "sourceUrl": "https://www.opentix.life/event/2083080153702313985",
+        "title": "2026基隆演藝～擊樂團兒童故事音樂會《胡桃鉗》",
+        "venue": "基隆表演藝術中心演藝廳",
+        "category": "concert",
+        "classificationReason": "title-keyword-fallback",
+        "classificationConfidence": "medium",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2083080153702313985",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2078021008845074433",
+        "sourceUrl": "https://www.opentix.life/event/2078021008845074433",
+        "title": "手風琴家蔡偉靖、王學與台灣絃樂團《極致拉風摺學》",
+        "venue": "國家音樂廳",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2078021008845074433",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2083083444863610881",
+        "sourceUrl": "https://www.opentix.life/event/2083083444863610881",
+        "title": "2026基隆演藝～《勇者・參上！》英雄傳說與交響管樂的時空共鳴",
+        "venue": "基隆表演藝術中心演藝廳",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2083083444863610881",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2011666592979537921",
+        "sourceUrl": "https://www.opentix.life/event/2011666592979537921",
+        "title": "巴洛克獨奏家樂團《布蘭登堡全集：巴赫的和聲奇蹟》",
+        "venue": "衛武營國家藝術文化中心音樂廳",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2011666592979537921",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2085664559789076480",
+        "sourceUrl": "https://www.opentix.life/event/2085664559789076480",
+        "title": "2026中國信託新舞臺藝術節 約恩．布爾熱瓦舞團《誰會跌倒》",
+        "venue": "臺北表演藝術中心 球劇場",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2085664559789076480",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2085252055415214081",
+        "sourceUrl": "https://www.opentix.life/event/2085252055415214081",
+        "title": "《黃翊與庫卡》Apple Immersive Video",
+        "venue": "黃翊工作室＋",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2085252055415214081",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2095352621671849984",
+        "sourceUrl": "https://www.opentix.life/event/2095352621671849984",
+        "title": "2026 秋天藝術節 ✕ 報導者學院「朗讀之夜：在失序的時代尋路」",
+        "venue": "國家兩廳院實驗劇場",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2095352621671849984",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2095032675222945793",
+        "sourceUrl": "https://www.opentix.life/event/2095032675222945793",
+        "title": "林冠廷2026鋼琴獨奏會_向柴可夫斯基致敬",
+        "venue": "國家兩廳院演奏廳",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2095032675222945793",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2084178428940558336",
+        "sourceUrl": "https://www.opentix.life/event/2084178428940558336",
+        "title": "《看不見》親子繪本說故事",
+        "venue": "國家兩廳院表演藝術圖書館",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2084178428940558336",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2089184609844899841",
+        "sourceUrl": "https://www.opentix.life/event/2089184609844899841",
+        "title": "職男人生3-達成激笑",
+        "venue": "新竹縣政府文化局演藝廳",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2089184609844899841",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "opentix",
+        "eventId": "2090271128120614912",
+        "sourceUrl": "https://www.opentix.life/event/2090271128120614912",
+        "title": "《弦舞歐洲》富爾敦室內樂團 2026 臺灣巡迴音樂會",
+        "venue": "國家兩廳院演奏廳",
+        "category": "concert",
+        "classificationReason": "title-keyword-fallback",
+        "classificationConfidence": "medium",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "opentix",
+          "sourceUrl": "https://www.opentix.life/event/2090271128120614912",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      }
+    ],
+    "coverage": {
+      "summariesDiscovered": 20,
+      "detailEnriched": 19,
+      "performancesDiscovered": 105,
+      "pricesKnown": 105,
+      "categoriesKnown": 5
     }
   },
   "udn": {
@@ -1917,7 +2505,15 @@
             "maxPrice": 3000,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EBDFK7&kdid=A01",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -1967,7 +2563,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A01",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2017,7 +2621,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EW334C&kdid=A01",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2045,7 +2657,15 @@
             "maxPrice": 1600,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A01",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2073,7 +2693,15 @@
             "maxPrice": 0,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EBDFKH",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2100,7 +2728,15 @@
             "maxPrice": 0,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1B9YMMZ",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2210,7 +2846,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AS0TFB",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2248,7 +2892,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2299,7 +2951,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=N23SE92T",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2410,7 +3070,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2508,7 +3176,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2606,7 +3282,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2680,7 +3364,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P18UR3V5",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2730,7 +3422,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AS0TF9&kdid=A02",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2792,7 +3492,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1DIYT1D&kdid=A03",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2854,7 +3562,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1CHFLI4&kdid=A03",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2916,7 +3632,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A03",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2944,7 +3668,15 @@
             "maxPrice": 0,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P185ZP45&kdid=A04",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -2972,7 +3704,15 @@
             "maxPrice": 1400,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A04",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       },
       {
         "schemaVersion": 1,
@@ -3010,7 +3750,15 @@
             "maxPrice": null,
             "currency": "TWD"
           }
-        ]
+        ],
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A05",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
       }
     ],
     "completeness": {
@@ -3025,6 +3773,415 @@
       "knownPriceCount": 0,
       "knownCategoryCount": 0,
       "health": "ok"
+    },
+    "summaries": [
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1EBDFK7",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EBDFK7&kdid=A01",
+        "title": "2026《一村喜事：光陰的故事》沉浸式辦桌舞台劇",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EBDFK7&kdid=A01",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P19BAHLP",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A01",
+        "title": "【櫻桃小丸子原作40週年】特展",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A01",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1EW334C",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EW334C&kdid=A01",
+        "title": "《FunVR 劇場》",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EW334C&kdid=A01",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1AEBJG5",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A01",
+        "title": "倫敦全本音樂劇《史瑞克》",
+        "category": "musical",
+        "classificationReason": "title-keyword-fallback",
+        "classificationConfidence": "medium",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A01",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1EBDFKH",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EBDFKH",
+        "title": "影集式音樂劇《不親愛家人》",
+        "category": "musical",
+        "classificationReason": "title-keyword-fallback",
+        "classificationConfidence": "medium",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EBDFKH",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1B9YMMZ",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1B9YMMZ",
+        "title": "韓國大學路喜劇猛男秀《Hunky Show》",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1B9YMMZ",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1AS0TFB",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AS0TFB",
+        "title": "古典光影大師：林布蘭到哥雅-托雷多美術館珍藏展I",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AS0TFB",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1AHW7XE",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE",
+        "title": "維也納美泉宮管弦樂團",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "N23SE92T",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=N23SE92T",
+        "title": "唱 我們的歌 流行音樂故事展",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=N23SE92T",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P14NG899",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
+        "title": "恐龍大復活 關渡探險樂園",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1A6G98Z",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z",
+        "title": "埃及木乃伊-永生傳說",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P19OHPBL",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
+        "title": "伊藤潤二展 誘惑",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P18UR3V5",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P18UR3V5",
+        "title": "圓潤的魔法 波特羅特展",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P18UR3V5",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1AS0TF9",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AS0TF9&kdid=A02",
+        "title": "新藝境 慕夏百年經典特展",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AS0TF9&kdid=A02",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1DIYT1D",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1DIYT1D&kdid=A03",
+        "title": "2026愛手創國際手作設計節-靈感午茶會",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1DIYT1D&kdid=A03",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1CHFLI4",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1CHFLI4&kdid=A03",
+        "title": "忠泰美術館當期展覽《藤本壯介建築展：原初．未來．森 》",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1CHFLI4&kdid=A03",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1AJGKAD",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A03",
+        "title": "動物王國大探險展-比薩大學自然史博物館",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A03",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P185ZP45",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P185ZP45&kdid=A04",
+        "title": "會演是英雄2之《英雄所賤略同》",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P185ZP45&kdid=A04",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P0YXZMT5",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A04",
+        "title": "王偉忠監製舞台劇《明星養老院》2.0人生下半場，笑著登場!",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A04",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      },
+      {
+        "schemaVersion": 1,
+        "source": "udn",
+        "eventId": "P1AGQOQ6",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A05",
+        "title": "烏克蘭國家歌劇院管弦樂團 貝九《合唱》交響曲",
+        "category": "unknown",
+        "classificationReason": "unknown",
+        "classificationConfidence": "low",
+        "firstSeenAt": "2026-09-09T12:25:42.464Z",
+        "catalogFetchedAt": "2026-09-09T12:25:42.464Z",
+        "detailStatus": "detail-enriched",
+        "provenance": {
+          "source": "udn",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A05",
+          "retrievedAt": "2026-09-09T12:25:42.464Z",
+          "discoveryMethod": "legacy-migration",
+          "parserVersion": "legacy-state"
+        }
+      }
+    ],
+    "coverage": {
+      "summariesDiscovered": 20,
+      "detailEnriched": 20,
+      "performancesDiscovered": 69,
+      "pricesKnown": 11,
+      "categoriesKnown": 2
     }
   }
 }
