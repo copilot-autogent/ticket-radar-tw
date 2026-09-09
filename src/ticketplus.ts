@@ -65,7 +65,7 @@ export function parseTicketPlusOrdinaryJson(body: string, observedAt = new Date(
   const docs = jsonDocuments(body);
   const records = docs.flatMap((doc) => findAll(doc, (item) => clean(item.id ?? item.eventId) === TICKET_PLUS_ORDINARY_EVENT || clean(item.eventId) === TICKET_PLUS_ORDINARY_EVENT));
   const root = records[0] ?? (docs[0] && typeof docs[0] === "object" ? docs[0] as Record<string, unknown> : {});
-  const sessions = findAll(root, (item) => Boolean(clean(item.sessionId ?? item.id)) && (clean(item.eventId) === TICKET_PLUS_ORDINARY_ACTIVITY || clean(item.event_id) === TICKET_PLUS_ORDINARY_ACTIVITY || /^s\d+$/i.test(clean(item.sessionId ?? item.id)) || clean(item.sessionId ?? item.id).length > 12));
+  const sessions = docs.flatMap((doc) => findAll(doc, (item) => Boolean(clean(item.sessionId ?? item.id)) && (clean(item.eventId) === TICKET_PLUS_ORDINARY_ACTIVITY || clean(item.event_id) === TICKET_PLUS_ORDINARY_ACTIVITY || /^s\d+$/i.test(clean(item.sessionId ?? item.id)) || clean(item.sessionId ?? item.id).length > 12)));
   const parsed: TicketPlusSession[] = sessions.map((item) => {
     const sessionId = clean(item.id ?? item.sessionId);
     const status = clean(item.status ?? item.saleStatus ?? item.state) || "unknown";
@@ -129,7 +129,7 @@ export function pairTicketPlus(ordinary: TicketPlusOrdinaryObservation | null, l
 }
 export async function fetchTicketPlus(fetchImpl: typeof fetch = fetch, now = new Date()): Promise<{ ordinary?: TicketPlusOrdinaryObservation; lottery?: TicketPlusLotteryObservation; errors: string[] }> {
   const errors: string[] = []; const result: { ordinary?: TicketPlusOrdinaryObservation; lottery?: TicketPlusLotteryObservation; errors: string[] } = { errors };
-  const ordinaryUrl = process.env.TICKET_PLUS_ORDINARY_API_URL ?? `https://apis.ticketplus.com.tw/config/api/v1/getS3?path=event/${TICKET_PLUS_ORDINARY_ACTIVITY}/sessions.json`;
+  const ordinaryUrl = process.env.TICKET_PLUS_ORDINARY_API_URL ?? "https://apis.ticketplus.com.tw/config/api/v1/get?eventId=e000001508&sessionId=s000002229,s000002230";
   const lotteryUrl = process.env.TICKET_PLUS_LOTTERY_URL ?? `https://apis.ticketplus.com.tw/config/api/v1/getS3?path=event/${TICKET_PLUS_LOTTERY_ACTIVITY}/event.json`;
   for (const [kind, url] of [["ordinary", ordinaryUrl], ["lottery", lotteryUrl] as const]) {
     try {
