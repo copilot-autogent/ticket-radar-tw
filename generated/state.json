@@ -665,9 +665,9 @@
   ],
   "health": {
     "category": "stale",
-    "lastAttemptAt": "2026-09-10T09:22:28.484Z",
+    "lastAttemptAt": "2026-09-10T13:43:18.060Z",
     "lastSuccessfulAt": "2026-09-09T22:05:11.828Z",
-    "nextEligibleAt": "2026-09-10T09:52:58.484Z",
+    "nextEligibleAt": "2026-09-10T14:13:48.060Z",
     "error": "response-size"
   },
   "cache": {
@@ -749,7 +749,7 @@
       "updatedAt": "2026-09-09T14:10:23.942Z"
     }
   },
-  "lastAttemptAt": "2026-09-10T09:22:28.484Z",
+  "lastAttemptAt": "2026-09-10T13:43:18.060Z",
   "lastSuccessfulAt": "2026-09-09T22:05:11.828Z",
-  "nextEligibleAt": "2026-09-10T09:52:58.484Z"
+  "nextEligibleAt": "2026-09-10T14:13:48.060Z"
 }
