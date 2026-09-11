@@ -1,7 +1,7 @@
 {
   "opentix": {
     "schemaVersion": 1,
-    "generatedAt": "2026-09-11T19:53:40.831Z",
+    "generatedAt": "2026-09-11T22:05:23.464Z",
     "summaries": [
       {
         "schemaVersion": 1,
@@ -56,12 +56,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2009991201670881281",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -77,12 +77,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -139,12 +139,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2028779666870386688",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -265,12 +265,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2011666592979537921",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -532,12 +532,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2070410822586720257",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -552,12 +552,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2068957182809317377",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -572,12 +572,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2071451959172661248",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -592,12 +592,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2070116012517888001",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -612,12 +612,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2070446724700692480",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -632,12 +632,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2071452051433553921",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -652,12 +652,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2070413509618323457",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -672,12 +672,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2066797494353469441",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -692,12 +692,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2066809416750247937",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -712,12 +712,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2066805019785867264",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -732,12 +732,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2066793620628512768",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -752,12 +752,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2066764933884280832",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -772,12 +772,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2071798385800597505",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -792,12 +792,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2066812720814366721",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -812,12 +812,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2079821135483363329",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -832,12 +832,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2072516129034670080",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -852,12 +852,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2070323539426664449",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -872,12 +872,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2087098850967314433",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -892,12 +892,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-failed",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2054505084713033728",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -912,12 +912,12 @@
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/1823201256034107393",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -932,12 +932,12 @@
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/1881618375330443264",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -952,12 +952,12 @@
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2011615042313633793",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -972,12 +972,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2059829556966187009",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -992,12 +992,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2060216856853549057",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1012,12 +1012,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2088117837816233984",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1032,12 +1032,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2086734015886159873",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1072,12 +1072,12 @@
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2051921256186417153",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1092,12 +1092,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2028634382323146752",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1112,12 +1112,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2033425502020579329",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1132,12 +1132,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2042084429244149760",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1152,12 +1152,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2042154718167330817",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1172,12 +1172,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-failed",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2046829520049606657",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1192,12 +1192,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2051277751034351617",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1212,12 +1212,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2067069773813166080",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1232,12 +1232,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2058820097808400384",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1252,12 +1252,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2089637449305997313",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1272,12 +1272,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2077603220684337153",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1292,12 +1292,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2014304295499268097",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1312,12 +1312,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2074011530553950209",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1332,12 +1332,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2092089077167427584",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1352,12 +1352,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2087091480778027009",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1412,12 +1412,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T04:57:59.552Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2082753505317773312",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1432,12 +1432,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T04:57:59.552Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2087369663374917633",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1472,12 +1472,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2096881473457676289",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1492,12 +1492,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2094283311024123904",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1512,12 +1512,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2095333696817012737",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1532,12 +1532,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2095796632407044097",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1552,12 +1552,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2097174206931984385",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1572,12 +1572,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2095401754193502209",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1592,12 +1592,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2097172276515475456",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1612,12 +1612,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2095039681607081985",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1632,12 +1632,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2097148400504287233",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1652,12 +1652,12 @@
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-11T13:41:11.903Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2029816885442543616",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1672,12 +1672,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T13:41:11.903Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2095056692701274113",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -1891,7 +1891,7 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -2033,7 +2033,7 @@
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2009991201670881281",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -2049,7 +2049,7 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -2161,7 +2161,7 @@
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2048966343179272192",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -2297,13 +2297,13 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [],
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2028779666870386688",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -2509,7 +2509,7 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -2561,7 +2561,7 @@
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2011666592979537921",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -3832,12 +3832,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2070410822586720257",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -3853,12 +3853,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2068957182809317377",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -3874,12 +3874,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2071451959172661248",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -3895,12 +3895,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2070116012517888001",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -3916,12 +3916,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2070446724700692480",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -3937,12 +3937,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2071452051433553921",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -3958,12 +3958,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2070413509618323457",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -3979,12 +3979,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2066797494353469441",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4000,12 +4000,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2066809416750247937",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4021,12 +4021,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2066805019785867264",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4042,12 +4042,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2066793620628512768",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4063,12 +4063,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2066764933884280832",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4084,12 +4084,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2071798385800597505",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4105,12 +4105,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2066812720814366721",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4126,12 +4126,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2079821135483363329",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4147,12 +4147,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2072516129034670080",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4168,12 +4168,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2070323539426664449",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4189,12 +4189,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2087098850967314433",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4210,12 +4210,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-failed",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2054505084713033728",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4231,12 +4231,12 @@
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/1823201256034107393",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4283,12 +4283,12 @@
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/1881618375330443264",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4470,12 +4470,12 @@
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2011615042313633793",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4537,12 +4537,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2059829556966187009",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -4979,12 +4979,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2060216856853549057",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5031,12 +5031,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2088117837816233984",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5052,12 +5052,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2086734015886159873",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5140,12 +5140,12 @@
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2051921256186417153",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5192,12 +5192,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2028634382323146752",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5259,12 +5259,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2033425502020579329",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5311,12 +5311,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2042084429244149760",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5378,12 +5378,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2042154718167330817",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5475,12 +5475,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-failed",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2046829520049606657",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5496,12 +5496,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2051277751034351617",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5578,12 +5578,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2067069773813166080",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5599,12 +5599,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2058820097808400384",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5681,12 +5681,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2089637449305997313",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5702,12 +5702,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2077603220684337153",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5723,12 +5723,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2014304295499268097",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5775,12 +5775,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2074011530553950209",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5796,12 +5796,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2092089077167427584",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5817,12 +5817,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2087091480778027009",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5896,12 +5896,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T04:57:59.552Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2082753505317773312",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5917,12 +5917,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T04:57:59.552Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2087369663374917633",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5959,12 +5959,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2096881473457676289",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -5980,12 +5980,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2094283311024123904",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -6001,12 +6001,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2095333696817012737",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -6022,12 +6022,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2095796632407044097",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -6043,12 +6043,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2097174206931984385",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -6064,12 +6064,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2095401754193502209",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -6085,12 +6085,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2097172276515475456",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -6106,12 +6106,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2095039681607081985",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -6127,12 +6127,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T09:16:03.458Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2097148400504287233",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -6148,12 +6148,12 @@
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-11T13:41:11.903Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2029816885442543616",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -6215,12 +6215,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-11T13:41:11.903Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "opentix",
           "sourceUrl": "https://www.opentix.life/event/2095056692701274113",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -6229,7 +6229,7 @@
     ],
     "completeness": {
       "source": "opentix",
-      "fetchedAt": "2026-09-11T19:53:40.831Z",
+      "fetchedAt": "2026-09-11T22:05:23.464Z",
       "eventCount": 83,
       "pageCount": 5,
       "detailCount": 20,
@@ -6252,13 +6252,13 @@
   },
   "udn": {
     "schemaVersion": 1,
-    "generatedAt": "2026-09-11T19:53:40.831Z",
+    "generatedAt": "2026-09-11T22:05:23.464Z",
     "summaries": [
       {
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1EBDFK7",
-        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EBDFK7",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EBDFK7&kdid=A02",
         "title": "UDN event P1EBDFK7",
         "category": "unknown",
         "classificationReason": "unknown",
@@ -6278,18 +6278,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P19BAHLP",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A05",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A02",
         "title": "【櫻桃小丸子原作40週年】特展",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A02",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6318,18 +6318,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1AEBJG5",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A02",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A04",
         "title": "倫敦全本音樂劇《史瑞克》",
         "category": "musical",
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A02",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A04",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6364,12 +6364,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1B9YMMZ",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6384,12 +6384,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AS0TFB&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6398,18 +6398,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1AHW7XE",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE&kdid=A04",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE",
         "title": "維也納美泉宮管弦樂團",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE&kdid=A04",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6424,12 +6424,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=N23SE92T",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6438,18 +6438,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P14NG899",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899&kdid=A05",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
         "title": "恐龍大復活 關渡探險樂園",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6458,18 +6458,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1A6G98Z",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A05",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A03",
         "title": "埃及木乃伊-永生傳說",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A03",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6478,18 +6478,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P19OHPBL",
-        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL&kdid=A05",
         "title": "伊藤潤二展 誘惑",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL&kdid=A05",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6504,12 +6504,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P18UR3V5&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6524,12 +6524,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AS0TF9&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6544,12 +6544,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1DIYT1D&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6564,12 +6564,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1CHFLI4&kdid=A02",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6578,18 +6578,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1AJGKAD",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A03",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A02",
         "title": "動物王國大探險展-比薩大學自然史博物館",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A03",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A02",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6604,12 +6604,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P185ZP45&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6618,18 +6618,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P0YXZMT5",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A04",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A05",
         "title": "王偉忠監製舞台劇《明星養老院》2.0人生下半場，笑著登場!",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A04",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A05",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6638,18 +6638,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1AGQOQ6",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A05",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A02",
         "title": "烏克蘭國家歌劇院管弦樂團 貝九《合唱》交響曲",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A02",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6658,18 +6658,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1EA8QIL",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A02",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A03",
         "title": "2026 台北國際玩具創作大展",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A02",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A03",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6684,12 +6684,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98K&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6704,12 +6704,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T17:24:38.286Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EW334F&kdid=A05",
-          "retrievedAt": "2026-09-11T17:24:38.286Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6718,18 +6718,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P19YQAUA",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A02",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A05",
         "title": "波隆那世界插畫大獎展",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A02",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A05",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6740,7 +6740,7 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1EBDFK7",
-        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EBDFK7",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EBDFK7&kdid=A02",
         "title": "UDN event P1EBDFK7",
         "category": "unknown",
         "classificationReason": "unknown",
@@ -6776,20 +6776,20 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P19BAHLP",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A05",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A02",
         "title": "【櫻桃小丸子原作40週年】特展",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
             "source": "udn",
             "eventId": "P19BAHLP",
             "performanceId": "P19BAHLP-performance-1",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A02",
             "startsAt": "2026-06-18T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -6801,7 +6801,7 @@
             "source": "udn",
             "eventId": "P19BAHLP",
             "performanceId": "P19BAHLP-performance-2",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A02",
             "startsAt": "2026-09-28T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -6813,7 +6813,7 @@
             "source": "udn",
             "eventId": "P19BAHLP",
             "performanceId": "P19BAHLP-performance-3",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A02",
             "startsAt": "2026-06-18T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -6824,8 +6824,8 @@
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19BAHLP&kdid=A02",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6892,20 +6892,20 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1AEBJG5",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A02",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A04",
         "title": "倫敦全本音樂劇《史瑞克》",
         "category": "musical",
         "classificationReason": "title-keyword-fallback",
         "classificationConfidence": "medium",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
             "source": "udn",
             "eventId": "P1AEBJG5",
             "performanceId": "P1AEBJG5-performance-1",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A02",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A04",
             "startsAt": "2026-11-20T19:30:00+08:00",
             "cancelled": false,
             "venue": "臺北表演藝術中心 大劇院",
@@ -6918,8 +6918,8 @@
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A02",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AEBJG5&kdid=A04",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -6970,7 +6970,7 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -6990,7 +6990,7 @@
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1B9YMMZ",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7005,7 +7005,7 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -7108,7 +7108,7 @@
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AS0TFB&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7117,20 +7117,20 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1AHW7XE",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE&kdid=A04",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE",
         "title": "維也納美泉宮管弦樂團",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
             "source": "udn",
             "eventId": "P1AHW7XE",
             "performanceId": "P1AHW7XE-performance-1",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE&kdid=A04",
+            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE",
             "startsAt": "2026-12-06T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7142,7 +7142,7 @@
             "source": "udn",
             "eventId": "P1AHW7XE",
             "performanceId": "P1AHW7XE-performance-2",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE&kdid=A04",
+            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE",
             "startsAt": "2026-12-06T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7153,8 +7153,8 @@
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE&kdid=A04",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AHW7XE",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7169,7 +7169,7 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -7213,7 +7213,7 @@
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=N23SE92T",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7222,20 +7222,20 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P14NG899",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899&kdid=A05",
+        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
         "title": "恐龍大復活 關渡探險樂園",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
             "source": "udn",
             "eventId": "P14NG899",
             "performanceId": "P14NG899-performance-1",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
             "startsAt": "2026-01-17T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7247,7 +7247,7 @@
             "source": "udn",
             "eventId": "P14NG899",
             "performanceId": "P14NG899-performance-2",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
             "startsAt": "2026-01-17T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7259,7 +7259,7 @@
             "source": "udn",
             "eventId": "P14NG899",
             "performanceId": "P14NG899-performance-3",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
             "startsAt": "2026-02-16T00:00:00+08:00",
             "cancelled": false,
             "saleStart": "2026-02-16T00:00:00+08:00",
@@ -7272,7 +7272,7 @@
             "source": "udn",
             "eventId": "P14NG899",
             "performanceId": "P14NG899-performance-4",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
             "startsAt": "2025-12-15T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7284,7 +7284,7 @@
             "source": "udn",
             "eventId": "P14NG899",
             "performanceId": "P14NG899-performance-5",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
             "startsAt": "2026-01-17T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7296,7 +7296,7 @@
             "source": "udn",
             "eventId": "P14NG899",
             "performanceId": "P14NG899-performance-6",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
             "startsAt": "2027-02-21T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7308,7 +7308,7 @@
             "source": "udn",
             "eventId": "P14NG899",
             "performanceId": "P14NG899-performance-7",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
             "startsAt": "2027-02-21T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7320,7 +7320,7 @@
             "source": "udn",
             "eventId": "P14NG899",
             "performanceId": "P14NG899-performance-8",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
             "startsAt": "2026-01-17T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7331,8 +7331,8 @@
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P14NG899",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7341,20 +7341,20 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1A6G98Z",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A05",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A03",
         "title": "埃及木乃伊-永生傳說",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
             "source": "udn",
             "eventId": "P1A6G98Z",
             "performanceId": "P1A6G98Z-performance-1",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A03",
             "startsAt": "2026-06-18T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7366,7 +7366,7 @@
             "source": "udn",
             "eventId": "P1A6G98Z",
             "performanceId": "P1A6G98Z-performance-2",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A03",
             "startsAt": "2026-05-15T00:00:00+08:00",
             "cancelled": false,
             "minPrice": 100,
@@ -7378,7 +7378,7 @@
             "source": "udn",
             "eventId": "P1A6G98Z",
             "performanceId": "P1A6G98Z-performance-3",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A03",
             "startsAt": "2026-05-15T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7390,7 +7390,7 @@
             "source": "udn",
             "eventId": "P1A6G98Z",
             "performanceId": "P1A6G98Z-performance-4",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A03",
             "startsAt": "2026-06-18T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7402,7 +7402,7 @@
             "source": "udn",
             "eventId": "P1A6G98Z",
             "performanceId": "P1A6G98Z-performance-5",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A03",
             "startsAt": "2026-06-18T00:00:00+08:00",
             "cancelled": true,
             "minPrice": null,
@@ -7414,7 +7414,7 @@
             "source": "udn",
             "eventId": "P1A6G98Z",
             "performanceId": "P1A6G98Z-performance-6",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A03",
             "startsAt": "2026-09-28T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7426,7 +7426,7 @@
             "source": "udn",
             "eventId": "P1A6G98Z",
             "performanceId": "P1A6G98Z-performance-7",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A03",
             "startsAt": "2026-06-18T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7437,8 +7437,8 @@
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98Z&kdid=A03",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7447,20 +7447,20 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P19OHPBL",
-        "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL&kdid=A05",
         "title": "伊藤潤二展 誘惑",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
             "source": "udn",
             "eventId": "P19OHPBL",
             "performanceId": "P19OHPBL-performance-1",
-            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL&kdid=A05",
             "startsAt": "2026-06-19T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7472,7 +7472,7 @@
             "source": "udn",
             "eventId": "P19OHPBL",
             "performanceId": "P19OHPBL-performance-2",
-            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL&kdid=A05",
             "startsAt": "2026-05-04T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7484,7 +7484,7 @@
             "source": "udn",
             "eventId": "P19OHPBL",
             "performanceId": "P19OHPBL-performance-3",
-            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL&kdid=A05",
             "startsAt": "2026-06-19T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7496,7 +7496,7 @@
             "source": "udn",
             "eventId": "P19OHPBL",
             "performanceId": "P19OHPBL-performance-4",
-            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL&kdid=A05",
             "startsAt": "2026-06-19T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7508,7 +7508,7 @@
             "source": "udn",
             "eventId": "P19OHPBL",
             "performanceId": "P19OHPBL-performance-5",
-            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL&kdid=A05",
             "startsAt": "2026-06-19T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7520,7 +7520,7 @@
             "source": "udn",
             "eventId": "P19OHPBL",
             "performanceId": "P19OHPBL-performance-6",
-            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL&kdid=A05",
             "startsAt": "2026-09-28T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7532,7 +7532,7 @@
             "source": "udn",
             "eventId": "P19OHPBL",
             "performanceId": "P19OHPBL-performance-7",
-            "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL&kdid=A05",
             "startsAt": "2026-06-19T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7543,8 +7543,8 @@
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/Application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19OHPBL&kdid=A05",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7559,7 +7559,7 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -7626,7 +7626,7 @@
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P18UR3V5&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7641,7 +7641,7 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -7684,7 +7684,7 @@
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AS0TF9&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7699,7 +7699,7 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -7754,7 +7754,7 @@
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1DIYT1D&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7769,7 +7769,7 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -7824,7 +7824,7 @@
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1CHFLI4&kdid=A02",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7833,20 +7833,20 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1AJGKAD",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A03",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A02",
         "title": "動物王國大探險展-比薩大學自然史博物館",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
             "source": "udn",
             "eventId": "P1AJGKAD",
             "performanceId": "P1AJGKAD-performance-1",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A03",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A02",
             "startsAt": "2026-07-11T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7858,7 +7858,7 @@
             "source": "udn",
             "eventId": "P1AJGKAD",
             "performanceId": "P1AJGKAD-performance-2",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A03",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A02",
             "startsAt": "2026-05-22T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7870,7 +7870,7 @@
             "source": "udn",
             "eventId": "P1AJGKAD",
             "performanceId": "P1AJGKAD-performance-3",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A03",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A02",
             "startsAt": "2026-07-11T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7882,7 +7882,7 @@
             "source": "udn",
             "eventId": "P1AJGKAD",
             "performanceId": "P1AJGKAD-performance-4",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A03",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A02",
             "startsAt": "2026-07-11T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -7893,8 +7893,8 @@
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A03",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AJGKAD&kdid=A02",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7909,7 +7909,7 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
@@ -7930,7 +7930,7 @@
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P185ZP45&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7939,20 +7939,20 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P0YXZMT5",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A04",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A05",
         "title": "王偉忠監製舞台劇《明星養老院》2.0人生下半場，笑著登場!",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
             "source": "udn",
             "eventId": "P0YXZMT5",
             "performanceId": "P0YXZMT5-performance-1",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A04",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A05",
             "startsAt": "2026-12-25T19:30:00+08:00",
             "cancelled": false,
             "venue": "臺北表演藝術中心 大劇院",
@@ -7965,8 +7965,8 @@
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A04",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P0YXZMT5&kdid=A05",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -7975,20 +7975,20 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1AGQOQ6",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A05",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A02",
         "title": "烏克蘭國家歌劇院管弦樂團 貝九《合唱》交響曲",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-09T12:25:42.464Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "performances": [
           {
             "schemaVersion": 1,
             "source": "udn",
             "eventId": "P1AGQOQ6",
             "performanceId": "P1AGQOQ6-performance-1",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A02",
             "startsAt": "2026-12-26T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -8000,7 +8000,7 @@
             "source": "udn",
             "eventId": "P1AGQOQ6",
             "performanceId": "P1AGQOQ6-performance-2",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A05",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A02",
             "startsAt": "2026-12-26T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -8011,8 +8011,8 @@
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1AGQOQ6&kdid=A02",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         }
@@ -8021,18 +8021,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P1EA8QIL",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A02",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A03",
         "title": "2026 台北國際玩具創作大展",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A02",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A03",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -8042,7 +8042,7 @@
             "source": "udn",
             "eventId": "P1EA8QIL",
             "performanceId": "P1EA8QIL-performance-1",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A02",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A03",
             "startsAt": "2026-10-08T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -8054,7 +8054,7 @@
             "source": "udn",
             "eventId": "P1EA8QIL",
             "performanceId": "P1EA8QIL-performance-2",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A02",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EA8QIL&kdid=A03",
             "startsAt": "2026-10-08T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -8073,12 +8073,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1A6G98K&kdid=A05",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -8155,12 +8155,12 @@
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T17:24:38.286Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "discovered-summary",
         "provenance": {
           "source": "udn",
           "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P1EW334F&kdid=A05",
-          "retrievedAt": "2026-09-11T17:24:38.286Z",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "structured-summary",
           "parserVersion": "catalog-structured-v2"
         },
@@ -8170,18 +8170,18 @@
         "schemaVersion": 1,
         "source": "udn",
         "eventId": "P19YQAUA",
-        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A02",
+        "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A05",
         "title": "波隆那世界插畫大獎展",
         "category": "unknown",
         "classificationReason": "unknown",
         "classificationConfidence": "low",
         "firstSeenAt": "2026-09-10T00:22:02.505Z",
-        "catalogFetchedAt": "2026-09-11T19:53:40.831Z",
+        "catalogFetchedAt": "2026-09-11T22:05:23.464Z",
         "detailStatus": "detail-enriched",
         "provenance": {
           "source": "udn",
-          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A02",
-          "retrievedAt": "2026-09-11T19:53:40.831Z",
+          "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A05",
+          "retrievedAt": "2026-09-11T22:05:23.464Z",
           "discoveryMethod": "detail",
           "parserVersion": "catalog-structured-v2"
         },
@@ -8191,7 +8191,7 @@
             "source": "udn",
             "eventId": "P19YQAUA",
             "performanceId": "P19YQAUA-performance-1",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A02",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A05",
             "startsAt": "2026-07-04T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -8203,7 +8203,7 @@
             "source": "udn",
             "eventId": "P19YQAUA",
             "performanceId": "P19YQAUA-performance-2",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A02",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A05",
             "startsAt": "2026-07-04T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -8215,7 +8215,7 @@
             "source": "udn",
             "eventId": "P19YQAUA",
             "performanceId": "P19YQAUA-performance-3",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A02",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A05",
             "startsAt": "2026-05-15T00:00:00+08:00",
             "cancelled": false,
             "minPrice": 290,
@@ -8227,7 +8227,7 @@
             "source": "udn",
             "eventId": "P19YQAUA",
             "performanceId": "P19YQAUA-performance-4",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A02",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A05",
             "startsAt": "2026-07-04T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -8239,7 +8239,7 @@
             "source": "udn",
             "eventId": "P19YQAUA",
             "performanceId": "P19YQAUA-performance-5",
-            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A02",
+            "sourceUrl": "https://tickets.udnfunlife.com/application/UTK02/UTK0201_.aspx?PRODUCT_ID=P19YQAUA&kdid=A05",
             "startsAt": "2026-07-04T00:00:00+08:00",
             "cancelled": false,
             "minPrice": null,
@@ -8251,7 +8251,7 @@
     ],
     "completeness": {
       "source": "udn",
-      "fetchedAt": "2026-09-11T19:53:40.831Z",
+      "fetchedAt": "2026-09-11T22:05:23.464Z",
       "eventCount": 24,
       "pageCount": 5,
       "detailCount": 20,
