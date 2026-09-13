@@ -205,7 +205,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 101
+      "remaining": 174
     },
     {
       "schemaVersion": 2,
@@ -227,7 +227,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 49
+      "remaining": 101
     },
     {
       "schemaVersion": 2,
@@ -249,7 +249,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 121
+      "remaining": 49
     },
     {
       "schemaVersion": 2,
@@ -271,7 +271,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 67
+      "remaining": 121
     },
     {
       "schemaVersion": 2,
@@ -293,7 +293,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 36
+      "remaining": 67
     },
     {
       "schemaVersion": 2,
@@ -315,7 +315,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 96
+      "remaining": 36
     },
     {
       "schemaVersion": 2,
@@ -337,7 +337,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 22
+      "remaining": 175
     },
     {
       "schemaVersion": 2,
@@ -359,7 +359,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 45
+      "remaining": 96
     },
     {
       "schemaVersion": 2,
@@ -381,10 +381,10 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 157
+      "remaining": 45
     }
   ],
-  "remainingTotal": 1274,
-  "observedAt": "2026-09-13T19:58:48.838Z",
+  "remainingTotal": 1444,
+  "observedAt": "2026-09-13T22:08:04.125Z",
   "parserVersion": "opentix-jsonld-v1"
 }
