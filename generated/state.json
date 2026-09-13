@@ -54,7 +54,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 64
+        "remaining": 46
       },
       {
         "schemaVersion": 2,
@@ -76,7 +76,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 46
+        "remaining": 56
       },
       {
         "schemaVersion": 2,
@@ -98,7 +98,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 97
+        "remaining": 112
       },
       {
         "schemaVersion": 2,
@@ -120,7 +120,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 56
+        "remaining": 60
       },
       {
         "schemaVersion": 2,
@@ -142,7 +142,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 21
+        "remaining": 41
       },
       {
         "schemaVersion": 2,
@@ -164,7 +164,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 112
+        "remaining": 174
       },
       {
         "schemaVersion": 2,
@@ -186,7 +186,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 60
+        "remaining": 101
       },
       {
         "schemaVersion": 2,
@@ -208,7 +208,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 41
+        "remaining": 49
       },
       {
         "schemaVersion": 2,
@@ -230,7 +230,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 174
+        "remaining": 121
       },
       {
         "schemaVersion": 2,
@@ -252,7 +252,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 49
+        "remaining": 67
       },
       {
         "schemaVersion": 2,
@@ -274,7 +274,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 125
+        "remaining": 36
       },
       {
         "schemaVersion": 2,
@@ -296,7 +296,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 36
+        "remaining": 173
       },
       {
         "schemaVersion": 2,
@@ -318,7 +318,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 178
+        "remaining": 45
       },
       {
         "schemaVersion": 2,
@@ -340,7 +340,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 160
+        "remaining": 157
       },
       {
         "schemaVersion": 2,
@@ -384,14 +384,14 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 42
+        "remaining": 39
       }
     ],
-    "remainingTotal": 1509,
-    "observedAt": "2026-09-13T14:30:11.523Z",
+    "remainingTotal": 1525,
+    "observedAt": "2026-09-13T17:33:22.746Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-13T14:30:11.523Z",
+  "retainedDataAt": "2026-09-13T17:33:22.746Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -467,6 +467,11 @@
       "observedAt": "2026-09-13T14:30:11.523Z",
       "performanceCount": 17,
       "totalRemaining": 1509
+    },
+    {
+      "observedAt": "2026-09-13T17:33:22.746Z",
+      "performanceCount": 17,
+      "totalRemaining": 1525
     }
   ],
   "transitions": [
@@ -713,12 +718,12 @@
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-13T14:30:11.523Z",
-    "lastSuccessfulAt": "2026-09-13T14:30:11.523Z",
-    "nextEligibleAt": "2026-09-13T15:00:11.523Z"
+    "lastAttemptAt": "2026-09-13T17:33:22.746Z",
+    "lastSuccessfulAt": "2026-09-13T17:33:22.746Z",
+    "nextEligibleAt": "2026-09-13T18:03:22.746Z"
   },
   "cache": {
-    "etag": "\"f5bdd-RZZXAzi/uutIxLwAxFLj+0mW16Y\""
+    "etag": "\"f5bc8-e9DiqMFOt0ZkHwJL4Uv51v1qHBM\""
   },
   "outbox": [
     {
@@ -1084,7 +1089,7 @@
       "updatedAt": "2026-09-13T14:30:17.173Z"
     }
   },
-  "lastAttemptAt": "2026-09-13T14:30:11.523Z",
-  "lastSuccessfulAt": "2026-09-13T14:30:11.523Z",
-  "nextEligibleAt": "2026-09-13T15:00:11.523Z"
+  "lastAttemptAt": "2026-09-13T17:33:22.746Z",
+  "lastSuccessfulAt": "2026-09-13T17:33:22.746Z",
+  "nextEligibleAt": "2026-09-13T18:03:22.746Z"
 }
