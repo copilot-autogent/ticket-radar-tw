@@ -95,7 +95,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 82
+      "remaining": 80
     },
     {
       "schemaVersion": 2,
@@ -117,7 +117,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 94
+      "remaining": 92
     },
     {
       "schemaVersion": 2,
@@ -139,7 +139,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 173
+      "remaining": 37
     },
     {
       "schemaVersion": 2,
@@ -161,7 +161,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 101
+      "remaining": 172
     },
     {
       "schemaVersion": 2,
@@ -183,7 +183,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 116
+      "remaining": 101
     },
     {
       "schemaVersion": 2,
@@ -205,7 +205,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 66
+      "remaining": 116
     },
     {
       "schemaVersion": 2,
@@ -227,7 +227,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 169
+      "remaining": 66
     },
     {
       "schemaVersion": 2,
@@ -249,7 +249,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 95
+      "remaining": 169
     },
     {
       "schemaVersion": 2,
@@ -271,7 +271,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 22
+      "remaining": 95
     },
     {
       "schemaVersion": 2,
@@ -293,7 +293,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 147
+      "remaining": 22
     },
     {
       "schemaVersion": 2,
@@ -315,7 +315,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 92
+      "remaining": 148
     },
     {
       "schemaVersion": 2,
@@ -337,7 +337,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 29
+      "remaining": 93
     },
     {
       "schemaVersion": 2,
@@ -359,7 +359,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 184
+      "remaining": 29
     },
     {
       "schemaVersion": 2,
@@ -381,10 +381,10 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 47
+      "remaining": 184
     }
   ],
-  "remainingTotal": 1609,
-  "observedAt": "2026-09-14T16:41:03.927Z",
+  "remainingTotal": 1596,
+  "observedAt": "2026-09-14T20:40:43.886Z",
   "parserVersion": "opentix-jsonld-v1"
 }
