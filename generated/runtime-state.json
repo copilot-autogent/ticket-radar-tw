@@ -32,7 +32,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 120
+        "remaining": 116
       },
       {
         "schemaVersion": 2,
@@ -54,7 +54,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 27
+        "remaining": 35
       },
       {
         "schemaVersion": 2,
@@ -76,7 +76,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 45
+        "remaining": 27
       },
       {
         "schemaVersion": 2,
@@ -98,7 +98,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 81
+        "remaining": 45
       },
       {
         "schemaVersion": 2,
@@ -120,7 +120,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 92
+        "remaining": 81
       },
       {
         "schemaVersion": 2,
@@ -142,7 +142,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 37
+        "remaining": 92
       },
       {
         "schemaVersion": 2,
@@ -164,7 +164,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 173
+        "remaining": 37
       },
       {
         "schemaVersion": 2,
@@ -186,7 +186,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 101
+        "remaining": 172
       },
       {
         "schemaVersion": 2,
@@ -208,7 +208,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 116
+        "remaining": 115
       },
       {
         "schemaVersion": 2,
@@ -230,7 +230,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 66
+        "remaining": 65
       },
       {
         "schemaVersion": 2,
@@ -252,7 +252,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 168
+        "remaining": 169
       },
       {
         "schemaVersion": 2,
@@ -318,7 +318,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 42
+        "remaining": 148
       },
       {
         "schemaVersion": 2,
@@ -340,7 +340,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 148
+        "remaining": 93
       },
       {
         "schemaVersion": 2,
@@ -362,7 +362,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 93
+        "remaining": 39
       },
       {
         "schemaVersion": 2,
@@ -387,11 +387,11 @@
         "remaining": 29
       }
     ],
-    "remainingTotal": 1455,
-    "observedAt": "2026-09-14T23:34:14.304Z",
+    "remainingTotal": 1380,
+    "observedAt": "2026-09-15T02:20:35.812Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-14T23:34:14.304Z",
+  "retainedDataAt": "2026-09-15T02:20:35.812Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -512,6 +512,11 @@
       "observedAt": "2026-09-14T23:34:14.304Z",
       "performanceCount": 17,
       "totalRemaining": 1455
+    },
+    {
+      "observedAt": "2026-09-15T02:20:35.812Z",
+      "performanceCount": 17,
+      "totalRemaining": 1380
     }
   ],
   "transitions": [
@@ -758,12 +763,12 @@
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-14T23:34:14.304Z",
-    "lastSuccessfulAt": "2026-09-14T23:34:14.304Z",
-    "nextEligibleAt": "2026-09-15T00:04:14.304Z"
+    "lastAttemptAt": "2026-09-15T02:20:35.812Z",
+    "lastSuccessfulAt": "2026-09-15T02:20:35.812Z",
+    "nextEligibleAt": "2026-09-15T02:50:35.812Z"
   },
   "cache": {
-    "etag": "\"f5bd4-b4C1b3NuwSSCyhWze2+H/G7BrFo\""
+    "etag": "\"f5bcc-E/Ltq4QyXHh6kFgV30T5THmC3w0\""
   },
   "outbox": [
     {
@@ -1129,7 +1134,7 @@
       "updatedAt": "2026-09-13T14:30:17.173Z"
     }
   },
-  "lastAttemptAt": "2026-09-14T23:34:14.304Z",
-  "lastSuccessfulAt": "2026-09-14T23:34:14.304Z",
-  "nextEligibleAt": "2026-09-15T00:04:14.304Z"
+  "lastAttemptAt": "2026-09-15T02:20:35.812Z",
+  "lastSuccessfulAt": "2026-09-15T02:20:35.812Z",
+  "nextEligibleAt": "2026-09-15T02:50:35.812Z"
 }
