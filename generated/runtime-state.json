@@ -388,10 +388,10 @@
       }
     ],
     "remainingTotal": 1334,
-    "observedAt": "2026-09-15T20:22:17.326Z",
+    "observedAt": "2026-09-15T22:59:38.253Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-15T20:22:17.326Z",
+  "retainedDataAt": "2026-09-15T22:59:38.253Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -535,6 +535,11 @@
     },
     {
       "observedAt": "2026-09-15T20:22:17.326Z",
+      "performanceCount": 17,
+      "totalRemaining": 1334
+    },
+    {
+      "observedAt": "2026-09-15T22:59:38.253Z",
       "performanceCount": 17,
       "totalRemaining": 1334
     }
@@ -783,9 +788,9 @@
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-15T20:22:17.326Z",
-    "lastSuccessfulAt": "2026-09-15T20:22:17.326Z",
-    "nextEligibleAt": "2026-09-15T20:52:17.326Z"
+    "lastAttemptAt": "2026-09-15T22:59:38.253Z",
+    "lastSuccessfulAt": "2026-09-15T22:59:38.253Z",
+    "nextEligibleAt": "2026-09-15T23:29:38.253Z"
   },
   "cache": {
     "etag": "\"f5e37-D3FHzS8DEt2ZS+BgiauQ2ckSJxY\""
@@ -1154,7 +1159,7 @@
       "updatedAt": "2026-09-13T14:30:17.173Z"
     }
   },
-  "lastAttemptAt": "2026-09-15T20:22:17.326Z",
-  "lastSuccessfulAt": "2026-09-15T20:22:17.326Z",
-  "nextEligibleAt": "2026-09-15T20:52:17.326Z"
+  "lastAttemptAt": "2026-09-15T22:59:38.253Z",
+  "lastSuccessfulAt": "2026-09-15T22:59:38.253Z",
+  "nextEligibleAt": "2026-09-15T23:29:38.253Z"
 }
