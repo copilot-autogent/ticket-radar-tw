@@ -286,5 +286,53 @@
     "from": null,
     "to": 47,
     "observedAt": "2026-09-16T11:52:01.725Z"
+  },
+  {
+    "key": "2058823893792186368:new",
+    "kind": "new-performance",
+    "performanceId": "2058823893792186368",
+    "from": null,
+    "to": 142,
+    "observedAt": "2026-09-16T15:44:07.795Z"
+  },
+  {
+    "key": "2058823893787738112:new",
+    "kind": "new-performance",
+    "performanceId": "2058823893787738112",
+    "from": null,
+    "to": 38,
+    "observedAt": "2026-09-16T15:44:07.795Z"
+  },
+  {
+    "key": "2058823893791932416:new",
+    "kind": "new-performance",
+    "performanceId": "2058823893791932416",
+    "from": null,
+    "to": 30,
+    "observedAt": "2026-09-16T15:44:07.795Z"
+  },
+  {
+    "key": "2058823893771214848:new",
+    "kind": "new-performance",
+    "performanceId": "2058823893771214848",
+    "from": null,
+    "to": 99,
+    "observedAt": "2026-09-16T15:44:07.795Z"
+  },
+  {
+    "key": "2058823893779603456:new",
+    "kind": "new-performance",
+    "performanceId": "2058823893779603456",
+    "from": null,
+    "to": 47,
+    "observedAt": "2026-09-16T15:44:07.795Z"
+  },
+  {
+    "key": "2058823302673981441:new",
+    "kind": "new-performance",
+    "performanceId": "2058823302673981441",
+    "from": null,
+    "to": 184,
+    "observedAt": "2026-09-16T15:44:07.795Z"
   }
 ]
