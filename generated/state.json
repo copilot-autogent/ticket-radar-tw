@@ -32,7 +32,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 162
+        "remaining": 163
       },
       {
         "schemaVersion": 2,
@@ -252,7 +252,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 24
+        "remaining": 97
       },
       {
         "schemaVersion": 2,
@@ -274,7 +274,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 183
+        "remaining": 24
       },
       {
         "schemaVersion": 2,
@@ -296,7 +296,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 89
+        "remaining": 183
       },
       {
         "schemaVersion": 2,
@@ -318,14 +318,14 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 30
+        "remaining": 89
       }
     ],
-    "remainingTotal": 1372,
-    "observedAt": "2026-09-17T19:07:32.037Z",
+    "remainingTotal": 1440,
+    "observedAt": "2026-09-17T22:17:41.912Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-17T19:07:32.037Z",
+  "retainedDataAt": "2026-09-17T22:17:41.912Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -531,6 +531,11 @@
       "observedAt": "2026-09-17T19:07:32.037Z",
       "performanceCount": 14,
       "totalRemaining": 1372
+    },
+    {
+      "observedAt": "2026-09-17T22:17:41.912Z",
+      "performanceCount": 14,
+      "totalRemaining": 1440
     }
   ],
   "transitions": [
@@ -921,12 +926,12 @@
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-17T19:07:32.037Z",
-    "lastSuccessfulAt": "2026-09-17T19:07:32.037Z",
-    "nextEligibleAt": "2026-09-17T19:37:32.037Z"
+    "lastAttemptAt": "2026-09-17T22:17:41.912Z",
+    "lastSuccessfulAt": "2026-09-17T22:17:41.912Z",
+    "nextEligibleAt": "2026-09-17T22:47:41.912Z"
   },
   "cache": {
-    "etag": "\"dca06-ikTkqNHtd0BbmvQMJ4apJQCkEQI\""
+    "etag": "\"dca00-y0erz9QMrA1/tH3jyxbNC0KMJk8\""
   },
   "outbox": [
     {
@@ -1508,7 +1513,7 @@
       "updatedAt": "2026-09-17T15:21:48.703Z"
     }
   },
-  "lastAttemptAt": "2026-09-17T19:07:32.037Z",
-  "lastSuccessfulAt": "2026-09-17T19:07:32.037Z",
-  "nextEligibleAt": "2026-09-17T19:37:32.037Z"
+  "lastAttemptAt": "2026-09-17T22:17:41.912Z",
+  "lastSuccessfulAt": "2026-09-17T22:17:41.912Z",
+  "nextEligibleAt": "2026-09-17T22:47:41.912Z"
 }
