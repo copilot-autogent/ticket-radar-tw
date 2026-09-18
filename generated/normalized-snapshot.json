@@ -29,7 +29,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 139
+      "remaining": 137
     },
     {
       "schemaVersion": 2,
@@ -51,7 +51,7 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 36
+      "remaining": 34
     },
     {
       "schemaVersion": 2,
@@ -274,7 +274,7 @@
       "remaining": 87
     }
   ],
-  "remainingTotal": 1172,
-  "observedAt": "2026-09-18T20:07:29.832Z",
+  "remainingTotal": 1168,
+  "observedAt": "2026-09-18T22:41:28.494Z",
   "parserVersion": "opentix-jsonld-v1"
 }
