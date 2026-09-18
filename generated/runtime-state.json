@@ -76,7 +76,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 117
+        "remaining": 116
       },
       {
         "schemaVersion": 2,
@@ -98,7 +98,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 68
+        "remaining": 67
       },
       {
         "schemaVersion": 2,
@@ -164,7 +164,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 182
+        "remaining": 181
       },
       {
         "schemaVersion": 2,
@@ -277,11 +277,11 @@
         "remaining": 87
       }
     ],
-    "remainingTotal": 1175,
-    "observedAt": "2026-09-18T17:31:22.029Z",
+    "remainingTotal": 1172,
+    "observedAt": "2026-09-18T20:07:29.832Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-18T17:31:22.029Z",
+  "retainedDataAt": "2026-09-18T20:07:29.832Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -517,6 +517,11 @@
       "observedAt": "2026-09-18T17:31:22.029Z",
       "performanceCount": 12,
       "totalRemaining": 1175
+    },
+    {
+      "observedAt": "2026-09-18T20:07:29.832Z",
+      "performanceCount": 12,
+      "totalRemaining": 1172
     }
   ],
   "transitions": [
@@ -1003,12 +1008,12 @@
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-18T17:31:22.029Z",
-    "lastSuccessfulAt": "2026-09-18T17:31:22.029Z",
-    "nextEligibleAt": "2026-09-18T18:01:22.029Z"
+    "lastAttemptAt": "2026-09-18T20:07:29.832Z",
+    "lastSuccessfulAt": "2026-09-18T20:07:29.832Z",
+    "nextEligibleAt": "2026-09-18T20:37:29.832Z"
   },
   "cache": {
-    "etag": "\"cb890-khm5jGoC2e+8/sGyFwWwHbWAR20\""
+    "etag": "\"cb890-CY4Upx5IuQ+qaHGK3guokHoUe34\""
   },
   "outbox": [
     {
@@ -1734,7 +1739,7 @@
       "updatedAt": "2026-09-18T13:59:16.056Z"
     }
   },
-  "lastAttemptAt": "2026-09-18T17:31:22.029Z",
-  "lastSuccessfulAt": "2026-09-18T17:31:22.029Z",
-  "nextEligibleAt": "2026-09-18T18:01:22.029Z"
+  "lastAttemptAt": "2026-09-18T20:07:29.832Z",
+  "lastSuccessfulAt": "2026-09-18T20:07:29.832Z",
+  "nextEligibleAt": "2026-09-18T20:37:29.832Z"
 }

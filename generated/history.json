@@ -233,5 +233,10 @@
     "observedAt": "2026-09-18T17:31:22.029Z",
     "performanceCount": 12,
     "totalRemaining": 1175
+  },
+  {
+    "observedAt": "2026-09-18T20:07:29.832Z",
+    "performanceCount": 12,
+    "totalRemaining": 1172
   }
 ]
