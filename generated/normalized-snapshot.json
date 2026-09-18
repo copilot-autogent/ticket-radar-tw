@@ -13,29 +13,7 @@
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823302673981441",
-      "startsAt": "2026-09-18T19:30:00+08:00",
-      "endsAt": "2026-09-18T21:10:00+08:00",
-      "venue": {
-        "name": "西門紅樓二樓劇場",
-        "address": "萬華區成都路10號",
-        "timeZone": "Asia/Taipei"
-      },
-      "lifecycle": "on-sale",
-      "saleOpenAt": "2026-06-29T20:00:00+08:00",
-      "saleCloseAt": "2026-09-18T21:10:00+08:00",
-      "price": {
-        "currency": "TWD",
-        "min": 1200,
-        "max": 2200
-      },
-      "remaining": 63
-    },
-    {
-      "schemaVersion": 2,
-      "source": "https://www.opentix.life/event/2054406826574860289",
-      "eventId": "2054406826574860289",
-      "performanceId": "2058823303971725312",
+      "performanceId": "2058823898143514625",
       "startsAt": "2026-09-19T14:30:00+08:00",
       "endsAt": "2026-09-19T16:10:00+08:00",
       "venue": {
@@ -51,13 +29,13 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 149
+      "remaining": 144
     },
     {
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823303965827072",
+      "performanceId": "2058823899393531904",
       "startsAt": "2026-09-19T19:30:00+08:00",
       "endsAt": "2026-09-19T21:10:00+08:00",
       "venue": {
@@ -79,7 +57,7 @@
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823303963738112",
+      "performanceId": "2058823899567489024",
       "startsAt": "2026-09-20T14:30:00+08:00",
       "endsAt": "2026-09-20T16:10:00+08:00",
       "venue": {
@@ -101,7 +79,7 @@
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823303896629248",
+      "performanceId": "2058823899559890944",
       "startsAt": "2026-09-20T19:30:00+08:00",
       "endsAt": "2026-09-20T21:10:00+08:00",
       "venue": {
@@ -117,13 +95,13 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 122
+      "remaining": 119
     },
     {
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823303967531008",
+      "performanceId": "2058823899567742976",
       "startsAt": "2026-09-23T14:30:00+08:00",
       "endsAt": "2026-09-23T16:10:00+08:00",
       "venue": {
@@ -139,13 +117,13 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 73
+      "remaining": 70
     },
     {
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823303956140032",
+      "performanceId": "2058823899390926848",
       "startsAt": "2026-09-23T19:30:00+08:00",
       "endsAt": "2026-09-23T21:10:00+08:00",
       "venue": {
@@ -167,7 +145,7 @@
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823898143514625",
+      "performanceId": "2058823899395522560",
       "startsAt": "2026-09-24T19:30:00+08:00",
       "endsAt": "2026-09-24T21:10:00+08:00",
       "venue": {
@@ -183,13 +161,13 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 174
+      "remaining": 171
     },
     {
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823899393531904",
+      "performanceId": "2058823308755722241",
       "startsAt": "2026-09-25T14:30:00+08:00",
       "endsAt": "2026-09-25T16:10:00+08:00",
       "venue": {
@@ -205,13 +183,13 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 95
+      "remaining": 93
     },
     {
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823899567489024",
+      "performanceId": "2058823311530516480",
       "startsAt": "2026-09-25T19:30:00+08:00",
       "endsAt": "2026-09-25T21:10:00+08:00",
       "venue": {
@@ -233,7 +211,7 @@
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823899559890944",
+      "performanceId": "2058823310103797760",
       "startsAt": "2026-09-26T14:30:00+08:00",
       "endsAt": "2026-09-26T16:10:00+08:00",
       "venue": {
@@ -255,7 +233,7 @@
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823899567742976",
+      "performanceId": "2058823310102093825",
       "startsAt": "2026-09-26T19:30:00+08:00",
       "endsAt": "2026-09-26T21:10:00+08:00",
       "venue": {
@@ -277,7 +255,7 @@
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823899390926848",
+      "performanceId": "2058823311514275840",
       "startsAt": "2026-09-27T14:30:00+08:00",
       "endsAt": "2026-09-27T16:10:00+08:00",
       "venue": {
@@ -296,7 +274,7 @@
       "remaining": 175
     }
   ],
-  "remainingTotal": 1340,
-  "observedAt": "2026-09-18T09:55:56.442Z",
+  "remainingTotal": 1261,
+  "observedAt": "2026-09-18T13:59:10.967Z",
   "parserVersion": "opentix-jsonld-v1"
 }
