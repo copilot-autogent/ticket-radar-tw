@@ -76,7 +76,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 23
+        "remaining": 47
       },
       {
         "schemaVersion": 2,
@@ -98,7 +98,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 47
+        "remaining": 51
       },
       {
         "schemaVersion": 2,
@@ -120,7 +120,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 178
+        "remaining": 169
       },
       {
         "schemaVersion": 2,
@@ -142,7 +142,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 51
+        "remaining": 46
       },
       {
         "schemaVersion": 2,
@@ -164,7 +164,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 169
+        "remaining": 97
       },
       {
         "schemaVersion": 2,
@@ -186,7 +186,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 46
+        "remaining": 25
       },
       {
         "schemaVersion": 2,
@@ -208,7 +208,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 177
+        "remaining": 44
       },
       {
         "schemaVersion": 2,
@@ -230,14 +230,14 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 97
+        "remaining": 175
       }
     ],
-    "remainingTotal": 1044,
-    "observedAt": "2026-09-19T16:53:12.784Z",
+    "remainingTotal": 910,
+    "observedAt": "2026-09-19T19:03:16.445Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-19T16:53:12.784Z",
+  "retainedDataAt": "2026-09-19T19:03:16.445Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -508,6 +508,11 @@
       "observedAt": "2026-09-19T16:53:12.784Z",
       "performanceCount": 10,
       "totalRemaining": 1044
+    },
+    {
+      "observedAt": "2026-09-19T19:03:16.445Z",
+      "performanceCount": 10,
+      "totalRemaining": 910
     }
   ],
   "transitions": [
@@ -1090,12 +1095,12 @@
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-19T16:53:12.784Z",
-    "lastSuccessfulAt": "2026-09-19T16:53:12.784Z",
-    "nextEligibleAt": "2026-09-19T17:23:12.784Z"
+    "lastAttemptAt": "2026-09-19T19:03:16.445Z",
+    "lastSuccessfulAt": "2026-09-19T19:03:16.445Z",
+    "nextEligibleAt": "2026-09-19T19:33:16.445Z"
   },
   "cache": {
-    "etag": "\"bb43f-xnJIRBekloCrn1QrKftslxxugeg\""
+    "etag": "\"bb44a-zANmXF+djGcJujmQDyiXz5HJYIs\""
   },
   "outbox": [
     {
@@ -1965,7 +1970,7 @@
       "updatedAt": "2026-09-19T13:33:45.039Z"
     }
   },
-  "lastAttemptAt": "2026-09-19T16:53:12.784Z",
-  "lastSuccessfulAt": "2026-09-19T16:53:12.784Z",
-  "nextEligibleAt": "2026-09-19T17:23:12.784Z"
+  "lastAttemptAt": "2026-09-19T19:03:16.445Z",
+  "lastSuccessfulAt": "2026-09-19T19:03:16.445Z",
+  "nextEligibleAt": "2026-09-19T19:33:16.445Z"
 }
