@@ -32,7 +32,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 171
+        "remaining": 168
       },
       {
         "schemaVersion": 2,
@@ -54,7 +54,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 25
+        "remaining": 84
       },
       {
         "schemaVersion": 2,
@@ -98,7 +98,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 164
+        "remaining": 161
       },
       {
         "schemaVersion": 2,
@@ -120,7 +120,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 45
+        "remaining": 83
       },
       {
         "schemaVersion": 2,
@@ -142,7 +142,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 168
+        "remaining": 27
       },
       {
         "schemaVersion": 2,
@@ -164,7 +164,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 93
+        "remaining": 45
       },
       {
         "schemaVersion": 2,
@@ -186,14 +186,14 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 21
+        "remaining": 166
       }
     ],
-    "remainingTotal": 738,
-    "observedAt": "2026-09-21T02:14:15.971Z",
+    "remainingTotal": 785,
+    "observedAt": "2026-09-21T08:04:27.575Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-21T02:14:15.971Z",
+  "retainedDataAt": "2026-09-21T08:04:27.575Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -519,6 +519,11 @@
       "observedAt": "2026-09-21T02:14:15.971Z",
       "performanceCount": 8,
       "totalRemaining": 738
+    },
+    {
+      "observedAt": "2026-09-21T08:04:27.575Z",
+      "performanceCount": 8,
+      "totalRemaining": 785
     }
   ],
   "transitions": [
@@ -1197,12 +1202,12 @@
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-21T02:14:15.971Z",
-    "lastSuccessfulAt": "2026-09-21T02:14:15.971Z",
-    "nextEligibleAt": "2026-09-21T02:44:15.971Z"
+    "lastAttemptAt": "2026-09-21T08:04:27.575Z",
+    "lastSuccessfulAt": "2026-09-21T08:04:27.575Z",
+    "nextEligibleAt": "2026-09-21T08:34:27.575Z"
   },
   "cache": {
-    "etag": "\"aafd6-XzYIXPh1qM5kZHEP6hx1ZtTQFio\""
+    "etag": "\"aafdc-OPNM5LBnzeckIDiRu5EsCTj4dQg\""
   },
   "outbox": [
     {
@@ -2216,7 +2221,7 @@
       "updatedAt": "2026-09-20T12:44:18.579Z"
     }
   },
-  "lastAttemptAt": "2026-09-21T02:14:15.971Z",
-  "lastSuccessfulAt": "2026-09-21T02:14:15.971Z",
-  "nextEligibleAt": "2026-09-21T02:44:15.971Z"
+  "lastAttemptAt": "2026-09-21T08:04:27.575Z",
+  "lastSuccessfulAt": "2026-09-21T08:04:27.575Z",
+  "nextEligibleAt": "2026-09-21T08:34:27.575Z"
 }
