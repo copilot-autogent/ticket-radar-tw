@@ -32,7 +32,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 120
+        "remaining": 119
       },
       {
         "schemaVersion": 2,
@@ -54,7 +54,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 68
+        "remaining": 67
       },
       {
         "schemaVersion": 2,
@@ -98,7 +98,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 160
+        "remaining": 158
       },
       {
         "schemaVersion": 2,
@@ -120,14 +120,14 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 86
+        "remaining": 84
       }
     ],
-    "remainingTotal": 472,
-    "observedAt": "2026-09-24T17:24:09.646Z",
+    "remainingTotal": 466,
+    "observedAt": "2026-09-24T20:35:56.612Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-24T17:24:09.646Z",
+  "retainedDataAt": "2026-09-24T20:35:56.612Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -553,6 +553,11 @@
       "observedAt": "2026-09-24T17:24:09.646Z",
       "performanceCount": 5,
       "totalRemaining": 472
+    },
+    {
+      "observedAt": "2026-09-24T20:35:56.612Z",
+      "performanceCount": 5,
+      "totalRemaining": 466
     }
   ],
   "transitions": [
@@ -1367,12 +1372,12 @@
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-24T17:24:09.646Z",
-    "lastSuccessfulAt": "2026-09-24T17:24:09.646Z",
-    "nextEligibleAt": "2026-09-24T17:54:09.646Z"
+    "lastAttemptAt": "2026-09-24T20:35:56.612Z",
+    "lastSuccessfulAt": "2026-09-24T20:35:56.612Z",
+    "nextEligibleAt": "2026-09-24T21:05:56.612Z"
   },
   "cache": {
-    "etag": "\"91ce1-3i9MFCT2rztxoDA0xviYE8g3E+Q\""
+    "etag": "\"91ce1-bK3lpJR/0ZOAmcsqqsrcv6ZFNn0\""
   },
   "outbox": [
     {
@@ -2582,7 +2587,7 @@
       "updatedAt": "2026-09-24T17:24:13.828Z"
     }
   },
-  "lastAttemptAt": "2026-09-24T17:24:09.646Z",
-  "lastSuccessfulAt": "2026-09-24T17:24:09.646Z",
-  "nextEligibleAt": "2026-09-24T17:54:09.646Z"
+  "lastAttemptAt": "2026-09-24T20:35:56.612Z",
+  "lastSuccessfulAt": "2026-09-24T20:35:56.612Z",
+  "nextEligibleAt": "2026-09-24T21:05:56.612Z"
 }
