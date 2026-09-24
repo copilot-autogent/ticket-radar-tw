@@ -766,5 +766,45 @@
     "from": null,
     "to": 42,
     "observedAt": "2026-09-23T17:19:50.874Z"
+  },
+  {
+    "key": "2058823920908898305:new",
+    "kind": "new-performance",
+    "performanceId": "2058823920908898305",
+    "from": null,
+    "to": 120,
+    "observedAt": "2026-09-24T17:24:09.646Z"
+  },
+  {
+    "key": "2058823923695214592:new",
+    "kind": "new-performance",
+    "performanceId": "2058823923695214592",
+    "from": null,
+    "to": 68,
+    "observedAt": "2026-09-24T17:24:09.646Z"
+  },
+  {
+    "key": "2058823923731664896:new",
+    "kind": "new-performance",
+    "performanceId": "2058823923731664896",
+    "from": null,
+    "to": 38,
+    "observedAt": "2026-09-24T17:24:09.646Z"
+  },
+  {
+    "key": "2058823922297212928:new",
+    "kind": "new-performance",
+    "performanceId": "2058823922297212928",
+    "from": null,
+    "to": 160,
+    "observedAt": "2026-09-24T17:24:09.646Z"
+  },
+  {
+    "key": "2058823922300870656:new",
+    "kind": "new-performance",
+    "performanceId": "2058823922300870656",
+    "from": null,
+    "to": 86,
+    "observedAt": "2026-09-24T17:24:09.646Z"
   }
 ]
