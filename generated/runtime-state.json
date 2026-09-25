@@ -32,7 +32,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 119
+        "remaining": 117
       },
       {
         "schemaVersion": 2,
@@ -54,7 +54,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 67
+        "remaining": 66
       },
       {
         "schemaVersion": 2,
@@ -76,7 +76,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 38
+        "remaining": 158
       },
       {
         "schemaVersion": 2,
@@ -98,7 +98,7 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 158
+        "remaining": 84
       },
       {
         "schemaVersion": 2,
@@ -120,14 +120,14 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 84
+        "remaining": 22
       }
     ],
-    "remainingTotal": 466,
-    "observedAt": "2026-09-24T23:40:16.410Z",
+    "remainingTotal": 447,
+    "observedAt": "2026-09-25T02:23:31.684Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-24T23:40:16.410Z",
+  "retainedDataAt": "2026-09-25T02:23:31.684Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -563,6 +563,11 @@
       "observedAt": "2026-09-24T23:40:16.410Z",
       "performanceCount": 5,
       "totalRemaining": 466
+    },
+    {
+      "observedAt": "2026-09-25T02:23:31.684Z",
+      "performanceCount": 5,
+      "totalRemaining": 447
     }
   ],
   "transitions": [
@@ -1377,12 +1382,12 @@
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-24T23:40:16.410Z",
-    "lastSuccessfulAt": "2026-09-24T23:40:16.410Z",
-    "nextEligibleAt": "2026-09-25T00:10:16.410Z"
+    "lastAttemptAt": "2026-09-25T02:23:31.684Z",
+    "lastSuccessfulAt": "2026-09-25T02:23:31.684Z",
+    "nextEligibleAt": "2026-09-25T02:53:31.684Z"
   },
   "cache": {
-    "etag": "\"91ce1-bK3lpJR/0ZOAmcsqqsrcv6ZFNn0\""
+    "etag": "\"91ce1-gvuOy1KqxUdtfGqMPNgEVY5hUkU\""
   },
   "outbox": [
     {
@@ -2592,7 +2597,7 @@
       "updatedAt": "2026-09-24T17:24:13.828Z"
     }
   },
-  "lastAttemptAt": "2026-09-24T23:40:16.410Z",
-  "lastSuccessfulAt": "2026-09-24T23:40:16.410Z",
-  "nextEligibleAt": "2026-09-25T00:10:16.410Z"
+  "lastAttemptAt": "2026-09-25T02:23:31.684Z",
+  "lastSuccessfulAt": "2026-09-25T02:23:31.684Z",
+  "nextEligibleAt": "2026-09-25T02:53:31.684Z"
 }
