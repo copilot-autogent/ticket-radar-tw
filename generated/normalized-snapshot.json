@@ -13,29 +13,7 @@
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823334255792129",
-      "startsAt": "2026-09-25T19:30:00+08:00",
-      "endsAt": "2026-09-25T21:10:00+08:00",
-      "venue": {
-        "name": "西門紅樓二樓劇場",
-        "address": "萬華區成都路10號",
-        "timeZone": "Asia/Taipei"
-      },
-      "lifecycle": "on-sale",
-      "saleOpenAt": "2026-06-29T20:00:00+08:00",
-      "saleCloseAt": "2026-09-25T21:10:00+08:00",
-      "price": {
-        "currency": "TWD",
-        "min": 1200,
-        "max": 2200
-      },
-      "remaining": 136
-    },
-    {
-      "schemaVersion": 2,
-      "source": "https://www.opentix.life/event/2054406826574860289",
-      "eventId": "2054406826574860289",
-      "performanceId": "2058823336621379584",
+      "performanceId": "2058823929435918337",
       "startsAt": "2026-09-26T14:30:00+08:00",
       "endsAt": "2026-09-26T16:10:00+08:00",
       "venue": {
@@ -51,13 +29,13 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 63
+      "remaining": 110
     },
     {
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823336610209792",
+      "performanceId": "2058823931035246593",
       "startsAt": "2026-09-26T19:30:00+08:00",
       "endsAt": "2026-09-26T21:10:00+08:00",
       "venue": {
@@ -73,13 +51,13 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 22
+      "remaining": 60
     },
     {
       "schemaVersion": 2,
       "source": "https://www.opentix.life/event/2054406826574860289",
       "eventId": "2054406826574860289",
-      "performanceId": "2058823336618483712",
+      "performanceId": "2058823931038142465",
       "startsAt": "2026-09-27T14:30:00+08:00",
       "endsAt": "2026-09-27T16:10:00+08:00",
       "venue": {
@@ -95,10 +73,10 @@
         "min": 1200,
         "max": 2200
       },
-      "remaining": 44
+      "remaining": 34
     }
   ],
-  "remainingTotal": 265,
-  "observedAt": "2026-09-25T08:01:01.565Z",
+  "remainingTotal": 204,
+  "observedAt": "2026-09-25T13:58:45.929Z",
   "parserVersion": "opentix-jsonld-v1"
 }

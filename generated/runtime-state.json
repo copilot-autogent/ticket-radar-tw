@@ -16,29 +16,7 @@
         "schemaVersion": 2,
         "source": "https://www.opentix.life/event/2054406826574860289",
         "eventId": "2054406826574860289",
-        "performanceId": "2058823334255792129",
-        "startsAt": "2026-09-25T19:30:00+08:00",
-        "endsAt": "2026-09-25T21:10:00+08:00",
-        "venue": {
-          "name": "西門紅樓二樓劇場",
-          "address": "萬華區成都路10號",
-          "timeZone": "Asia/Taipei"
-        },
-        "lifecycle": "on-sale",
-        "saleOpenAt": "2026-06-29T20:00:00+08:00",
-        "saleCloseAt": "2026-09-25T21:10:00+08:00",
-        "price": {
-          "currency": "TWD",
-          "min": 1200,
-          "max": 2200
-        },
-        "remaining": 136
-      },
-      {
-        "schemaVersion": 2,
-        "source": "https://www.opentix.life/event/2054406826574860289",
-        "eventId": "2054406826574860289",
-        "performanceId": "2058823336621379584",
+        "performanceId": "2058823929435918337",
         "startsAt": "2026-09-26T14:30:00+08:00",
         "endsAt": "2026-09-26T16:10:00+08:00",
         "venue": {
@@ -54,13 +32,13 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 63
+        "remaining": 110
       },
       {
         "schemaVersion": 2,
         "source": "https://www.opentix.life/event/2054406826574860289",
         "eventId": "2054406826574860289",
-        "performanceId": "2058823336610209792",
+        "performanceId": "2058823931035246593",
         "startsAt": "2026-09-26T19:30:00+08:00",
         "endsAt": "2026-09-26T21:10:00+08:00",
         "venue": {
@@ -76,13 +54,13 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 22
+        "remaining": 60
       },
       {
         "schemaVersion": 2,
         "source": "https://www.opentix.life/event/2054406826574860289",
         "eventId": "2054406826574860289",
-        "performanceId": "2058823336618483712",
+        "performanceId": "2058823931038142465",
         "startsAt": "2026-09-27T14:30:00+08:00",
         "endsAt": "2026-09-27T16:10:00+08:00",
         "venue": {
@@ -98,14 +76,14 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 44
+        "remaining": 34
       }
     ],
-    "remainingTotal": 265,
-    "observedAt": "2026-09-25T08:01:01.565Z",
+    "remainingTotal": 204,
+    "observedAt": "2026-09-25T13:58:45.929Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-25T08:01:01.565Z",
+  "retainedDataAt": "2026-09-25T13:58:45.929Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -551,6 +529,11 @@
       "observedAt": "2026-09-25T08:01:01.565Z",
       "performanceCount": 4,
       "totalRemaining": 265
+    },
+    {
+      "observedAt": "2026-09-25T13:58:45.929Z",
+      "performanceCount": 3,
+      "totalRemaining": 204
     }
   ],
   "transitions": [
@@ -1393,42 +1376,42 @@
       "from": null,
       "to": 44,
       "observedAt": "2026-09-25T08:01:01.565Z"
+    },
+    {
+      "key": "2058823929435918337:new",
+      "kind": "new-performance",
+      "performanceId": "2058823929435918337",
+      "from": null,
+      "to": 110,
+      "observedAt": "2026-09-25T13:58:45.929Z"
+    },
+    {
+      "key": "2058823931035246593:new",
+      "kind": "new-performance",
+      "performanceId": "2058823931035246593",
+      "from": null,
+      "to": 60,
+      "observedAt": "2026-09-25T13:58:45.929Z"
+    },
+    {
+      "key": "2058823931038142465:new",
+      "kind": "new-performance",
+      "performanceId": "2058823931038142465",
+      "from": null,
+      "to": 34,
+      "observedAt": "2026-09-25T13:58:45.929Z"
     }
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-25T08:01:01.565Z",
-    "lastSuccessfulAt": "2026-09-25T08:01:01.565Z",
-    "nextEligibleAt": "2026-09-25T08:31:01.565Z"
+    "lastAttemptAt": "2026-09-25T13:58:45.929Z",
+    "lastSuccessfulAt": "2026-09-25T13:58:45.929Z",
+    "nextEligibleAt": "2026-09-25T14:28:45.929Z"
   },
   "cache": {
-    "etag": "\"88d25-H4jBaMIq3Eqp8GaUt9UXYCfYRSY\""
+    "etag": "\"80b5a-/TzRJsA1daNPa/3/VgRCHXNgNM4\""
   },
   "outbox": [
-    {
-      "key": "2058823874549256193:new",
-      "kind": "new-performance",
-      "performanceId": "2058823874549256193",
-      "from": null,
-      "to": 129,
-      "observedAt": "2026-09-09T14:10:19.160Z"
-    },
-    {
-      "key": "2058823279113277441:new",
-      "kind": "new-performance",
-      "performanceId": "2058823279113277441",
-      "from": null,
-      "to": 85,
-      "observedAt": "2026-09-13T10:24:33.525Z"
-    },
-    {
-      "key": "2058823280488218624:new",
-      "kind": "new-performance",
-      "performanceId": "2058823280488218624",
-      "from": null,
-      "to": 150,
-      "observedAt": "2026-09-13T10:24:33.525Z"
-    },
     {
       "key": "2058823280509190144:new",
       "kind": "new-performance",
@@ -2204,6 +2187,30 @@
       "from": null,
       "to": 44,
       "observedAt": "2026-09-25T08:01:01.565Z"
+    },
+    {
+      "key": "2058823929435918337:new",
+      "kind": "new-performance",
+      "performanceId": "2058823929435918337",
+      "from": null,
+      "to": 110,
+      "observedAt": "2026-09-25T13:58:45.929Z"
+    },
+    {
+      "key": "2058823931035246593:new",
+      "kind": "new-performance",
+      "performanceId": "2058823931035246593",
+      "from": null,
+      "to": 60,
+      "observedAt": "2026-09-25T13:58:45.929Z"
+    },
+    {
+      "key": "2058823931038142465:new",
+      "kind": "new-performance",
+      "performanceId": "2058823931038142465",
+      "from": null,
+      "to": 34,
+      "observedAt": "2026-09-25T13:58:45.929Z"
     }
   ],
   "ledger": {
@@ -2626,9 +2633,21 @@
     "2058823336618483712:new": {
       "status": "sent",
       "updatedAt": "2026-09-25T08:01:06.630Z"
+    },
+    "2058823929435918337:new": {
+      "status": "sent",
+      "updatedAt": "2026-09-25T13:58:48.840Z"
+    },
+    "2058823931035246593:new": {
+      "status": "sent",
+      "updatedAt": "2026-09-25T13:58:49.720Z"
+    },
+    "2058823931038142465:new": {
+      "status": "sent",
+      "updatedAt": "2026-09-25T13:58:50.213Z"
     }
   },
-  "lastAttemptAt": "2026-09-25T08:01:01.565Z",
-  "lastSuccessfulAt": "2026-09-25T08:01:01.565Z",
-  "nextEligibleAt": "2026-09-25T08:31:01.565Z"
+  "lastAttemptAt": "2026-09-25T13:58:45.929Z",
+  "lastSuccessfulAt": "2026-09-25T13:58:45.929Z",
+  "nextEligibleAt": "2026-09-25T14:28:45.929Z"
 }
