@@ -862,5 +862,21 @@
     "from": null,
     "to": 34,
     "observedAt": "2026-09-25T13:58:45.929Z"
+  },
+  {
+    "key": "2058823341752426497:new",
+    "kind": "new-performance",
+    "performanceId": "2058823341752426497",
+    "from": null,
+    "to": 96,
+    "observedAt": "2026-09-26T09:59:13.018Z"
+  },
+  {
+    "key": "2058823342989746176:new",
+    "kind": "new-performance",
+    "performanceId": "2058823342989746176",
+    "from": null,
+    "to": 49,
+    "observedAt": "2026-09-26T09:59:13.018Z"
   }
 ]

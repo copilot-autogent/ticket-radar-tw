@@ -16,29 +16,7 @@
         "schemaVersion": 2,
         "source": "https://www.opentix.life/event/2054406826574860289",
         "eventId": "2054406826574860289",
-        "performanceId": "2058823929435918337",
-        "startsAt": "2026-09-26T14:30:00+08:00",
-        "endsAt": "2026-09-26T16:10:00+08:00",
-        "venue": {
-          "name": "西門紅樓二樓劇場",
-          "address": "萬華區成都路10號",
-          "timeZone": "Asia/Taipei"
-        },
-        "lifecycle": "on-sale",
-        "saleOpenAt": "2026-06-29T20:00:00+08:00",
-        "saleCloseAt": "2026-09-26T16:10:00+08:00",
-        "price": {
-          "currency": "TWD",
-          "min": 1200,
-          "max": 2200
-        },
-        "remaining": 84
-      },
-      {
-        "schemaVersion": 2,
-        "source": "https://www.opentix.life/event/2054406826574860289",
-        "eventId": "2054406826574860289",
-        "performanceId": "2058823931035246593",
+        "performanceId": "2058823341752426497",
         "startsAt": "2026-09-26T19:30:00+08:00",
         "endsAt": "2026-09-26T21:10:00+08:00",
         "venue": {
@@ -54,13 +32,13 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 38
+        "remaining": 96
       },
       {
         "schemaVersion": 2,
         "source": "https://www.opentix.life/event/2054406826574860289",
         "eventId": "2054406826574860289",
-        "performanceId": "2058823931038142465",
+        "performanceId": "2058823342989746176",
         "startsAt": "2026-09-27T14:30:00+08:00",
         "endsAt": "2026-09-27T16:10:00+08:00",
         "venue": {
@@ -76,14 +54,14 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 31
+        "remaining": 49
       }
     ],
-    "remainingTotal": 153,
-    "observedAt": "2026-09-26T05:12:27.586Z",
+    "remainingTotal": 145,
+    "observedAt": "2026-09-26T09:59:13.018Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-26T05:12:27.586Z",
+  "retainedDataAt": "2026-09-26T09:59:13.018Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -554,6 +532,11 @@
       "observedAt": "2026-09-26T05:12:27.586Z",
       "performanceCount": 3,
       "totalRemaining": 153
+    },
+    {
+      "observedAt": "2026-09-26T09:59:13.018Z",
+      "performanceCount": 2,
+      "totalRemaining": 145
     }
   ],
   "transitions": [
@@ -1420,34 +1403,34 @@
       "from": null,
       "to": 34,
       "observedAt": "2026-09-25T13:58:45.929Z"
+    },
+    {
+      "key": "2058823341752426497:new",
+      "kind": "new-performance",
+      "performanceId": "2058823341752426497",
+      "from": null,
+      "to": 96,
+      "observedAt": "2026-09-26T09:59:13.018Z"
+    },
+    {
+      "key": "2058823342989746176:new",
+      "kind": "new-performance",
+      "performanceId": "2058823342989746176",
+      "from": null,
+      "to": 49,
+      "observedAt": "2026-09-26T09:59:13.018Z"
     }
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-26T05:12:27.586Z",
-    "lastSuccessfulAt": "2026-09-26T05:12:27.586Z",
-    "nextEligibleAt": "2026-09-26T05:42:27.586Z"
+    "lastAttemptAt": "2026-09-26T09:59:13.018Z",
+    "lastSuccessfulAt": "2026-09-26T09:59:13.018Z",
+    "nextEligibleAt": "2026-09-26T10:29:13.018Z"
   },
   "cache": {
-    "etag": "\"80b53-4TeZfGwFR0t45x+pUc7bPZyg8jg\""
+    "etag": "\"78985-u7jcdPnWFK4oRPYBBGLEZdFXI34\""
   },
   "outbox": [
-    {
-      "key": "2058823280509190144:new",
-      "kind": "new-performance",
-      "performanceId": "2058823280509190144",
-      "from": null,
-      "to": 64,
-      "observedAt": "2026-09-13T10:24:33.525Z"
-    },
-    {
-      "key": "2058823280504594432:new",
-      "kind": "new-performance",
-      "performanceId": "2058823280504594432",
-      "from": null,
-      "to": 31,
-      "observedAt": "2026-09-13T10:24:33.525Z"
-    },
     {
       "key": "2058823280511279104:new",
       "kind": "new-performance",
@@ -2231,6 +2214,22 @@
       "from": null,
       "to": 34,
       "observedAt": "2026-09-25T13:58:45.929Z"
+    },
+    {
+      "key": "2058823341752426497:new",
+      "kind": "new-performance",
+      "performanceId": "2058823341752426497",
+      "from": null,
+      "to": 96,
+      "observedAt": "2026-09-26T09:59:13.018Z"
+    },
+    {
+      "key": "2058823342989746176:new",
+      "kind": "new-performance",
+      "performanceId": "2058823342989746176",
+      "from": null,
+      "to": 49,
+      "observedAt": "2026-09-26T09:59:13.018Z"
     }
   ],
   "ledger": {
@@ -2665,9 +2664,17 @@
     "2058823931038142465:new": {
       "status": "sent",
       "updatedAt": "2026-09-25T13:58:50.213Z"
+    },
+    "2058823341752426497:new": {
+      "status": "sent",
+      "updatedAt": "2026-09-26T09:59:15.201Z"
+    },
+    "2058823342989746176:new": {
+      "status": "sent",
+      "updatedAt": "2026-09-26T09:59:15.761Z"
     }
   },
-  "lastAttemptAt": "2026-09-26T05:12:27.586Z",
-  "lastSuccessfulAt": "2026-09-26T05:12:27.586Z",
-  "nextEligibleAt": "2026-09-26T05:42:27.586Z"
+  "lastAttemptAt": "2026-09-26T09:59:13.018Z",
+  "lastSuccessfulAt": "2026-09-26T09:59:13.018Z",
+  "nextEligibleAt": "2026-09-26T10:29:13.018Z"
 }
