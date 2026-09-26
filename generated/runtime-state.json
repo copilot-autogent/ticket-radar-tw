@@ -16,29 +16,7 @@
         "schemaVersion": 2,
         "source": "https://www.opentix.life/event/2054406826574860289",
         "eventId": "2054406826574860289",
-        "performanceId": "2058823341752426497",
-        "startsAt": "2026-09-26T19:30:00+08:00",
-        "endsAt": "2026-09-26T21:10:00+08:00",
-        "venue": {
-          "name": "西門紅樓二樓劇場",
-          "address": "萬華區成都路10號",
-          "timeZone": "Asia/Taipei"
-        },
-        "lifecycle": "on-sale",
-        "saleOpenAt": "2026-06-29T20:00:00+08:00",
-        "saleCloseAt": "2026-09-26T21:10:00+08:00",
-        "price": {
-          "currency": "TWD",
-          "min": 1200,
-          "max": 2200
-        },
-        "remaining": 96
-      },
-      {
-        "schemaVersion": 2,
-        "source": "https://www.opentix.life/event/2054406826574860289",
-        "eventId": "2054406826574860289",
-        "performanceId": "2058823342989746176",
+        "performanceId": "2058823937356062721",
         "startsAt": "2026-09-27T14:30:00+08:00",
         "endsAt": "2026-09-27T16:10:00+08:00",
         "venue": {
@@ -54,14 +32,14 @@
           "min": 1200,
           "max": 2200
         },
-        "remaining": 49
+        "remaining": null
       }
     ],
-    "remainingTotal": 145,
-    "observedAt": "2026-09-26T09:59:13.018Z",
+    "remainingTotal": null,
+    "observedAt": "2026-09-26T14:10:40.363Z",
     "parserVersion": "opentix-jsonld-v1"
   },
-  "retainedDataAt": "2026-09-26T09:59:13.018Z",
+  "retainedDataAt": "2026-09-26T14:10:40.363Z",
   "history": [
     {
       "observedAt": "2026-09-09T01:45:00Z",
@@ -537,6 +515,11 @@
       "observedAt": "2026-09-26T09:59:13.018Z",
       "performanceCount": 2,
       "totalRemaining": 145
+    },
+    {
+      "observedAt": "2026-09-26T14:10:40.363Z",
+      "performanceCount": 1,
+      "totalRemaining": null
     }
   ],
   "transitions": [
@@ -1423,12 +1406,12 @@
   ],
   "health": {
     "category": "ok",
-    "lastAttemptAt": "2026-09-26T09:59:13.018Z",
-    "lastSuccessfulAt": "2026-09-26T09:59:13.018Z",
-    "nextEligibleAt": "2026-09-26T10:29:13.018Z"
+    "lastAttemptAt": "2026-09-26T14:10:40.363Z",
+    "lastSuccessfulAt": "2026-09-26T14:10:40.363Z",
+    "nextEligibleAt": "2026-09-26T14:40:40.363Z"
   },
   "cache": {
-    "etag": "\"78985-u7jcdPnWFK4oRPYBBGLEZdFXI34\""
+    "etag": "\"70700-k1GU/j/A5u4UfsZxgNh7gWFEECA\""
   },
   "outbox": [
     {
@@ -2674,7 +2657,7 @@
       "updatedAt": "2026-09-26T09:59:15.761Z"
     }
   },
-  "lastAttemptAt": "2026-09-26T09:59:13.018Z",
-  "lastSuccessfulAt": "2026-09-26T09:59:13.018Z",
-  "nextEligibleAt": "2026-09-26T10:29:13.018Z"
+  "lastAttemptAt": "2026-09-26T14:10:40.363Z",
+  "lastSuccessfulAt": "2026-09-26T14:10:40.363Z",
+  "nextEligibleAt": "2026-09-26T14:40:40.363Z"
 }
