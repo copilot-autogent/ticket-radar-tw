@@ -498,5 +498,10 @@
     "observedAt": "2026-09-27T01:35:55.202Z",
     "performanceCount": 1,
     "totalRemaining": null
+  },
+  {
+    "observedAt": "2026-09-27T07:17:55.347Z",
+    "performanceCount": 1,
+    "totalRemaining": null
   }
 ]
